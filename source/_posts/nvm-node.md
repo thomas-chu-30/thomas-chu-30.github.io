@@ -1,11 +1,9 @@
 ---
-title: nvm-node
+title: MacOS 使用 brew 安裝 nvm 管理 node.js
 date: 2021-08-10 10:32:13
 tags: nvm
 categories: FrontEnd
 ---
-
-# MacOS 使用 brew 安裝 nvm 管理 node.js
 
 > 有些專案由於年代久遠，所以沒有辦法使用現在的 LTS 的版本，所以透過 nvm 來切換 node 的版本，以利開發速度
 

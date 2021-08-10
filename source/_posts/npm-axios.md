@@ -1,8 +1,8 @@
 ---
 title: npm-axios [ 筆記 ]
 date: 2021-08-08 13:29:48
-tags: "npm"
-categories: "FrontEnd"
+tags: npm
+categories: FrontEnd
 ---
 
 ## install
@@ -50,6 +50,21 @@ axios 會用  `validateStatus`  這個設定來決定要 resolve 或 reject �
 validateStatus: function (status) {
     return status >= 200 && status < 300; // default
   },
+```
+
+### 小技巧
+
+當你的 method 是 GET 的時候，可用 params 來帶入 query 的資料，用物件的方式就不用自已組字串
+
+```javascript
+axios
+  .get("/user", {
+    params: { ID: 12345 },
+    // 完全等於 '/user?ID=12345'
+  })
+  .then(function (response) {
+    console.log(response);
+  });
 ```
 
 ## 使用 axios.create() 客製化 Axios

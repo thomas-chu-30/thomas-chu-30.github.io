@@ -13,6 +13,8 @@ max os 屬於類 unix 的系統，所以他會有一些 unix 系統的目錄風�
 
 > 類 Unix 系統（英文：Unix-like）是指繼承 UNIX 的設計風格演變出來的系統（比如 GNU/Linux、FreeBSD、OpenBSD、SUN 公司的 Solaris、Minix、QNX 等），這些作業系統雖然有的是自由軟體，有的是商業軟體，但都相當程度地繼承了原始 UNIX 的特性，有許多相似處，並且都在一定程度上遵守 POSIX 規範，但是它們卻並不含有 UNIX 的原始碼。目前 UNIX 的原始碼為 SCO 公司所有，屬於商業軟體，UNIX 的商標權和 UNIX 標準認定屬於 OPENGROUP 所有。由於 UNIX 標準認定價格昂貴，所以目前唯一獲得 UNIX 標準認定的為蘋果的 MACOS 系統。
 
+<!--more-->
+
 **以下目錄為類 unix 系統的通用目錄**
 
 ```bash

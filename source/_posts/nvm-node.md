@@ -7,6 +7,8 @@ categories: FrontEnd
 
 > 有些專案由於年代久遠，所以沒有辦法使用現在的 LTS 的版本，所以透過 nvm 來切換 node 的版本，以利開發速度
 
+<!--more-->
+
 ## 安裝 nvm
 
 首先你必需裝好你的 brew ，在用 brew 安裝 nvm

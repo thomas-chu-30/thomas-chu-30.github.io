@@ -1,25 +1,24 @@
 ---
-title: git command 
+title: Git 時光之術
 date: 2021-08-14 00:23:21
-tags: git 
+tags: git
 ---
-
-
 
 > Git 可以說是比寫 code 還要重要的東西，現在的專案基本上都要共同協作，所以如何避免衝突，不在開發的時候發生災難，可以說是非常的重要，寫 code 寫不好可以問人，但 Git 不行的話可能連工作都沒有辦法一起 co-work 。
 >
 > 另外如果對 `vim` 還沒有很熟的話建議去多了解一下 `vim` 的編輯、儲存、查尋方式，對你在使用 git 上會更加的得心應手。
-# Git 常用commend line
+
+# Git 常用 commend line
 
 ## git 起手式
 
-在專案位置下初使化 git ，表示可開始用 git 來管理你的專案，此時專案中會出現一個隱藏資料夾  `.git` ，然而你在開發的過程中也一定會有你不想要推到 remote 的東西，這個時候你可以建立一個 `.gitignore` 的檔案，在裡面編寫你不想要上傳的文件 or 資料夾
+在專案位置下初使化 git ，表示可開始用 git 來管理你的專案，此時專案中會出現一個隱藏資料夾 `.git` ，然而你在開發的過程中也一定會有你不想要推到 remote 的東西，這個時候你可以建立一個 `.gitignore` 的檔案，在裡面編寫你不想要上傳的文件 or 資料夾
 
 ```shell
-git init	
+git init
 # .gitignore 檔案
 node_modules # 資料夾不推上 git
-/dist 
+/dist
 .env # 檔案不推上 git
 ```
 
@@ -30,8 +29,6 @@ git config --list # 查看你目前的 config 清單
 git config --global user.name [YOUR_NAME] # 建立名稱
 git config --global user.email [YOUT_EMAIL] # 建立 email
 ```
-
-
 
 ## clone 專案
 
@@ -45,7 +42,7 @@ git clone [YOUR_PROJECT]
 
 ```shell
 git remote -h # 查詢remote相關指令
-git remote rename `<old>` `<new>` # 將遠端數據庫的名稱從 <old> 改為 <new> 
+git remote rename `<old>` `<new>` # 將遠端數據庫的名稱從 <old> 改為 <new>
 git remote set-url `<name>` `<newurl>` # 在 <newurl> 內指定遠端數據庫的新地址
 git remote add origin [YOUR_PROJECT]
 ```
@@ -76,7 +73,7 @@ git add -p # after everyone check, add file to stage
 取消加入暫存區
 
 ```shell
-git checkout 
+git checkout
 ```
 
 ## 加入本地儲存區
@@ -96,7 +93,7 @@ git reset --hard `<id>^` # 本地數據庫不見
 git reset --soft `<id>^` # 本地數據庫還在
 ```
 
->  commit 訊息邏輯
+> commit 訊息邏輯
 >
 > - 以大寫開頭
 > - 以<動詞> + <受詞> + <內容> 的文法撰寫
@@ -107,10 +104,10 @@ git reset --soft `<id>^` # 本地數據庫還在
 
 會使用它最常有的情境是，你開發到一半，但是 BOSS 請你趕快的去處理另一件是，這個時候你也還沒有到可下 commit 的時候，這個時候，可用 stash 把你開發的 code 先到一個地方，之後只要回來，在把東西 stash 回來便可繼續開發。
 
->  在 stash 之前建議先把所有的 code 放到暫區，因有時候我們是新建檔，直接 stash 的話新檔就會被遺留在，原本的 br 上面
+> 在 stash 之前建議先把所有的 code 放到暫區，因有時候我們是新建檔，直接 stash 的話新檔就會被遺留在，原本的 br 上面
 >
 > ```shell
-> git add . 
+> git add .
 > ```
 >
 > 為了確保我們所寫的東西不要被分別放在不同的 stash list 裡面
@@ -141,7 +138,7 @@ git stash apply `<shash ID>`
 
 ```shell
 git stash drop `<shash ID>`
-git stash clear # clear all 
+git stash clear # clear all
 ```
 
 # 合併分之
@@ -164,7 +161,9 @@ git rebase [BRANCH_NAME]
 
 > 這兩個都是把 br 作合並的效果，但是 rebase 是直接把原本的分支合回到另一個 br 的分支上，變成一個，也就是說，有些 commit 你可能會沒有辦法在 tree 上面直接的看到，因為被合到另一個 tree 上面了
 
-# 刪除 branch 
+# 刪除 branch
+
+Coming soon ...
 
 # 遠端數據庫
 
@@ -176,18 +175,16 @@ git rebase [BRANCH_NAME]
 git fetch # 把你在遠端的 br 拉下來
 ```
 
- 
-
-## pull 
+## pull
 
 那 pull 的這個動作，就是我們把 fetch + merge 的動作一起作完，把 code 拉下來，然後 merge 到你現在的 br 中
 
 ```shell
-git pull # git fetch + git merge 
-git pull --rebase # 當然你也可選擇 rebase 
+git pull # git fetch + git merge
+git pull --rebase # 當然你也可選擇 rebase
 ```
 
-## push 
+## push
 
 把你所 commit 好的的檔案往上傳到 remote 端，但是需先確認是否已設定好 origin 的 remote 位置
 
@@ -216,7 +213,7 @@ git tag -n #  可以顯示出標籤和註解
 
 ```shell
 git bisect start [BAD_COMMIT] [GOOD_COMMIT]
-# 開始後將自動 checkout 到要檢查的 commit 
+# 開始後將自動 checkout 到要檢查的 commit
 # 請執行以下指令標記正常 or 錯誤
 ```
 
@@ -226,11 +223,11 @@ git bisect start [BAD_COMMIT] [GOOD_COMMIT]
 
 在 `github` 選擇 fork ，需在把你的 remote 專案名稱修正，因為通常 origin 指的是自己的開發 remote。然後在把 fork 的 repositories 設定到你的 origin 裡面。
 
-確認 remote 的名稱 ⇒ 修正名稱 ⇒ 加入新的fork repositories ⇒ 確認 remote 的名稱
+確認 remote 的名稱 ⇒ 修正名稱 ⇒ 加入新的 fork repositories ⇒ 確認 remote 的名稱
 
 # Git alais
 
-Coming soon ... 
+Coming soon ...
 
 # 檢查 git
 
@@ -248,4 +245,4 @@ git remote -h # 可以檢看一下指令
 
 [搬移檔案](https://zlargon.gitbooks.io/git-tutorial/content/file/move.html)
 
-https://www.notion.so/git-commit-message-a18a8a5cc0cb4cc48c4c49c82da4cabe)
+[git commit message 的格式](https://www.notion.so/git-commit-message-a18a8a5cc0cb4cc48c4c49c82da4cabe)

@@ -41,6 +41,8 @@ axios.interceptors.response.use(
 export default axios;
 ```
 
+<!--more-->
+
 ### validateStatus
 
 axios 會用  `validateStatus`  這個設定來決定要 resolve 或 reject 該請求的 Promise。預設當 HTTP response 的 statusCode 如下時，都會當成錯誤拋出：

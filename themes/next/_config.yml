@@ -601,8 +601,8 @@ gitalk:
   enable: true
   github_id: thomas-chu-30 # GitHub repo owner
   repo: thomas-chu-30.github.io # Repository name to store issues
-  client_id: 23bea7704021b427e2e2 # GitHub Application Client ID
-  client_secret: 6d44084df98997d7c7402bde8dcf031910476d05 # GitHub Application Client Secret
+  client_id: c0ac85ddeda6dcd02e2f # GitHub Application Client ID
+  client_secret: ee9fabf8ea48c8f55703393dad72ac955e39f783 # GitHub Application Client Secret
   admin_user: thomas-chu-30 # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address

@@ -1,7 +1,8 @@
 ---
-title: tailwind-vs-windicss
+title: tailwind vs windicss
 date: 2021-08-15 17:24:44
-tags:
+tags: css
+categories: FrontEnd
 ---
 
 > 信相前端工程師在切版下過一點功夫的人，一定都聽過 tailwind css ，但不一定有聽過 windicss ，這兩個東西都被稱作是下一個世代的 css ，今天來比較兩個的差異。

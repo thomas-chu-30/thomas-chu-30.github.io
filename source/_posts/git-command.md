@@ -8,6 +8,8 @@ tags: git
 >
 > 另外如果對 `vim` 還沒有很熟的話建議去多了解一下 `vim` 的編輯、儲存、查尋方式，對你在使用 git 上會更加的得心應手。
 
+<!--more-->
+
 # Git 常用 commend line
 
 ## git 起手式

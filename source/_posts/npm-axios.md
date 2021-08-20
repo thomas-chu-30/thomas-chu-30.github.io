@@ -1,5 +1,5 @@
 ---
-title: npm-axios [ 筆記 ]
+title: npm-axios [NOTE]
 date: 2021-08-08 13:29:48
 tags: npm
 categories: FrontEnd

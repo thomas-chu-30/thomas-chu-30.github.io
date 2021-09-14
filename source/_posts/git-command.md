@@ -248,3 +248,5 @@ git remote -h # 可以檢看一下指令
 [搬移檔案](https://zlargon.gitbooks.io/git-tutorial/content/file/move.html)
 
 [git commit message 的格式](https://www.notion.so/git-commit-message-a18a8a5cc0cb4cc48c4c49c82da4cabe)
+
+[git commit 這樣子寫更好](https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html)

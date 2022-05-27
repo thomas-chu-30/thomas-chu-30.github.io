@@ -187,7 +187,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular-Framework/form/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/decorators/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -200,7 +200,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular-Framework/form/" class="post-title-link" itemprop="url">Untitled</a>
+          <a href="/2022/05/27/Angular/decorators/" class="post-title-link" itemprop="url">[Angular] - Decorators</a>
         </h2>
 
         <div class="post-meta-container">
@@ -210,8 +210,18 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2022-05-27 17:31:00" itemprop="dateCreated datePublished" datetime="2022-05-27T17:31:00+08:00">2022-05-27</time>
+      <time title="Created: 2022-05-27 00:23:21 / Modified: 22:36:40" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
     </span>
 
   
@@ -224,318 +234,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Form"><a href="#Form" class="headerlink" title="Form"></a>Form</h1><h2 id="引用-mat-樣式"><a href="#引用-mat-樣式" class="headerlink" title="引用 mat 樣式"></a>引用 mat 樣式</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mat-form-field</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mat-label</span>&gt;</span>Input<span class="tag">&lt;/<span class="name">mat-label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">matInput</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mat-form-field</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mat-form-field</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mat-label</span>&gt;</span>Select<span class="tag">&lt;/<span class="name">mat-label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mat-select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mat-option</span> <span class="attr">value</span>=<span class="string">&quot;one&quot;</span>&gt;</span>First option<span class="tag">&lt;/<span class="name">mat-option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mat-option</span> <span class="attr">value</span>=<span class="string">&quot;two&quot;</span>&gt;</span>Second option<span class="tag">&lt;/<span class="name">mat-option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mat-select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mat-form-field</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mat-form-field</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mat-label</span>&gt;</span>Textarea<span class="tag">&lt;/<span class="name">mat-label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">matInput</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mat-form-field</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="form-表單"><a href="#form-表單" class="headerlink" title="form 表單"></a>form 表單</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;form [formGroup]=<span class="string">&quot;subscribeForm&quot;</span> (ngSubmit)=<span class="string">&quot;submit()&quot;</span>&gt;</span><br><span class="line">   <span class="xml"><span class="tag">&lt;<span class="name">mat-form-field</span> <span class="attr">class</span>=<span class="string">&quot;w-full&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">       <span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">           <span class="attr">matInput</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">           <span class="attr">required</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">           <span class="attr">type</span>=<span class="string">&quot;email&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="xml">           <span class="attr">formControlName</span>=<span class="string">&quot;email&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">        /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">mat-error</span>&gt;</span> Please enter a valid email address <span class="tag">&lt;/<span class="name">mat-error</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">mat-form-field</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="invalid-function"><a href="#invalid-function" class="headerlink" title="invalid function"></a>invalid function</h2><p><a target="_blank" rel="noopener" href="https://www.tektutorialshub.com/angular/angular-formbuilder-in-reactive-forms/">https://www.tektutorialshub.com/angular/angular-formbuilder-in-reactive-forms/</a></p>
-<h2 id="FormGroup"><a href="#FormGroup" class="headerlink" title="FormGroup"></a>FormGroup</h2><p>How do I restrict an input to only accept numbers?</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;number&quot;</span> ng-model=<span class="string">&quot;myText&quot;</span> name=<span class="string">&quot;inputName&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/14615236/how-do-i-restrict-an-input-to-only-accept-numbers">How do I restrict an input to only accept numbers?</a></p>
-<h3 id="Nested-FormGroup"><a href="#Nested-FormGroup" class="headerlink" title="Nested FormGroup"></a>Nested FormGroup</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.contactForm = <span class="built_in">this</span>.formBuilder.group(&#123;</span><br><span class="line">  <span class="attr">firstname</span>: [<span class="string">&#x27;&#x27;</span>, [Validators.required, Validators.minLength(<span class="number">10</span>)]],</span><br><span class="line">  <span class="attr">lastname</span>: [<span class="string">&#x27;&#x27;</span>, [Validators.required, Validators.maxLength(<span class="number">15</span>), Validators.pattern(<span class="string">&quot;^[a-zA-Z]+$&quot;</span>)]],</span><br><span class="line">  <span class="attr">email</span>: [<span class="string">&#x27;&#x27;</span>, [Validators.required, Validators.email]],</span><br><span class="line">  <span class="attr">gender</span>: [<span class="string">&#x27;&#x27;</span>, [Validators.required]],</span><br><span class="line">  <span class="attr">isMarried</span>: [<span class="string">&#x27;&#x27;</span>, [Validators.required]],</span><br><span class="line">  <span class="attr">country</span>: [<span class="string">&#x27;&#x27;</span>, [Validators.required]],</span><br><span class="line">  <span class="attr">address</span>: <span class="built_in">this</span>.formBuilder.group(&#123;</span><br><span class="line">    <span class="attr">city</span>: [<span class="string">&#x27;&#x27;</span>, [Validators.required]],</span><br><span class="line">    <span class="attr">street</span>: [<span class="string">&#x27;&#x27;</span>, [Validators.required]],</span><br><span class="line">    <span class="attr">pincode</span>: [<span class="string">&#x27;&#x27;</span>, [Validators.required]],</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="Validations"><a href="#Validations" class="headerlink" title="Validations"></a>Validations</h2><p><a target="_blank" rel="noopener" href="https://angular.io/api/forms/Validators#compose">Angular</a></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Validators</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> min(min: number): ValidatorFn</span><br><span class="line">  <span class="keyword">static</span> max(max: number): ValidatorFn</span><br><span class="line">  <span class="keyword">static</span> required(control: AbstractControl): ValidationErrors | <span class="literal">null</span></span><br><span class="line">  <span class="keyword">static</span> requiredTrue(control: AbstractControl): ValidationErrors | <span class="literal">null</span></span><br><span class="line">  <span class="keyword">static</span> email(control: AbstractControl): ValidationErrors | <span class="literal">null</span></span><br><span class="line">  <span class="keyword">static</span> minLength(minLength: number): ValidatorFn</span><br><span class="line">  <span class="keyword">static</span> maxLength(maxLength: number): ValidatorFn</span><br><span class="line">  <span class="keyword">static</span> pattern(pattern: string | <span class="built_in">RegExp</span>): ValidatorFn</span><br><span class="line">  <span class="keyword">static</span> nullValidator(control: AbstractControl): ValidationErrors | <span class="literal">null</span></span><br><span class="line">  <span class="keyword">static</span> compose(validators: ValidatorFn[]): ValidatorFn | <span class="literal">null</span></span><br><span class="line">  <span class="keyword">static</span> composeAsync(validators: AsyncValidatorFn[]): AsyncValidatorFn | <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="updateValidations"><a href="#updateValidations" class="headerlink" title="updateValidations"></a>updateValidations</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.fromName.get(<span class="string">&quot;formControlName&quot;</span>).setValidators([Validators.required]);</span><br><span class="line"><span class="comment">//setting validations</span></span><br><span class="line"><span class="built_in">this</span>.fromName.get(<span class="string">&quot;formControlName&quot;</span>).setErrors(&#123;<span class="string">&#x27;required&#x27;</span>:<span class="literal">true</span>&#125;);</span><br><span class="line"><span class="comment">//error message</span></span><br><span class="line"><span class="built_in">this</span>.myForm.controls[<span class="string">&#x27;controlName&#x27;</span>].clearValidators()</span><br><span class="line"><span class="comment">//clear valiations</span></span><br><span class="line"><span class="built_in">this</span>.fromName.updateValueAndValidity();</span><br><span class="line"><span class="comment">//update validation</span></span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/51300628/angular-reactive-forms-set-and-clear-validators">Angular reactive forms set and clear validators</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.tektutorialshub.com/angular/how-to-add-validators-dynamically-using-setvalidators-in-angular/">https://www.tektutorialshub.com/angular/how-to-add-validators-dynamically-using-setvalidators-in-angular/</a></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private destroy$: ReplaySubject&lt;boolean&gt; = <span class="keyword">new</span> ReplaySubject(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="hasError"><a href="#hasError" class="headerlink" title="hasError"></a>hasError</h3><p>在操作 js 的時候，需要有一個特定的 error style 可以用 <code>setErrors</code> 來設定 <code>boolean</code> 讓 <code>template</code> 來使用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.productsForm[index].controls[<span class="string">&#x27;unit_price&#x27;</span>].setErrors(&#123; <span class="attr">bottomPrice</span>: <span class="literal">true</span> &#125;);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mat-error</span> *<span class="attr">ngIf</span>=<span class="string">&quot;productsForm[index].get(&#x27;unit_price&#x27;).hasError(&#x27;bottomPrice&#x27;)&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">span</span>&gt;</span>Please enter bottomPrice.<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mat-error</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>清楚不需要 error style 可以把此方法，我原本設用的 error 移除</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.addProductForm.controls[<span class="string">&#x27;part_no&#x27;</span>].setErrors(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">note </span><br><span class="line"><span class="keyword">const</span> pattern = <span class="regexp">/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,6&#125;/</span>;</span><br><span class="line"><span class="comment">// REF: https://www.w3resource.com/javascript/form/email-validation.php</span></span><br><span class="line"><span class="keyword">const</span> pattern = <span class="regexp">/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w&#123;2,3&#125;)+$/</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Reset-Reactive-Form"><a href="#Reset-Reactive-Form" class="headerlink" title="Reset Reactive Form"></a>Reset Reactive Form</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> [<span class="attr">formGroup</span>]=<span class="string">&quot;addProductForm&quot;</span> (<span class="attr">ngSubmit</span>)=<span class="string">&quot;addProduct()&quot;</span> #<span class="attr">formDirective</span>=<span class="string">&quot;ngForm&quot;</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">CorporateQuotationPageComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">   @ViewChild(<span class="string">&#x27;formDirective&#x27;</span>) formDirective;</span><br><span class="line">	 ...</span><br><span class="line">   <span class="function"><span class="title">resetForm</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  		<span class="built_in">this</span>.formDirective.resetForm(); <span class="comment">//重新的把值清空</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="ValueChange"><a href="#ValueChange" class="headerlink" title="ValueChange"></a>ValueChange</h2><p><a target="_blank" rel="noopener" href="https://www.tektutorialshub.com/angular/valuechanges-in-angular-forms/">value change</a></p>
-<h2 id="Custom-Async-Validators"><a href="#Custom-Async-Validators" class="headerlink" title="Custom Async Validators"></a>Custom Async Validators</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;AbstractControl, FormControl, FormGroup, ValidationErrors&#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/forms&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;Observable, <span class="keyword">of</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;delay, map&#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs/operators&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">  <span class="attr">providedIn</span>: <span class="string">&#x27;root&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ZipcodeService</span> </span>&#123;</span><br><span class="line">  private validZipcodes = [<span class="string">&#x27;00001&#x27;</span>, <span class="string">&#x27;00002&#x27;</span>, <span class="string">&#x27;00003&#x27;</span>, <span class="string">&#x27;00004&#x27;</span>];</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">fakeHttp</span>(<span class="params">value: string</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">of</span>(<span class="built_in">this</span>.validZipcodes.includes(value)).pipe(delay(<span class="number">5000</span>));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;ZipcodeService&#125; <span class="keyword">from</span> <span class="string">&#x27;./zipcode.service&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;AbstractControl, AsyncValidatorFn, ValidationErrors&#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/forms&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;Observable&#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;map&#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs/operators&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ZipcodeValidator</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> createValidator(zipcodeService: ZipcodeService): AsyncValidatorFn &#123;</span><br><span class="line">    <span class="keyword">return</span> (control: AbstractControl): Observable&lt;ValidationErrors&gt; =&gt; &#123;</span><br><span class="line">      <span class="keyword">return</span> zipcodeService.fakeHttp(control.value).pipe(</span><br><span class="line">        map(<span class="function">(<span class="params">result: boolean</span>) =&gt;</span> result ? <span class="literal">null</span> : &#123;<span class="attr">invalidAsync</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">      );</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;Component, OnInit&#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; FormControl, FormGroup, Validators&#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/forms&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;ZipcodeService&#125; <span class="keyword">from</span> <span class="string">&#x27;./zipcode.service&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;ZipcodeValidator&#125; <span class="keyword">from</span> <span class="string">&#x27;./zipcode-validator&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  <span class="attr">selector</span>: <span class="string">&#x27;app-async-validator-demo&#x27;</span>,</span><br><span class="line">  <span class="attr">templateUrl</span>: <span class="string">&#x27;./async-validator-demo.component.html&#x27;</span>,</span><br><span class="line">  <span class="attr">styleUrls</span>: [<span class="string">&#x27;./async-validator-demo.component.scss&#x27;</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AsyncValidatorDemoComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">  <span class="attr">address</span>: FormGroup;</span><br><span class="line">  zipcodeSyncValidators = [</span><br><span class="line">    Validators.required,</span><br><span class="line">    Validators.pattern(<span class="string">&#x27;\\d&#123;5&#125;&#x27;</span>)</span><br><span class="line">  ];</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">private zipcodeService: ZipcodeService</span>)</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.address = <span class="keyword">new</span> FormGroup(&#123;</span><br><span class="line">      <span class="attr">zipcode</span>: <span class="keyword">new</span> FormControl(<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">       <span class="built_in">this</span>.zipcodeSyncValidators,</span><br><span class="line">       ZipcodeValidator.createValidator(<span class="built_in">this</span>.zipcodeService))</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://medium.com/@rinciarijoc/angular-custom-async-validators-13a648d688d8">Angular: Custom Async Validators</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular-Framework/element/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Thomas_chu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Life × Ex × Code">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular-Framework/element/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-05-27 17:31:00" itemprop="dateCreated datePublished" datetime="2022-05-27T17:31:00+08:00">2022-05-27</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h1><h2 id="ng-container"><a href="#ng-container" class="headerlink" title="ng-container"></a>ng-container</h2><h2 id="ng-content"><a href="#ng-content" class="headerlink" title="ng-content"></a>ng-content</h2><h2 id="ng-template"><a href="#ng-template" class="headerlink" title="ng-template"></a>ng-template</h2>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular-Framework/directive/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Thomas_chu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Life × Ex × Code">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular-Framework/directive/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-05-27 17:31:00 / Modified: 17:52:04" itemprop="dateCreated datePublished" datetime="2022-05-27T17:31:00+08:00">2022-05-27</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular-Framework/decorators/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Thomas_chu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Life × Ex × Code">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular-Framework/decorators/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-05-27 17:31:00" itemprop="dateCreated datePublished" datetime="2022-05-27T17:31:00+08:00">2022-05-27</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Decorators"><a href="#Decorators" class="headerlink" title="Decorators"></a>Decorators</h1><blockquote>
+          <blockquote>
 <p>Decorators 是 function 掛有 <code>@</code>前綴符號，可以用於 <code>class</code>、<code>paramemter</code>、<code>method</code> 或 <code>property</code>的前面。用來提供額外的資訊。</p>
 </blockquote>
-<h2 id="HostListener"><a href="#HostListener" class="headerlink" title="HostListener"></a>HostListener</h2><p>@hostListener 可以監聽宿主元素上的事件，監聽 JS 的 event click | keydown | mouseleave …</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class CountClicks &#123;</span><br><span class="line">  numberOfClicks = 0;</span><br><span class="line">	// 這裡的 onClick 可以自行命名</span><br><span class="line">  @HostListener(&#x27;window:click&#x27;, [&#x27;$event&#x27;])</span><br><span class="line">  onClick(btn): void&#123;</span><br><span class="line">    console.log(&#x27;button&#x27;, btn, &#x27;number of clicks:&#x27;, this.numberOfClicks++);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="HostBinding"><a href="#HostBinding" class="headerlink" title="HostBinding"></a>HostBinding</h2><p>@HostBinding()可以為指令的宿主元素新增類、樣式、屬性等</p>
-<p>@HostBinding()和@HostListener()不僅僅用在自定義指令，只是在自定義指令中用的較多</p>
-<p>下面我們通過實現一個在輸入時實時改變字型和邊框顏色的指令，學習@HostBinding()和@HostListener()的用法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AddRainbowDirective</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;&#125;</span><br><span class="line">    possibleColors = [</span><br><span class="line">        <span class="string">&#x27;darksalmon&#x27;</span>, <span class="string">&#x27;hotpink&#x27;</span>, <span class="string">&#x27;lightskyblue&#x27;</span>, <span class="string">&#x27;goldenrod&#x27;</span>, <span class="string">&#x27;peachpuff&#x27;</span>, <span class="string">&#x27;mediumspringgreen&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;cornflowerblue&#x27;</span>, <span class="string">&#x27;blanchedalmond&#x27;</span>, <span class="string">&#x27;lightslategrey&#x27;</span>,</span><br><span class="line">    ];</span><br><span class="line">    @HostBinding(<span class="string">&#x27;style.color&#x27;</span>) color: string;</span><br><span class="line">    @HostBinding(<span class="string">&#x27;style.borderColor&#x27;</span>) borderColor: string;</span><br><span class="line">    @HostListener(<span class="string">&#x27;keydown&#x27;</span>) <span class="function"><span class="title">onKeydown</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> colorPick = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="built_in">this</span>.possibleColors.length);</span><br><span class="line">        <span class="built_in">this</span>.color = <span class="built_in">this</span>.borderColor = <span class="built_in">this</span>.possibleColors[colorPick];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">appRainbow</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="NgModule"><a href="#NgModule" class="headerlink" title="NgModule"></a>NgModule</h2><ul>
-<li><strong>declarations</strong>－屬於此 NgModule 的 Component、Directive 與 Pipe 皆放置於此。</li>
-<li><strong>imports</strong>－此 NgModule 需要使用、依賴的其他 NgModule 皆放置於此（好像有點饒舌）。</li>
-<li><strong>providers</strong>－可以被整個應用程式中的任何部分被使用的 Service 皆放置於此，也可以將 Service 直接放置在 Component 的 Metadata 裡的 <code>providers</code> <em>（但放置在不同地方會有一些需要特別注意的事項，後續在說明 Service 時會提到。另外，在 Angular 6 之後，在 Service 之中也可以使用 Metadata 裡的 <code>providedIn</code> 宣告，該 Service 要 <code>provided</code> 到哪裡。詳細可以參考<a target="_blank" rel="noopener" href="https://blog.ninja-squad.com/2018/05/04/what-is-new-angular-6/">此篇文章</a>或是隔壁棚<a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10203876">Angular 大師之路</a>也有提到）</em> 。</li>
-<li><strong>exports</strong>－此處放置的是，當在其他 NgModule 裡 import 了當前的 Module 後，可以在其他 NgModule 裡的 Component Template 使用的 Component、Directive 與 Pipe。</li>
-<li><strong>entryComponents</strong>－放在這裡的元件通常是用不通過 Route 的方式，而採用動態加入的元件。</li>
-<li><strong>bootstrap</strong>－在此設置的是應用程式通常稱之為 Root Component <em>（根元件）</em> ，而且只有 Root Module 才要設置此屬性。</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195338">[功能介紹-11] NgModules - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天</a></p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>父層的 html </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;app-bank-account [bank]=&quot;RBC&quot; [account-id]=&quot;4747&quot;&gt;&lt;/app-bank-account&gt;</span><br></pre></td></tr></table></figure>
-
-<p>子層的 component</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class BankAccount &#123;</span><br><span class="line">  @Input() bankName: string;</span><br><span class="line">  @Input(&#x27;account-id&#x27;) id: string; //可以用此方把名稱改為自已想要的東西</span><br><span class="line">	// TODO: 還有一個可以直接 set() 值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>要使用 output 有三個步驟</p>
-<ol>
-<li>引入 Output &amp; EventEmitter 的 function 在 angular</li>
-<li>讓你的 Output 有一個 EventEmitter</li>
-<li>建立一個 function 把資料 emt 上去</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Output, EventEmitter &#125; from &#x27;@angular/core&#x27;; // step1</span><br><span class="line"></span><br><span class="line">@Output() newItemEvent = new EventEmitter&lt;string&gt;(); // step2 </span><br><span class="line"></span><br><span class="line">addNewItem(value: string) &#123;</span><br><span class="line">    this.newItemEvent.emit(value); // step3 用這個方式 emit 資料上去</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// html &lt;app-item (newItemEvent)=&quot;addItem($event)&quot;&gt;&lt;/app-item&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="VeiwChild"><a href="#VeiwChild" class="headerlink" title="VeiwChild"></a>VeiwChild</h2><p>抓取 DOM 也可以抓取 component 得到裡面的定義變數的值</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@ViewChild(<span class="string">&#x27;historyBlock&#x27;</span>) historyBlock;</span><br><span class="line"></span><br><span class="line">ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">this</span>.historyBlock.nativeElement) <span class="comment">// get DOM</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// html</span></span><br><span class="line">&lt;div #historyBlock&gt; &lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="VeiwChildren"><a href="#VeiwChildren" class="headerlink" title="VeiwChildren"></a>VeiwChildren</h2><p>用於配置檢視查詢的引數裝飾器。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ng-container</span> *<span class="attr">ngFor</span>=<span class="string">&quot;let item of arrName&quot;</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">hello</span> #<span class="attr">item</span> [<span class="attr">name</span>]=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">hello</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ng-container</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; AfterViewInit, Component, VERSION, ViewChild &#125; <span class="keyword">from</span> <span class="string">&quot;@angular/core&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HelloComponent &#125; <span class="keyword">from</span> <span class="string">&quot;./hello.component&quot;</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  <span class="attr">selector</span>: <span class="string">&quot;my-app&quot;</span>,</span><br><span class="line">  <span class="attr">templateUrl</span>: <span class="string">&quot;./app.component.html&quot;</span>,</span><br><span class="line">  <span class="attr">styleUrls</span>: [<span class="string">&quot;./app.component.css&quot;</span>],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> <span class="title">implements</span> <span class="title">AfterViewInit</span> </span>&#123;</span><br><span class="line">  arrName = [<span class="string">&quot;aa&quot;</span>, <span class="string">&quot;bb&quot;</span>, <span class="string">&quot;cc&quot;</span>];</span><br><span class="line">  @ViewChildren(<span class="string">&quot;item&quot;</span>) itemElement: QueryList&lt;HelloComponent&gt;;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">ngAfterViewInit</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.itemElement.map(<span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;itemElement&quot;</span>, e.name); <span class="comment">// 依序提出子組件裡的值</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：<code>ViewChildren</code> 一定要搭配 <code>QueryList</code> 一起使用，不然就不能實現列表更新這件事了因生命週期關係 <code>ViewChild</code> 與 <code>ViewChildren</code> 要在 <code>ngAfterViewInit</code> 裡才能實現</p>
-<h2 id="Injectable-amp-Inject"><a href="#Injectable-amp-Inject" class="headerlink" title="Injectable &amp; Inject"></a>Injectable &amp; Inject</h2><p>Angular 其實提供了三種註冊 Service 的方式。</p>
-<h3 id="inject-第一種"><a href="#inject-第一種" class="headerlink" title="inject 第一種"></a>inject 第一種</h3><p>第一種方式最簡單，也是 Angular CLI 在產生 Service 時預設使用的方式：</p>
-<p>這種方式是在 Service 自己的 Metadata 裡加上 <code>providedIn: &#39;root&#39;</code> 的屬性，來告訴 Angular 說：「請把我註冊在整個系統都是使用同一個實體的注射器裡」。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Injectable(&#123;</span><br><span class="line">		<span class="attr">providedIn</span>: <span class="string">&#x27;root&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="inject-第二種"><a href="#inject-第二種" class="headerlink" title="inject 第二種"></a>inject 第二種</h3><p>這種方式是告訴 Angular 說：「請把我註冊在這整個 NgModule 都用同一個實體的注射器裡」。也就是說，假設當初 A Service 是註冊在 A Module 裡，那麼在整個 A Module 裡就會使用同一個實體。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@NgModule(&#123;</span><br><span class="line">		<span class="attr">providers</span>: [</span><br><span class="line">				BackendService,</span><br><span class="line">				Logger</span><br><span class="line">		],</span><br><span class="line">  	...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>那在 B Module 裡可以用 A Service嗎？ 可以。</p>
-<p>那在 B Module 裡的 A Service 跟在 A Module 裡的 A Service 是同一個實體嗎？同一個&lt;心中存疑？？&gt;</p>
-</blockquote>
-<h3 id="inject-第三種"><a href="#inject-第三種" class="headerlink" title="inject 第三種"></a>inject 第三種</h3><p>這種方式是告訴 Angular 說：「請把我註冊在這整個 Component 都用同一個實體的注射器裡」。意思是每個 Component 拿到的 Service 實體都不是同一個。</p>
-<p>絕對不是同一個</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123;</span><br><span class="line">  <span class="attr">selector</span>:    <span class="string">&#x27;app-hero-list&#x27;</span>,</span><br><span class="line">  <span class="attr">templateUrl</span>: <span class="string">&#x27;./hero-list.component.html&#x27;</span>,</span><br><span class="line">  <span class="attr">providers</span>:  [ HeroService ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>這個要常常看一下，重要</p>
-<p><a target="_blank" rel="noopener" href="https://blog.kevinyang.net/2018/01/19/angular-viewproviders-providers/">https://blog.kevinyang.net/2018/01/19/angular-viewproviders-providers/</a></p>
-<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><p><a target="_blank" rel="noopener" href="https://blog.kevinyang.net/2017/01/30/angular2-decorators/">自訂Decorators</a></p>
-<p><a target="_blank" rel="noopener" href="https://jiaming0708.github.io/2017/03/27/angular-hostbinding-listener/">HostBinding&amp;HostListener</a></p>
-<p><a target="_blank" rel="noopener" href="https://jiaming0708.github.io/2017/03/27/angular-hostbinding-listener/">HostBinding&amp;HostListener</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/27/Angular/decorators/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -561,7 +270,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular-Framework/SSR/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/guides/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -574,7 +283,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular-Framework/SSR/" class="post-title-link" itemprop="url">Angular Server Side Render</a>
+          <a href="/2022/05/27/Angular/guides/" class="post-title-link" itemprop="url">[Angular] - Guides</a>
         </h2>
 
         <div class="post-meta-container">
@@ -586,7 +295,440 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-05-27 00:23:21 / Modified: 17:38:46" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+      <time title="Created: 2022-05-27 00:23:21 / Modified: 22:32:47" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>開發時常用的參考資料</p>
+<p><a target="_blank" rel="noopener" href="https://docs.w3cub.com/angular/api/router">強大的文件資料</a></p>
+<p><a target="_blank" rel="noopener" href="https://fonts.google.com/icons?selected=Material+Icons">可查詢 Google Fonts</a></p>
+<p><a target="_blank" rel="noopener" href="https://angular.io/api">Angular api</a></p>
+</blockquote>
+<h2 id="常用-command-line-大全"><a href="#常用-command-line-大全" class="headerlink" title="常用 command line 大全"></a>常用 command line 大全</h2><blockquote>
+<p>可參考 CLI 命令參考手冊，下列為 generate component 的 command</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ ng g component home/component/my-new-component</span><br><span class="line"><span class="comment"># =&gt; 组件 | 相對生成組件生成位置在項目的根目錄的  src/app/home/component（指令其他等等都可以用該方式生成）</span></span><br><span class="line"><span class="comment"># ng g component my-component | home/component/my-new-component</span></span><br><span class="line"></span><br><span class="line">$ ng g directive my-new-directive =&gt;  指令</span><br><span class="line"></span><br><span class="line">$ ng g pipe my-new-pipe =&gt; 管道</span><br><span class="line"></span><br><span class="line">$ ng g service my-new-service =&gt; 服務</span><br><span class="line"></span><br><span class="line">$ ng g class my-new-class =&gt; 類</span><br><span class="line"></span><br><span class="line">$ ng g interface my-new-interface =&gt; 接口</span><br><span class="line"></span><br><span class="line">$ ng g enum my-new-enum =&gt; 枚舉</span><br><span class="line"></span><br><span class="line">$ ng g module my-module =&gt; 模塊</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/27/Angular/guides/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/form/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/27/Angular/form/" class="post-title-link" itemprop="url">[Angular] - Form</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-27 00:23:21 / Modified: 22:37:33" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="引用-mat-樣式"><a href="#引用-mat-樣式" class="headerlink" title="引用 mat 樣式"></a>引用 mat 樣式</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/27/Angular/form/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/life_hooks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/27/Angular/life_hooks/" class="post-title-link" itemprop="url">[Angular] - Life Hooks</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-27 00:23:21 / Modified: 22:32:55" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="生命週期"><a href="#生命週期" class="headerlink" title="生命週期"></a>生命週期</h2><p><img src="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.39.40_g3w-n1T7hS9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802618366" alt="Life%20Hooks%208fbaa02f1ad44ff3b76564995fcd6b7a/_2021-07-21_1.34.35.png"></p>
+<hr>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/27/Angular/life_hooks/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/pipe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/27/Angular/pipe/" class="post-title-link" itemprop="url">[Angular] - Pipe</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-27 00:23:21 / Modified: 22:33:06" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>angular 原生的 number 需要特別去看一下</p>
+</blockquote>
+<h2 id="Common-13"><a href="#Common-13" class="headerlink" title="Common (13)"></a>Common (13)</h2><ol>
+<li>AsyncPipe</li>
+<li>DecimalPipe</li>
+<li>JsonPipe</li>
+<li>PercentPipe</li>
+<li>UpperCasePipe</li>
+<li>CurrencyPipe</li>
+<li>I18nPluraPipe</li>
+<li>KeyValuePipe</li>
+<li>SlicePipe</li>
+<li>DatePipe</li>
+<li>I18nSelectPipe</li>
+<li>LowCasePipe</li>
+<li>TitleCasePipe</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/27/Angular/pipe/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/router/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/27/Angular/router/" class="post-title-link" itemprop="url">[Angular] - Router</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-27 00:23:21 / Modified: 22:37:57" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Angular-路由"><a href="#Angular-路由" class="headerlink" title="Angular 路由"></a><strong>Angular 路由</strong></h2><p>建立 component 之後，去 <code>/src/app/app-routing.module.ts</code> 引進 component</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserModule &#125; from &quot;@angular/platform-browser&quot;;</span><br><span class="line">import &#123; NgModule &#125; from &quot;@angular/core&quot;;</span><br><span class="line">import &#123; AppRoutingModule &#125; from &quot;./app-routing.module&quot;;</span><br><span class="line">// CLI imports AppRoutingModule</span><br><span class="line">import &#123; AppComponent &#125; from &quot;./app.component&quot;;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    declarations: [</span><br><span class="line">        AppComponent,</span><br><span class="line">        // 在這裡引入 *** components</span><br><span class="line">    ],</span><br><span class="line">    imports: [</span><br><span class="line">        BrowserModule,</span><br><span class="line">        AppRoutingModule, // CLI adds AppRoutingModule to the AppModule&#x27;s imports array</span><br><span class="line">    ],</span><br><span class="line">    providers: [],</span><br><span class="line">    bootstrap: [AppComponent],</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123;&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/27/Angular/router/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/SSR/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/27/Angular/SSR/" class="post-title-link" itemprop="url">[Angular] - Server Side Render</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-27 00:23:21 / Modified: 22:33:36" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -645,7 +787,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular-Framework/guides/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/element/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -658,7 +800,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular-Framework/guides/" class="post-title-link" itemprop="url">Angular Guides</a>
+          <a href="/2022/05/27/Angular/element/" class="post-title-link" itemprop="url">[Angular] - Element</a>
         </h2>
 
         <div class="post-meta-container">
@@ -670,7 +812,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-05-27 00:23:21 / Modified: 17:40:00" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+      <time title="Created: 2022-05-27 00:23:21 / Modified: 22:34:56" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -692,24 +834,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>開發時常用的參考資料</p>
-<p><a target="_blank" rel="noopener" href="https://docs.w3cub.com/angular/api/router">強大的文件資料</a></p>
-<p><a target="_blank" rel="noopener" href="https://fonts.google.com/icons?selected=Material+Icons">可查詢 Google Fonts</a></p>
-<p><a target="_blank" rel="noopener" href="https://angular.io/api">Angular api</a></p>
-</blockquote>
-<h2 id="常用-command-line-大全"><a href="#常用-command-line-大全" class="headerlink" title="常用 command line 大全"></a>常用 command line 大全</h2><blockquote>
-<p>可參考 CLI 命令參考手冊，下列為 generate component 的 command</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ ng g component home/component/my-new-component</span><br><span class="line"><span class="comment"># =&gt; 组件 | 相對生成組件生成位置在項目的根目錄的  src/app/home/component（指令其他等等都可以用該方式生成）</span></span><br><span class="line"><span class="comment"># ng g component my-component | home/component/my-new-component</span></span><br><span class="line"></span><br><span class="line">$ ng g directive my-new-directive =&gt;  指令</span><br><span class="line"></span><br><span class="line">$ ng g pipe my-new-pipe =&gt; 管道</span><br><span class="line"></span><br><span class="line">$ ng g service my-new-service =&gt; 服務</span><br><span class="line"></span><br><span class="line">$ ng g class my-new-class =&gt; 類</span><br><span class="line"></span><br><span class="line">$ ng g interface my-new-interface =&gt; 接口</span><br><span class="line"></span><br><span class="line">$ ng g enum my-new-enum =&gt; 枚舉</span><br><span class="line"></span><br><span class="line">$ ng g module my-module =&gt; 模塊</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/27/Angular-Framework/guides/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h2 id="ng-container"><a href="#ng-container" class="headerlink" title="ng-container"></a>ng-container</h2><h2 id="ng-content"><a href="#ng-content" class="headerlink" title="ng-content"></a>ng-content</h2><h2 id="ng-template"><a href="#ng-template" class="headerlink" title="ng-template"></a>ng-template</h2>
       
     </div>
 
@@ -735,7 +860,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular-Framework/pipe/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/resolver/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -748,7 +873,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular-Framework/pipe/" class="post-title-link" itemprop="url">Angular Pipe</a>
+          <a href="/2022/05/27/Angular/resolver/" class="post-title-link" itemprop="url">[Angular] - Resolver</a>
         </h2>
 
         <div class="post-meta-container">
@@ -760,105 +885,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-05-27 00:23:21 / Modified: 17:40:40" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>angular 原生的 number 需要特別去看一下</p>
-</blockquote>
-<h2 id="Common-13"><a href="#Common-13" class="headerlink" title="Common (13)"></a>Common (13)</h2><ol>
-<li>AsyncPipe</li>
-<li>DecimalPipe</li>
-<li>JsonPipe</li>
-<li>PercentPipe</li>
-<li>UpperCasePipe</li>
-<li>CurrencyPipe</li>
-<li>I18nPluraPipe</li>
-<li>KeyValuePipe</li>
-<li>SlicePipe</li>
-<li>DatePipe</li>
-<li>I18nSelectPipe</li>
-<li>LowCasePipe</li>
-<li>TitleCasePipe</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/27/Angular-Framework/pipe/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular-Framework/resolver/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Thomas_chu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Life × Ex × Code">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular-Framework/resolver/" class="post-title-link" itemprop="url">Angular Resolver</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-05-27 00:23:21 / Modified: 17:40:51" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+      <time title="Created: 2022-05-27 00:23:21 / Modified: 22:33:15" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -884,7 +911,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng generate resolver &lt;folder/name&gt; [options eg. --skip-tests]</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/05/27/Angular-Framework/resolver/#more" rel="contents">
+              <a class="btn" href="/2022/05/27/Angular/resolver/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -915,7 +942,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular-Framework/life_hooks/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/directive/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -928,7 +955,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular-Framework/life_hooks/" class="post-title-link" itemprop="url">Angular Life Hooks</a>
+          <a href="/2022/05/27/Angular/directive/" class="post-title-link" itemprop="url">[Angular] - Directive</a>
         </h2>
 
         <div class="post-meta-container">
@@ -940,7 +967,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-05-27 00:23:21 / Modified: 17:40:29" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+      <time title="Created: 2022-05-27 00:23:21 / Modified: 22:36:31" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -962,171 +989,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="生命週期"><a href="#生命週期" class="headerlink" title="生命週期"></a>生命週期</h2><p><img src="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.39.40_g3w-n1T7hS9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802618366" alt="Life%20Hooks%208fbaa02f1ad44ff3b76564995fcd6b7a/_2021-07-21_1.34.35.png"></p>
-<hr>
+          <h2 id="Commom-11"><a href="#Commom-11" class="headerlink" title="Commom (11)"></a>Commom (11)</h2>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/05/27/Angular-Framework/life_hooks/#more" rel="contents">
+              <a class="btn" href="/2022/05/27/Angular/directive/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular-Framework/router/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Thomas_chu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Life × Ex × Code">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular-Framework/router/" class="post-title-link" itemprop="url">Angular Router</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-05-27 00:23:21 / Modified: 17:38:25" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Angular-路由"><a href="#Angular-路由" class="headerlink" title="Angular 路由"></a><strong>Angular 路由</strong></h2><p>建立 component 之後，去 <code>/src/app/app-routing.module.ts</code> 引進 component</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserModule &#125; from &quot;@angular/platform-browser&quot;;</span><br><span class="line">import &#123; NgModule &#125; from &quot;@angular/core&quot;;</span><br><span class="line">import &#123; AppRoutingModule &#125; from &quot;./app-routing.module&quot;;</span><br><span class="line">// CLI imports AppRoutingModule</span><br><span class="line">import &#123; AppComponent &#125; from &quot;./app.component&quot;;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    declarations: [</span><br><span class="line">        AppComponent,</span><br><span class="line">        // 在這裡引入 *** components</span><br><span class="line">    ],</span><br><span class="line">    imports: [</span><br><span class="line">        BrowserModule,</span><br><span class="line">        AppRoutingModule, // CLI adds AppRoutingModule to the AppModule&#x27;s imports array</span><br><span class="line">    ],</span><br><span class="line">    providers: [],</span><br><span class="line">    bootstrap: [AppComponent],</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在去 <code>/src/app/app-routing-modules.ts</code> 加上 routers</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &#123; NgModule &#125; from &quot;@angular/core&quot;;</span><br><span class="line">import &#123; Routes, RouterModule &#125; from &quot;@angular/router&quot;; // CLI imports router</span><br><span class="line"></span><br><span class="line">const routes: Routes = []; // sets up routes constant where you define your routes</span><br><span class="line"></span><br><span class="line">// configures NgModule imports and exports</span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    imports: [RouterModule.forRoot(routes)],</span><br><span class="line">    exports: [RouterModule],</span><br><span class="line">&#125;)</span><br><span class="line">export class AppRoutingModule &#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const routes: Routes = [</span><br><span class="line">    &#123; path: &quot;first-component&quot;, component: FirstComponent &#125;,</span><br><span class="line">    &#123; path: &quot;second-component&quot;, component: SecondComponent &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">// &lt;a routerLink=&quot;/first-component&quot;&gt;&lt;/a&gt;</span><br><span class="line">// RouterLinkActive =&gt; 這個是用來作什麼的？？</span><br></pre></td></tr></table></figure>
-
-<h2 id="轉址"><a href="#轉址" class="headerlink" title="轉址"></a>轉址</h2><h3 id="HTML5-URLs-and-the-lt-base-href-gt"><a href="#HTML5-URLs-and-the-lt-base-href-gt" class="headerlink" title="HTML5 URLs and the &lt;base href&gt;"></a>HTML5 URLs and the <code>&lt;base href&gt;</code></h3><p>The guidelines that follow will refer to different parts of a URL. This diagram outlines what those parts refer to:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foo://example.com:8042/over/there?name=ferret#nose</span><br><span class="line">\_/   \______________/\_________/ \_________/ \__/</span><br><span class="line"> |           |            |            |        |</span><br><span class="line">scheme    authority      path        query   fragment</span><br></pre></td></tr></table></figure>
-
-<h3 id="template-寫法"><a href="#template-寫法" class="headerlink" title="template 寫法"></a>template 寫法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">&quot;[&#x27;products&#x27;]&quot;</span> [<span class="attr">queryParams</span>]=<span class="string">&quot;&#123; id: 101 &#125;&quot;</span>&gt;</span>Prodcuts<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">routerLink</span>=<span class="string">&quot;products&quot;</span> [<span class="attr">queryParams</span>]=<span class="string">&quot;&#123; id: 101 &#125;&quot;</span>&gt;</span>Prodcuts<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">&quot;[&#x27;market&#x27;,&#x27;GP11011&#x27;]&quot;</span>&gt;</span>Prodcuts<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- hash url: router_name#fragment_name --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">&quot;[&#x27;router_name&#x27;]&quot;</span> <span class="attr">fragment</span>=<span class="string">&quot;fragment_name&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="用-function-轉跳網址"><a href="#用-function-轉跳網址" class="headerlink" title="用 function 轉跳網址"></a>用 function 轉跳網址</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Router &#125; from &quot;@angular/router&quot;;</span><br><span class="line">// constructor(private router: Router)&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const routes: Routes = [ &#123; path: &#x27;group/:id/:categories&#x27;, ... &#125;];</span><br><span class="line">//</span><br><span class="line">const routes: Routes = [ &#123; path: &#x27;group&#x27;, ... &#125;];</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// /market/categories/group/516/led-light</span><br><span class="line">this.router.navigate([&quot;group&quot;, 516, &quot;led-light&quot;]);</span><br><span class="line"></span><br><span class="line">// group;id=7</span><br><span class="line">this.router.navigate([&quot;group&quot;, &#123; id: 7 &#125;]);</span><br><span class="line"></span><br><span class="line">// group?id=7</span><br><span class="line">this.router.navigate([&quot;group&quot;], &#123; queryParams: &#123; id: 7 &#125; &#125;);</span><br><span class="line"></span><br><span class="line">// group#prodID</span><br><span class="line">this.router.navigate([&quot;group&quot;], &#123; fragment: prodID &#125;);</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://waynestalk.com/angular-router-tutorial/">Angular Router 教學 - Wayne’s Talk</a></p>
-<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195347">[功能介紹-15] Router 進階介紹 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天</a></p>
-<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10209035">[Angular 深入淺出三十天] Day 25 - 路由總結（一） - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天</a></p>
-<h3 id="取得參數"><a href="#取得參數" class="headerlink" title="取得參數"></a>取得參數</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export class ProductsComponent implements OnInit &#123;</span><br><span class="line">    constructor(private route: ActivatedRoute) &#123;&#125;</span><br><span class="line">    ngOnInit() &#123;</span><br><span class="line">        // 第一種方式（較推薦）</span><br><span class="line">        this.route.queryParams.subscribe((queryParams) =&gt; &#123;</span><br><span class="line">            console.log(queryParams[&quot;id&quot;]);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        // 第二種方式</span><br><span class="line">        console.log(this.route.snapshot.queryParams[&quot;id&quot;]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="延遲-Lazy-Page"><a href="#延遲-Lazy-Page" class="headerlink" title="延遲 Lazy Page"></a>延遲 Lazy Page</h2><p>在網站一開始進來的時候，不把所有網站用到的資原全部載入，由 router 對應到的 module 各別載入</p>
-<h3 id="Create-a-feature-module-with-routing"><a href="#Create-a-feature-module-with-routing" class="headerlink" title="Create a feature module with routing"></a>Create a feature module with routing</h3><p>Next, you’ll need a feature module with a component to route to. To make one, enter the following command in the terminal, where <code>customers</code> is the name of the feature module. The path for loading the <code>customers</code> feature modules is also <code>customers</code> because it is specified with the <code>--route</code> option:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ng generate module customers --route customers --module app.module</span></span><br></pre></td></tr></table></figure>
-
-<p>This creates a <code>customers</code> folder having the new lazy-loadable feature module <code>CustomersModule</code> defined in the <code>customers.module.ts</code> file and the routing module <code>CustomersRoutingModule</code> defined in the <code>customers-routing.module.ts</code> file. The command automatically declares the <code>CustomersComponent</code> and imports <code>CustomersRoutingModule</code> inside the new feature module.</p>
-<p>Because the new module is meant to be lazy-loaded, the command does NOT add a reference to the new feature module in the application’s root module file, <code>app.module.ts</code>. Instead, it adds the declared route, <code>customers</code> to the <code>routes</code> array declared in the module provided as the <code>--module</code> option.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&quot;customers&quot;</span>,</span><br><span class="line">        <span class="attr">loadChildren</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&quot;./customers/customers.module&quot;</span>).then(<span class="function">(<span class="params">m</span>) =&gt;</span> m.CustomersModule),</span><br><span class="line">    &#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-
-<h2 id="路由守衛"><a href="#路由守衛" class="headerlink" title="路由守衛"></a>路由守衛</h2><h3 id="解決了什麼問題？"><a href="#解決了什麼問題？" class="headerlink" title="解決了什麼問題？"></a>解決了什麼問題？</h3><p>在 angular 中，路由守衛主要可以解決以下的問題</p>
-<ol>
-<li>對於用戶訪問頁面的權限能否進入（是否已經登錄？已經登錄的角色是否有權限？）</li>
-<li>在跳轉到組件之前獲取必須的數據 頁面時，提示用戶是否保存未提交的修改</li>
-<li>離開頁面時，提示用戶是否保存未提交的修改</li>
-</ol>
-<p>Angular 幾個路由模塊提供瞭如下的接口用於幫助我們解決上面的問題</p>
-<ol>
-<li>CanActivate 操作訪問處理系統跳轉到可以執行的地址：（判斷是否）</li>
-<li>CanActivateChild 功能同 CanActivate，加點菜</li>
-<li>CanDeactivate：使用處理從當前路由的情況（判斷是否存在未提交的信息）</li>
-<li>CanLoad 延遲加載的方式： 是否允許通過</li>
-</ol>
-<p>在經過了路由守衛，通過添加路由守衛返回的值，從而達到路由控制的最終目的</p>
-<ol>
-<li>true：導航繼續</li>
-<li>false：導航欄，用戶跳轉停留在當前的頁面或者是到指定的頁面</li>
-<li>UrlTree：取消當前的導航，並導航到路由守衛返回的這個 UrlTree 上（一個新的路由信息）</li>
-</ol>
-<h3 id="建立一個-guard"><a href="#建立一個-guard" class="headerlink" title="建立一個 guard"></a>建立一個 guard</h3><p>透過 <code>agnular CLI</code> 建立一個 <code>guard</code> 來實現路由守衛，</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ng g guard auth/auth</span></span><br></pre></td></tr></table></figure>
-
-<p>在 router 建立一個路由守衛</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&quot;crisis-center&quot;</span>,</span><br><span class="line">        <span class="attr">component</span>: CrisisListComponent,</span><br><span class="line">        <span class="attr">canActivate</span>: [AuthGuard], <span class="comment">// 添加针对当前路由的 canActivate 路由守卫</span></span><br><span class="line">    &#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-
-<h2 id="matcher"><a href="#matcher" class="headerlink" title="matcher"></a>matcher</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> UserRoutes: Routes = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&quot;users&quot;</span>,</span><br><span class="line">        <span class="attr">component</span>: UserComponent,</span><br><span class="line">        <span class="attr">children</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">                <span class="attr">component</span>: UserListComponent,</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">matcher</span>: ComplexUrlMatcher(<span class="string">&quot;id&quot;</span>, <span class="regexp">/[0-9]+/</span>),</span><br><span class="line">                <span class="attr">component</span>: UserItemComponent,</span><br><span class="line">            &#125;,</span><br><span class="line">        ],</span><br><span class="line">    &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    <span class="attr">imports</span>: [RouterModule.forChild(UserRoutes)],</span><br><span class="line">    <span class="attr">exports</span>: [RouterModule],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">UserRoutingModule</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="directive-router"><a href="#directive-router" class="headerlink" title="directive router"></a>directive router</h2><h3 id="RouterLink"><a href="#RouterLink" class="headerlink" title="RouterLink"></a><a target="_blank" rel="noopener" href="https://angular.io/api/router/RouterLink">RouterLink</a></h3><h3 id="RouterLinkActive"><a href="#RouterLinkActive" class="headerlink" title="RouterLinkActive"></a><a target="_blank" rel="noopener" href="https://angular.io/api/router/RouterLinkActive">RouterLinkActive</a></h3><p>routerLinkActive 則是用來設定若現在的網址與所設定的連結一致時，要加上去的 Class 名稱，也可以利用來判斷顯示的邏輯</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;a</span><br><span class="line">    routerLink=<span class="string">&quot;/market/categories/note&quot;</span></span><br><span class="line">    #rla=<span class="string">&quot;routerLinkActive&quot;</span></span><br><span class="line">    routerLinkActive=<span class="string">&quot;active&quot;</span></span><br><span class="line">&gt;</span><br><span class="line">		&#123;&#123; rla.isActive ? <span class="string">&#x27;isActive&#x27;</span> : <span class="string">&#x27;noActive&#x27;</span> &#125;&#125; note</span><br><span class="line">&lt;/a&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">routerLink</span>=<span class="string">&quot;/market/categories/book&quot;</span>&gt;</span>book<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<h3 id="RouterLinkWithHref"><a href="#RouterLinkWithHref" class="headerlink" title="RouterLinkWithHref"></a><a target="_blank" rel="noopener" href="https://angular.io/api/router/RouterLinkWithHref">RouterLinkWithHref</a></h3><h3 id="RouterOutlet"><a href="#RouterOutlet" class="headerlink" title="RouterOutlet"></a><a target="_blank" rel="noopener" href="https://angular.io/api/router/RouterOutlet">RouterOutlet</a></h3><h2 id="你可能會遇到的問題"><a href="#你可能會遇到的問題" class="headerlink" title="你可能會遇到的問題"></a>你可能會遇到的問題</h2><hr>
-<h3 id="如果你重複使用-component-的話"><a href="#如果你重複使用-component-的話" class="headerlink" title="*如果你重複使用 component 的話"></a>*如果你重複使用 component 的話</h3><p>觸發 events 的 subscribe 會經過很多的 event</p>
-<p><a target="_blank" rel="noopener" href="https://angular.io/api/router/Event">Angular</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/de4479ce5b19">Angular 框架中去监听路由的改变（Router 中的 events: Observable ）</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.router.events.subscribe(<span class="function">(<span class="params">ev</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// ev 是在 event 的觸發時會跑過很多的 event</span></span><br><span class="line">    <span class="comment">// 這個 if 是在判斷如果 event 是 ActivationStart 的時候</span></span><br><span class="line">    <span class="comment">// 並且 component 同為 SupplierProductsPageComponent 時 unsubscribe</span></span><br><span class="line">    <span class="keyword">if</span> (ev <span class="keyword">instanceof</span> ActivationStart &amp;&amp; <span class="built_in">Object</span>.is(ev?.snapshot?.component, SupplierProductsPageComponent)) &#123;</span><br><span class="line">        <span class="built_in">this</span>.getDataSubscribe.unsubscribe();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="在-parent-要拿到本頁的-component"><a href="#在-parent-要拿到本頁的-component" class="headerlink" title="在 parent 要拿到本頁的 component"></a>在 parent 要拿到本頁的 component</h3><p>情境說明，在 header 因為要透過頁面 router 的 data 來判斷資料顯示。但在此處的 route 是直向最外面的 <code>app.component</code> ，但真正想要拿到的東西是在 firstChild 裡面，所以透過 <code>while</code> 來取得最後一個 component</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> current = <span class="built_in">this</span>.route.firstChild;</span><br><span class="line"><span class="keyword">while</span> (current.firstChild) &#123;</span><br><span class="line">    current = current.firstChild;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>[ 注意 ] 如果是 lazy page 的話，中間會有一層 <code>component</code> 為 undefine</p>
-</blockquote>
-<hr>
-<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195346"><strong>Router 基礎介紹</strong></a></p>
-<p><a target="_blank" rel="noopener" href="https://www.codingame.com/playgrounds/8104/angular-router-tutorial">Angular Router Tutorial</a></p>
-<p><a target="_blank" rel="noopener" href="https://matthung0807.blogspot.com/2019/06/angular-7-router-parameters.html">Angular 使用 Router Parameters 路由參數</a></p>
-<p><a target="_blank" rel="noopener" href="https://jonny-huang.github.io/angular/training/11_angular_lazy_loading/">Angular 延遲載入</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/danvic712/p/getting-started-with-angular-route-guards.html">Angular 从入坑到挖坑 - 路由守卫连连看</a></p>
-<p><a target="_blank" rel="noopener" href="https://tw511.com/a/01/26032.html">詳解 Angular 中的路由守衛</a></p>
-
       
     </div>
 

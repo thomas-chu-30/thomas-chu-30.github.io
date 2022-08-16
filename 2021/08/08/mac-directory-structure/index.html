@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="Mac OS 系統目錄介紹max os 屬於類 unix 的系統，所以他會有一些 unix 系統的目錄風格。 網上對類 unix 系統的一些解釋  類 Unix 系統（英文：Unix-like）是指繼承 UNIX 的設計風格演變出來的系統（比如 GNU&#x2F;Linux、FreeBSD、OpenBSD、SUN 公司的 Solaris、Minix、QNX 等），這些作業系統雖然有的是自由軟體，有的是商業軟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 目錄結構">
+<meta property="og:url" content="http://example.com/2021/08/08/mac-directory-structure/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="Mac OS 系統目錄介紹max os 屬於類 unix 的系統，所以他會有一些 unix 系統的目錄風格。 網上對類 unix 系統的一些解釋  類 Unix 系統（英文：Unix-like）是指繼承 UNIX 的設計風格演變出來的系統（比如 GNU&#x2F;Linux、FreeBSD、OpenBSD、SUN 公司的 Solaris、Minix、QNX 等），這些作業系統雖然有的是自由軟體，有的是商業軟">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-08T05:53:16.000Z">
+<meta property="article:modified_time" content="2022-08-16T05:22:13.673Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="mac">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/08/08/mac-directory-structure/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/08/08/mac-directory-structure/","path":"2021/08/08/mac-directory-structure/","title":"Mac 目錄結構"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Mac 目錄結構 | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mac-OS-%E7%B3%BB%E7%B5%B1%E7%9B%AE%E9%8C%84%E4%BB%8B%E7%B4%B9"><span class="nav-number">1.</span> <span class="nav-text">Mac OS 系統目錄介紹</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/08/mac-directory-structure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mac 目錄結構
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-08-08 13:53:16" itemprop="dateCreated datePublished" datetime="2021-08-08T13:53:16+08:00">2021-08-08</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%B8%E6%9C%83%E7%94%A8%E4%BD%A0%E7%9A%84-mac/" itemprop="url" rel="index"><span itemprop="name">學會用你的 mac</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Mac-OS-系統目錄介紹"><a href="#Mac-OS-系統目錄介紹" class="headerlink" title="Mac OS 系統目錄介紹"></a><strong>Mac OS 系統目錄介紹</strong></h2><p>max os 屬於類 unix 的系統，所以他會有一些 unix 系統的目錄風格。</p>
+<p>網上對類 unix 系統的一些解釋</p>
+<blockquote>
+<p>類 Unix 系統（英文：Unix-like）是指繼承 UNIX 的設計風格演變出來的系統（比如 GNU/Linux、FreeBSD、OpenBSD、SUN 公司的 Solaris、Minix、QNX 等），這些作業系統雖然有的是自由軟體，有的是商業軟體，但都相當程度地繼承了原始 UNIX 的特性，有許多相似處，並且都在一定程度上遵守 POSIX 規範，但是它們卻並不含有 UNIX 的原始碼。目前 UNIX 的原始碼為 SCO 公司所有，屬於商業軟體，UNIX 的商標權和 UNIX 標準認定屬於 OPENGROUP 所有。由於 UNIX 標準認定價格昂貴，所以目前唯一獲得 UNIX 標準認定的為蘋果的 MACOS 系統。</p>
+</blockquote>
+<span id="more"></span>
+
+<p><strong>以下目錄為類 unix 系統的通用目錄</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">/bin</span><br><span class="line"><span class="comment">#bin是binary的簡寫，主要是一些系統必備的工具比如，cp,ls,mv,rm,sh等</span></span><br><span class="line"><span class="comment">#英文解釋：commands in this dir are all system installed user commands</span></span><br><span class="line"></span><br><span class="line">/sbin</span><br><span class="line"><span class="comment">#sbin是管理員用於管理系統的一些必備命令，比如常用的，ifconfig,mount,reboot,shutdown等</span></span><br><span class="line"><span class="comment">#英文解釋：commands in this dir are all system installed super user commands</span></span><br><span class="line"></span><br><span class="line">/usr</span><br><span class="line"><span class="comment">#目錄下面的基本都是系統自帶第三方和用戶安裝的第三方軟體的安裝目錄</span></span><br><span class="line"></span><br><span class="line">/usr/bin</span><br><span class="line"><span class="comment">#用戶和管理員都需要用到的一些第三方軟體</span></span><br><span class="line"></span><br><span class="line">/usr/sbin</span><br><span class="line"><span class="comment">#管理員可以用到的一些第三方的軟體</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/</span><br><span class="line"><span class="comment">#用戶自己安裝的一些第三方軟體所在位置</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/bin</span><br><span class="line"><span class="comment">#此目錄下一般都是用戶自己安裝的一些軟體的二進位文件入口，比如上一篇文章中提到的用homebrew安裝的nginx,他的執行文件軟連就在此目錄，例如：nginx@ -&gt; ../Cellar/nginx/1.15.8/bin/nginx。可以看到他就是執行homebrew安裝的軟體位置。放在這裡的原因主要是在系統變量裡面 echo $PATH 已經配置/usr/local/bin 目錄，軟體軟連到此目錄後，命令行上直接輸入命令就能執行了。方便軟體的管理</span></span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/etc</span><br><span class="line"><span class="comment">#一些第三方軟體的配置信息，比如之前說的nginx，就在此目錄：/usr/local/etc/nginx</span></span><br><span class="line"></span><br><span class="line">/etc</span><br><span class="line"><span class="comment"># 用於存放系統配置文件的地方，如用戶密碼文件/etc/passwd，目錄指向的實際目錄是：/private/etc</span></span><br><span class="line"></span><br><span class="line">/tmp</span><br><span class="line"><span class="comment">#臨時文件存放目錄，其權限為所有人任意讀寫。目錄指向的實際目錄是 /private/tmp</span></span><br><span class="line"></span><br><span class="line">/var</span><br><span class="line"><span class="comment">#存放經常變化的文件，如日誌文件，目錄指向的實際目錄是 /private/var</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>下面是 mac os 獨有的一些目錄</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/Applications</span><br><span class="line">#基本一些gui應用程式都在此目錄</span><br><span class="line"></span><br><span class="line">/Users</span><br><span class="line">#用戶目錄，存放用戶的一些文檔，資料信息</span><br><span class="line"></span><br><span class="line">/System</span><br><span class="line">#只包含一個名為Library的目錄，這個子目錄中存放了系統的絕大部分組件，如各種framework，以及內核模塊，字體文件等等。</span><br><span class="line"></span><br><span class="line">/Library</span><br><span class="line">#系統的數據文件、幫助文件、文檔等等</span><br></pre></td></tr></table></figure>
+
+<p>原文網址：</p>
+<p><a target="_blank" rel="noopener" href="https://kknews.cc/code/8gg8zje.html">https://kknews.cc/code/8gg8zje.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mac/" rel="tag"># mac</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/08/08/npm-axios/" rel="prev" title="npm-axios [NOTE]">
+                  <i class="fa fa-chevron-left"></i> npm-axios [NOTE]
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/08/10/nvm-node/" rel="next" title="MacOS 使用 brew 安裝 nvm 管理 node.js">
+                  MacOS 使用 brew 安裝 nvm 管理 node.js <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"74d1b22b7ea3f251866dc41e8ed1f170"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="Git 可以說是比寫 code 還要重要的東西，現在的專案基本上都要共同協作，所以如何避免衝突，不在開發的時候發生災難，可以說是非常的重要，寫 code 寫不好可以問人，但 Git 不行的話可能連工作都沒有辦法一起 co-work 。 另外如果對 vim 還沒有很熟的話建議去多了解一下 vim 的編輯、儲存、查尋方式，對你在使用 git 上會更加的得心應手。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 時光之術">
+<meta property="og:url" content="http://example.com/2021/08/14/git-command/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="Git 可以說是比寫 code 還要重要的東西，現在的專案基本上都要共同協作，所以如何避免衝突，不在開發的時候發生災難，可以說是非常的重要，寫 code 寫不好可以問人，但 Git 不行的話可能連工作都沒有辦法一起 co-work 。 另外如果對 vim 還沒有很熟的話建議去多了解一下 vim 的編輯、儲存、查尋方式，對你在使用 git 上會更加的得心應手。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-13T16:23:21.000Z">
+<meta property="article:modified_time" content="2022-08-16T05:22:13.673Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/08/14/git-command/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/08/14/git-command/","path":"2021/08/14/git-command/","title":"Git 時光之術"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Git 時光之術 | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-%E5%B8%B8%E7%94%A8-commend-line"><span class="nav-number">1.</span> <span class="nav-text">Git 常用 commend line</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E8%B5%B7%E6%89%8B%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">git 起手式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#clone-%E5%B0%88%E6%A1%88"><span class="nav-number">1.2.</span> <span class="nav-text">clone 專案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E5%85%A5-remote"><span class="nav-number">1.3.</span> <span class="nav-text">加入 remote</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8F%9B%E9%81%A0%E7%AB%AF%E5%88%86%E6%94%AF"><span class="nav-number">1.4.</span> <span class="nav-text">切換遠端分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E5%85%A5%E6%9A%AB%E5%AD%98%E5%8D%80"><span class="nav-number">1.5.</span> <span class="nav-text">加入暫存區</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%84%B2%E5%AD%98%E5%8D%80"><span class="nav-number">1.6.</span> <span class="nav-text">加入本地儲存區</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stash"><span class="nav-number">1.7.</span> <span class="nav-text">stash</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%88%E4%BD%B5%E5%88%86%E4%B9%8B"><span class="nav-number">2.</span> <span class="nav-text">合併分之</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#merge"><span class="nav-number">2.1.</span> <span class="nav-text">merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase"><span class="nav-number">2.2.</span> <span class="nav-text">rebase</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%AA%E9%99%A4-branch"><span class="nav-number">3.</span> <span class="nav-text">刪除 branch</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%A0%E7%AB%AF%E6%95%B8%E6%93%9A%E5%BA%AB"><span class="nav-number">4.</span> <span class="nav-text">遠端數據庫</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fetch"><span class="nav-number">4.1.</span> <span class="nav-text">fetch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull"><span class="nav-number">4.2.</span> <span class="nav-text">pull</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push"><span class="nav-number">4.3.</span> <span class="nav-text">push</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tag"><span class="nav-number">5.</span> <span class="nav-text">tag</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-Bisect"><span class="nav-number">6.</span> <span class="nav-text">Git Bisect</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fork-%E5%B0%88%E6%A1%88"><span class="nav-number">7.</span> <span class="nav-text">fork 專案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-alais"><span class="nav-number">8.</span> <span class="nav-text">Git alais</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AA%A2%E6%9F%A5-git"><span class="nav-number">9.</span> <span class="nav-text">檢查 git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">10.</span> <span class="nav-text">參考文章</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/14/git-command/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git 時光之術
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-08-14 00:23:21" itemprop="dateCreated datePublished" datetime="2021-08-14T00:23:21+08:00">2021-08-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>Git 可以說是比寫 code 還要重要的東西，現在的專案基本上都要共同協作，所以如何避免衝突，不在開發的時候發生災難，可以說是非常的重要，寫 code 寫不好可以問人，但 Git 不行的話可能連工作都沒有辦法一起 co-work 。</p>
+<p>另外如果對 <code>vim</code> 還沒有很熟的話建議去多了解一下 <code>vim</code> 的編輯、儲存、查尋方式，對你在使用 git 上會更加的得心應手。</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="Git-常用-commend-line"><a href="#Git-常用-commend-line" class="headerlink" title="Git 常用 commend line"></a>Git 常用 commend line</h1><h2 id="git-起手式"><a href="#git-起手式" class="headerlink" title="git 起手式"></a>git 起手式</h2><p>在專案位置下初使化 git ，表示可開始用 git 來管理你的專案，此時專案中會出現一個隱藏資料夾 <code>.git</code> ，然而你在開發的過程中也一定會有你不想要推到 remote 的東西，這個時候你可以建立一個 <code>.gitignore</code> 的檔案，在裡面編寫你不想要上傳的文件 or 資料夾</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"><span class="meta">#</span><span class="bash"> .gitignore 檔案</span></span><br><span class="line">node_modules # 資料夾不推上 git</span><br><span class="line">/dist</span><br><span class="line">.env # 檔案不推上 git</span><br></pre></td></tr></table></figure>
+
+<p>在來你需要對專案說，你是誰，所以把你的 email 和名稱和 git 說，因此在 git.config 裡面建立資訊</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --list # 查看你目前的 config 清單</span><br><span class="line">git config --global user.name [YOUR_NAME] # 建立名稱</span><br><span class="line">git config --global user.email [YOUT_EMAIL] # 建立 email</span><br></pre></td></tr></table></figure>
+
+<h2 id="clone-專案"><a href="#clone-專案" class="headerlink" title="clone 專案"></a>clone 專案</h2><p>開發其它的專案，透過 clone 的方式，把 .git 的檔案一起抓下來</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone [YOUR_PROJECT]</span><br></pre></td></tr></table></figure>
+
+<h2 id="加入-remote"><a href="#加入-remote" class="headerlink" title="加入 remote"></a>加入 remote</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git remote -h # 查詢remote相關指令</span><br><span class="line">git remote rename `&lt;old&gt;` `&lt;new&gt;` # 將遠端數據庫的名稱從 &lt;old&gt; 改為 &lt;new&gt;</span><br><span class="line">git remote set-url `&lt;name&gt;` `&lt;newurl&gt;` # 在 &lt;newurl&gt; 內指定遠端數據庫的新地址</span><br><span class="line">git remote add origin [YOUR_PROJECT]</span><br></pre></td></tr></table></figure>
+
+<h2 id="切換遠端分支"><a href="#切換遠端分支" class="headerlink" title="切換遠端分支"></a>切換遠端分支</h2><p>首先你應該不會知道專案中所有的 br 叫什麼名稱，所以可透過</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a # 查看所有 local 遠端 br</span><br></pre></td></tr></table></figure>
+
+<p>在確認完之後，在回到專案的位置上，進行切換分支</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b [BRANCH_NAME] [origin/BRANCH_NAME]</span><br></pre></td></tr></table></figure>
+
+<h2 id="加入暫存區"><a href="#加入暫存區" class="headerlink" title="加入暫存區"></a>加入暫存區</h2><p>把資料加入暫存區</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add . # add all file stage</span><br><span class="line">git add -p # after everyone check, add file to stage</span><br></pre></td></tr></table></figure>
+
+<p>取消加入暫存區</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout</span><br></pre></td></tr></table></figure>
+
+<h2 id="加入本地儲存區"><a href="#加入本地儲存區" class="headerlink" title="加入本地儲存區"></a>加入本地儲存區</h2><p>把資料加入本地儲存區，方法其實有很多種，但主要就是要把你的資料寫到 git 裡面，如果你所要寫的東很多的話，建議你可以用 <code> vim</code> 的方式去作編輯歐</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit # 會直接進到 vim IDE 中</span><br><span class="line">git commit -m &#x27;msg content&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>退回本地儲存區</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git log # get commit id</span><br><span class="line">git reset --hard `&lt;id&gt;^` # 本地數據庫不見</span><br><span class="line">git reset --soft `&lt;id&gt;^` # 本地數據庫還在</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>commit 訊息邏輯</p>
+<ul>
+<li>以大寫開頭</li>
+<li>以&lt;動詞&gt; + &lt;受詞&gt; + &lt;內容&gt; 的文法撰寫</li>
+<li>內容不宜過長</li>
+<li>內容需要據有代表性</li>
+</ul>
+</blockquote>
+<h2 id="stash"><a href="#stash" class="headerlink" title="stash"></a>stash</h2><p>會使用它最常有的情境是，你開發到一半，但是 BOSS 請你趕快的去處理另一件是，這個時候你也還沒有到可下 commit 的時候，這個時候，可用 stash 把你開發的 code 先到一個地方，之後只要回來，在把東西 stash 回來便可繼續開發。</p>
+<blockquote>
+<p>在 stash 之前建議先把所有的 code 放到暫區，因有時候我們是新建檔，直接 stash 的話新檔就會被遺留在，原本的 br 上面</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<p>為了確保我們所寫的東西不要被分別放在不同的 stash list 裡面</p>
+</blockquote>
+<p>暫時存現狀</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash save &#x27;msg ...&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>顯示暫存清單</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+
+<p>回復暫清單，通當你會去看一下你的清單有什麼，然後確定是第幾個之後用 <code>stash@&#123;0&#125;</code> 的方式來還原你想的的暫存。</p>
+<blockquote>
+<p>這裡的 0 是表示，你最一次 stash 起來的東西，1 的話就是倒數第二次的東西，依此類推</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git stash pop shash@&#123;0&#125; # 拿回最後一次 stash 的 code</span><br><span class="line">git stash pop `&lt;shash ID&gt;` # delete stash data</span><br><span class="line">git stash apply `&lt;shash ID&gt;`</span><br></pre></td></tr></table></figure>
+
+<p>刪除暫檔</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git stash drop `&lt;shash ID&gt;`</span><br><span class="line">git stash clear # clear all</span><br></pre></td></tr></table></figure>
+
+<h1 id="合併分之"><a href="#合併分之" class="headerlink" title="合併分之"></a>合併分之</h1><p>通常在有規模的專案下面開發，比較不會用到 merge ，因為主要都是透過 lib 去發 merge request ，而不是自己在本地，就把 code merged 到其它的分支。</p>
+<h2 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge [BRANCH_NAME]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>但是我們在拉分支的時候，其實就是常常在用 merge 的指令，只是被合併在一起了。</p>
+</blockquote>
+<h2 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase [BRANCH_NAME]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>這兩個都是把 br 作合並的效果，但是 rebase 是直接把原本的分支合回到另一個 br 的分支上，變成一個，也就是說，有些 commit 你可能會沒有辦法在 tree 上面直接的看到，因為被合到另一個 tree 上面了</p>
+</blockquote>
+<h1 id="刪除-branch"><a href="#刪除-branch" class="headerlink" title="刪除 branch"></a>刪除 branch</h1><p>Coming soon …</p>
+<h1 id="遠端數據庫"><a href="#遠端數據庫" class="headerlink" title="遠端數據庫"></a>遠端數據庫</h1><h2 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h2><p>主要只執行拉 code 的動作，但它不會把 code 和你現在的 br 進行合併，所以執行完後你是會在 <code>HEAD</code> 上面的</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch # 把你在遠端的 br 拉下來</span><br></pre></td></tr></table></figure>
+
+<h2 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h2><p>那 pull 的這個動作，就是我們把 fetch + merge 的動作一起作完，把 code 拉下來，然後 merge 到你現在的 br 中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull # git fetch + git merge</span><br><span class="line">git pull --rebase # 當然你也可選擇 rebase</span><br></pre></td></tr></table></figure>
+
+<h2 id="push"><a href="#push" class="headerlink" title="push"></a>push</h2><p>把你所 commit 好的的檔案往上傳到 remote 端，但是需先確認是否已設定好 origin 的 remote 位置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin [BRANCH_NAME]</span><br></pre></td></tr></table></figure>
+
+<h1 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h1><p>若要添加標示標籤，可以在 tag 命令加上 -a 參數執行，執行後會啟動編輯器，請輸入要給予的註解。也可以用 -am 參數來直接添加註解。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -a [TAG_NAME]</span><br></pre></td></tr></table></figure>
+
+<p>在 HEAD 指向的提交裡增加名為 <code>[TAG_NAME]</code> 的標籤，請執行以下的命令。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -am &#x27;msg...&#x27; [TAG_NAME]</span><br><span class="line">git tag -n #  可以顯示出標籤和註解</span><br></pre></td></tr></table></figure>
+
+<h1 id="Git-Bisect"><a href="#Git-Bisect" class="headerlink" title="Git Bisect"></a>Git Bisect</h1><blockquote>
+<p>希望你一輩子都不要用到這個東西。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git bisect start [BAD_COMMIT] [GOOD_COMMIT]</span><br><span class="line"><span class="meta">#</span><span class="bash"> 開始後將自動 checkout 到要檢查的 commit</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 請執行以下指令標記正常 or 錯誤</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.gss.com.tw/blog/%E4%BD%BF%E7%94%A8-git-bisect-%E5%BF%AB%E9%80%9F%E6%89%BE%E5%88%B0%E7%AC%AC%E4%B8%80%E5%80%8B%E6%9C%89%E5%95%8F%E9%A1%8C%E7%9A%84-commit">參考文章</a></p>
+<h1 id="fork-專案"><a href="#fork-專案" class="headerlink" title="fork 專案"></a>fork 專案</h1><p>在 <code>github</code> 選擇 fork ，需在把你的 remote 專案名稱修正，因為通常 origin 指的是自己的開發 remote。然後在把 fork 的 repositories 設定到你的 origin 裡面。</p>
+<p>確認 remote 的名稱 ⇒ 修正名稱 ⇒ 加入新的 fork repositories ⇒ 確認 remote 的名稱</p>
+<h1 id="Git-alais"><a href="#Git-alais" class="headerlink" title="Git alais"></a>Git alais</h1><p>Coming soon …</p>
+<h1 id="檢查-git"><a href="#檢查-git" class="headerlink" title="檢查 git"></a>檢查 git</h1><p>下列這些指令是在你開發到一半，想要回去查東西時很用的指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git status # 看一下還有多少東西沒有進暫存區</span><br><span class="line">git log # 確認這個 br commit 的狀況</span><br><span class="line">git remote -v # 確認一下遠端</span><br><span class="line">git stash list # stash 的清單</span><br><span class="line">git remote -h # 可以檢看一下指令</span><br></pre></td></tr></table></figure>
+
+<h1 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h1><p><a target="_blank" rel="noopener" href="https://zlargon.gitbooks.io/git-tutorial/content/file/move.html">搬移檔案</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.notion.so/git-commit-message-a18a8a5cc0cb4cc48c4c49c82da4cabe">git commit message 的格式</a></p>
+<p><a target="_blank" rel="noopener" href="https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html">git commit 這樣子寫更好</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/08/10/nvm-node/" rel="prev" title="MacOS 使用 brew 安裝 nvm 管理 node.js">
+                  <i class="fa fa-chevron-left"></i> MacOS 使用 brew 安裝 nvm 管理 node.js
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/08/15/tailwind-vs-windicss/" rel="next" title="tailwind vs windicss">
+                  tailwind vs windicss <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"a9c82be48418566887f91f684a3fc103"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

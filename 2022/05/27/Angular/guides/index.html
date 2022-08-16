@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="開發時常用的參考資料 強大的文件資料 可查詢 Google Fonts Angular api  常用 command line 大全 可參考 CLI 命令參考手冊，下列為 generate component 的 command  1234567891011121314151617$ ng g component home&#x2F;component&#x2F;my-new-component# &#x3D;&gt; 组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Angular] - Guides">
+<meta property="og:url" content="http://example.com/2022/05/27/Angular/guides/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="開發時常用的參考資料 強大的文件資料 可查詢 Google Fonts Angular api  常用 command line 大全 可參考 CLI 命令參考手冊，下列為 generate component 的 command  1234567891011121314151617$ ng g component home&#x2F;component&#x2F;my-new-component# &#x3D;&gt; 组">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://claire-chang.com/wp-content/uploads/2017/12/injector-injects.png">
+<meta property="article:published_time" content="2022-05-26T16:23:21.000Z">
+<meta property="article:modified_time" content="2022-08-16T05:22:13.672Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="angular">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://claire-chang.com/wp-content/uploads/2017/12/injector-injects.png">
+
+
+<link rel="canonical" href="http://example.com/2022/05/27/Angular/guides/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/27/Angular/guides/","path":"2022/05/27/Angular/guides/","title":"[Angular] - Guides"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Angular] - Guides | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8-command-line-%E5%A4%A7%E5%85%A8"><span class="nav-number">1.</span> <span class="nav-text">常用 command line 大全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E4%B8%80-angular-%E5%B0%88%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">建立一 angular 專案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%A4%BE%E7%B5%90%E6%A7%8B%E8%AA%AA%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text">資料夾結構說明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NgModule"><span class="nav-number">4.</span> <span class="nav-text">NgModule</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrapping"><span class="nav-number">4.1.</span> <span class="nav-text">Bootstrapping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-providers"><span class="nav-number">4.2.</span> <span class="nav-text">Service providers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Services-Inject"><span class="nav-number">4.3.</span> <span class="nav-text">Services Inject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-number">4.4.</span> <span class="nav-text">Service</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B9%BC%E6%89%BF"><span class="nav-number">5.</span> <span class="nav-text">繼承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-HTTP-%E8%88%87%E5%BE%8C%E7%AB%AF%E6%9C%8D%E5%8B%99%E9%80%B2%E8%A1%8C%E9%80%9A%E8%A8%8A"><span class="nav-number">6.</span> <span class="nav-text">使用 HTTP 與後端服務進行通訊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode-%E5%BB%BA%E8%AD%B0%E5%AE%89%E8%A3%9D%E5%A5%97%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">vscode 建議安裝套件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">8.</span> <span class="nav-text">參考文章</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/guides/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Angular] - Guides
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-27 00:23:21" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>開發時常用的參考資料</p>
+<p><a target="_blank" rel="noopener" href="https://docs.w3cub.com/angular/api/router">強大的文件資料</a></p>
+<p><a target="_blank" rel="noopener" href="https://fonts.google.com/icons?selected=Material+Icons">可查詢 Google Fonts</a></p>
+<p><a target="_blank" rel="noopener" href="https://angular.io/api">Angular api</a></p>
+</blockquote>
+<h2 id="常用-command-line-大全"><a href="#常用-command-line-大全" class="headerlink" title="常用 command line 大全"></a>常用 command line 大全</h2><blockquote>
+<p>可參考 CLI 命令參考手冊，下列為 generate component 的 command</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ ng g component home/component/my-new-component</span><br><span class="line"><span class="comment"># =&gt; 组件 | 相對生成組件生成位置在項目的根目錄的  src/app/home/component（指令其他等等都可以用該方式生成）</span></span><br><span class="line"><span class="comment"># ng g component my-component | home/component/my-new-component</span></span><br><span class="line"></span><br><span class="line">$ ng g directive my-new-directive =&gt;  指令</span><br><span class="line"></span><br><span class="line">$ ng g pipe my-new-pipe =&gt; 管道</span><br><span class="line"></span><br><span class="line">$ ng g service my-new-service =&gt; 服務</span><br><span class="line"></span><br><span class="line">$ ng g class my-new-class =&gt; 類</span><br><span class="line"></span><br><span class="line">$ ng g interface my-new-interface =&gt; 接口</span><br><span class="line"></span><br><span class="line">$ ng g enum my-new-enum =&gt; 枚舉</span><br><span class="line"></span><br><span class="line">$ ng g module my-module =&gt; 模塊</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="建立一-angular-專案"><a href="#建立一-angular-專案" class="headerlink" title="建立一 angular 專案"></a>建立一 angular 專案</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ng new angular-tour-of-heroes</span></span><br></pre></td></tr></table></figure>
+
+<p>angular 入門到實踐</p>
+<p><a target="_blank" rel="noopener" href="https://cipchk.gitbooks.io/angular-practice/content/component/styles.html">样式</a></p>
+<h2 id="資料夾結構說明"><a href="#資料夾結構說明" class="headerlink" title="資料夾結構說明"></a>資料夾結構說明</h2><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10203534">[Angular 深入淺出三十天] Day 04 - 資料夾結構說明 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天</a></p>
+<p><a target="_blank" rel="noopener" href="https://medium.com/angular-%E7%9A%84%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/angular-3-%E8%AA%8D%E8%AD%98-angular-cli-%E7%94%A2%E7%94%9F%E7%9A%84%E5%B0%88%E6%A1%88%E7%9B%AE%E9%8C%84%E7%B5%90%E6%A7%8B-ba20c77d0029">[Angular #3]認識 Angular CLI 產生的專案目錄結構</a></p>
+<h2 id="NgModule"><a href="#NgModule" class="headerlink" title="NgModule"></a>NgModule</h2><p>NgModule 的 metadata 有下面幾項：</p>
+<ul>
+<li>  imports：這個模組所需用到的 Angular 提供的或第三方提供的 Angular 資源庫（如 FormsModule、HttpModule 等）。</li>
+<li>  providers：一些供這個模組使用的 service，在此宣告後所有下面的元件都可以直接使用這個服務。</li>
+<li>  declarations：這個 Module 內部<code>Components/Directives/Pipes</code>的列表，聲明這個 Module 的內部成員</li>
+<li>  exports：用來控制將哪些內部成員暴露給外部使用。</li>
+<li>  bootstrap：這個屬性只有根模組需要設定，在此設定在一開始要進入的模組成員是那一個。</li>
+</ul>
+<h3 id="Bootstrapping"><a href="#Bootstrapping" class="headerlink" title="Bootstrapping"></a><strong>Bootstrapping</strong></h3><p>每一個專案都一定會有一個根模組，也就是 root module，我們會在 main.ts 去做 Bootstrap 這個根模組的動作，讓整個 APP 可以運行起來。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; enableProdMode &#125; <span class="keyword">from</span> <span class="string">&quot;@angular/core&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; platformBrowserDynamic &#125; <span class="keyword">from</span> <span class="string">&quot;@angular/platform-browser-dynamic&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppModule &#125; <span class="keyword">from</span> <span class="string">&quot;./app/app.module&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; environment &#125; <span class="keyword">from</span> <span class="string">&quot;./environments/environment&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (environment.production) &#123;</span><br><span class="line">    enableProdMode();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">platformBrowserDynamic().bootstrapModule(AppModule); <span class="comment">//用這一串文字來運行根模組AppModule</span></span><br></pre></td></tr></table></figure>
+
+<p>在 bootstrap 的動作裡，會建立好執行環境並把在<code>src/app/app.module.ts</code>裡設定的 bootstrap 陣列裡的元素取出來並透過在該成員裡設定的 selector，讓我們可以在<code>src/index.html</code>來顯示這個元件的 VIEW。</p>
+<h3 id="Service-providers"><a href="#Service-providers" class="headerlink" title="Service providers"></a><strong>Service providers</strong></h3><p>可以看到<code>app.module.ts</code>的 providers 會增加一個名為 UserService 的類別</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">providers: [ UserService ]</span><br></pre></td></tr></table></figure>
+
+<p>在使用上，如果已經有設定好 providers 後，只要在元件的 constructor 裡面宣告一個變數是 providers 裡面設定好的 service，就可以在元件裡直接取用了</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">constructor</span>(<span class="params">userService: UserService</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.user = userService.userName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://claire-chang.com/wp-content/uploads/2017/12/injector-injects.png" alt="http://claire-chang.com/wp-content/uploads/2017/12/injector-injects.png"></p>
+<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195338">[功能介紹-11] NgModules - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天</a></p>
+<h3 id="Services-Inject"><a href="#Services-Inject" class="headerlink" title="Services Inject"></a>Services Inject</h3><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10207283">[Angular 深入淺出三十天] Day 17 - 基礎結構說明（四） - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天</a></p>
+<h3 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h3><p>在 Angular 裡，Service 其實一個滿核心的元件，任何你在應用程式裡會需要用到的值、函式或是功能都會用到它。而它也通常是一個有著明確定義的 Class，專門用來處理某件事。</p>
+<p>而 Angular 之所以會有 Service 這個元件是因為它想要讓我們在使用 Angular 撰寫應用時，能夠寫的更模組化一點、重用性更高一點。</p>
+<p>所以在理想狀況下， Component 只負責處理畫面、資料綁定，而 Service 則負責像是取得資料、表單驗證等等的邏輯處理，來讓我們的應用程式擁有更好的結構與彈性。</p>
+<p>那 Angular 是怎麼讓 Component 能夠很便利的使用 Service 呢？</p>
+<p>答案是：<strong>DI</strong> *（<strong>D</strong>ependency <strong>I</strong>njection，依賴注入）*<code>@Injectable</code></p>
+<p><strong><em>第一種 injectable</em></strong></p>
+<p>使用 <code>@Injectable</code> 的話，可以在每一個 component 作引用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Injectable(&#123;</span><br><span class="line">  providedIn: &#x27;root&#x27;</span><br><span class="line">&#125;) // 預設的寫法</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>第二種 injectable</em></strong></p>
+<p>這種方式是告訴 Angular 說：「請把我註冊在這整個 NgModule 都用同一個實體的注射器裡」。也就是說，假設當初 A Service 是註冊在 A Module 裡，那麼在整個 A Module 裡就會使用同一個實體。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// src/app/app.modules.ts</span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  providers: [</span><br><span class="line">    BackendService, // 加在這裡</span><br><span class="line">  ],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>第三種 injectable</em></strong></p>
+<p>註冊在 Component 裡，這種方式是告訴 Angular 說：「請把我註冊在這整個 Component 都用同一個實體的注射器裡」。意思是每個 Component 拿到的 Service 實體都不是同一個。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123;</span><br><span class="line">  selector:    &#x27;app-hero-list&#x27;,</span><br><span class="line">  templateUrl: &#x27;./hero-list.component.html&#x27;,</span><br><span class="line">  providers:  [ HeroService ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="繼承"><a href="#繼承" class="headerlink" title="繼承"></a>繼承</h2><p><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/angular-component-inheritance">How To Extend Classes with Angular Component Inheritance | DigitalOcean</a></p>
+<h2 id="使用-HTTP-與後端服務進行通訊"><a href="#使用-HTTP-與後端服務進行通訊" class="headerlink" title="使用 HTTP 與後端服務進行通訊"></a>使用 HTTP 與後端服務進行通訊</h2><figure class="highlight plaintext"><figcaption><span>~~~~~~</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```jsx</span><br><span class="line">// app/app.module.ts</span><br><span class="line">import &#123; NgModule &#125; from &#x27;@angular/core&#x27;;</span><br><span class="line">import &#123; BrowserModule &#125; from &#x27;@angular/platform-browser&#x27;;</span><br><span class="line">import &#123; HttpClientModule &#125; from &#x27;@angular/common/http&#x27;;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    // import HttpClientModule after BrowserModule.</span><br><span class="line">    HttpClientModule,</span><br><span class="line">  ],</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent,</span><br><span class="line">  ],</span><br><span class="line">  bootstrap: [ AppComponent ]</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123;&#125;</span><br><span class="line">```</span><br><span class="line"></span><br><span class="line">[Angular - 使用 HTTP 與後端服務進行通訊](https://angular.tw/guide/http#setup-for-server-communication)</span><br><span class="line"></span><br><span class="line">## Zone.js</span><br><span class="line"></span><br><span class="line">[[Angular] NgZone 的應用](https://blog.kevinyang.net/2019/02/14/ng-ngzone/)</span><br><span class="line"></span><br><span class="line">## angular 會對 url 中的 () 去作判斷</span><br><span class="line"></span><br><span class="line">https://github.com/angular/angular/issues/10280</span><br><span class="line"></span><br><span class="line">[question ](https://www.notion.so/question-f4a7e9a4d35341378dffd3bccd6bb065)</span><br><span class="line"></span><br><span class="line">[i18n tranlate ](https://www.notion.so/i18n-tranlate-335ecc06bd0349bfa51bba718327a164)</span><br><span class="line"></span><br><span class="line">[Angular for SSR](https://www.notion.so/Angular-for-SSR-0cb5908f871c4a96bb2cf6d8d2cc3603)</span><br><span class="line"></span><br><span class="line">[Router](https://www.notion.so/Router-03b68bca16aa433eb0616f0fa1b223c4)</span><br><span class="line"></span><br><span class="line">[Life Hooks](https://www.notion.so/Life-Hooks-23eb905e772f4901955bb5cf27fb280b)</span><br><span class="line"></span><br><span class="line">[Directive](https://www.notion.so/Directive-1693564dfc8d45fdbb1fe9c06310e835)</span><br><span class="line"></span><br><span class="line">[Decorators](https://www.notion.so/Decorators-bd2331d06164495db2804f206eb9d2e4)</span><br><span class="line"></span><br><span class="line">[Resolver](https://www.notion.so/Resolver-9a345add174d43bea66d9ba93cc244ff)</span><br><span class="line"></span><br><span class="line">[Blog](https://www.notion.so/Blog-dae39f67de074502a56d139b5a6d351f)</span><br><span class="line"></span><br><span class="line">[Unit Testing (Jest)](https://www.notion.so/Unit-Testing-Jest-dbc4ce76d3e14019bf6aaab16db0aca3)</span><br><span class="line"></span><br><span class="line">[Form](https://www.notion.so/Form-f727ebd646ae46b9a0db2b661a68a771)</span><br><span class="line"></span><br><span class="line">Yes, you can still use your general member account to shop at TECHDesign:</span><br><span class="line"></span><br><span class="line">```jsx</span><br><span class="line">public auth$ = new ReplaySubject&lt;AuthInfo | null&gt;(1);</span><br><span class="line"></span><br><span class="line">    constructor(private apiSystemService: ApiSystemService) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    initUserRoles() &#123;</span><br><span class="line">        return this.apiSystemService</span><br><span class="line">            .getCheckAuth()</span><br><span class="line">            .pipe(</span><br><span class="line">                tap((ret: any) =&gt; &#123;</span><br><span class="line">                    this.userConfig = ret.data.config;</span><br><span class="line">                    this.userRoles = ret.data.roles;</span><br><span class="line">                    this.auth$.next(ret.data);</span><br><span class="line">                &#125;)</span><br><span class="line">            )</span><br><span class="line">            .toPromise();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">```</span><br><span class="line"></span><br><span class="line">```jsx</span><br><span class="line">import &#123; Injectable &#125; from &#x27;@angular/core&#x27;;</span><br><span class="line">import &#123; ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree &#125; from &#x27;@angular/router&#x27;;</span><br><span class="line">import &#123; Observable &#125; from &#x27;rxjs&#x27;;</span><br><span class="line">import &#123; map &#125; from &#x27;rxjs/operators&#x27;;</span><br><span class="line">import &#123; AuthService &#125; from &#x27;../services/auth.service&#x27;;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">    providedIn: &#x27;root&#x27;,</span><br><span class="line">&#125;)</span><br><span class="line">export class LoginGuard implements CanActivate &#123;</span><br><span class="line">    constructor(private router: Router, private authService: AuthService) &#123;&#125;</span><br><span class="line">    canActivate(</span><br><span class="line">        route: ActivatedRouteSnapshot,</span><br><span class="line">        state: RouterStateSnapshot</span><br><span class="line">    ): Observable&lt;boolean | UrlTree&gt; | Promise&lt;boolean | UrlTree&gt; | boolean | UrlTree &#123;</span><br><span class="line">        // 因為 initialNavigation: &#x27;enabledBlocking&#x27; 這個設定的關係，route navigate不會等到 APP_INITIALIZER 完成才發生，</span><br><span class="line">        // 因此必須要透過 訂閱 auth$ 的方式來等到 checkAuth api 返回。</span><br><span class="line">        return this.authService.auth$.pipe(</span><br><span class="line">            map((data) =&gt; &#123;</span><br><span class="line">                if (!this.authService.isLogin()) &#123;</span><br><span class="line">                    const url = `/user/login?then=$&#123;state.url&#125;`;</span><br><span class="line">                    return this.router.parseUrl(url);</span><br><span class="line">                &#125;</span><br><span class="line">                return true;</span><br><span class="line">            &#125;)</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">```</span><br><span class="line"></span><br><span class="line">[**ng2-file-upload**](https://www.notion.so/ng2-file-upload-034cf6a5408846ca801cd43b1ecedea8)</span><br><span class="line"></span><br><span class="line">[Element](https://www.notion.so/Element-cf0bb4f09ac742faa4398a4f81f7ba5d)</span><br></pre></td></tr></table></figure>
+
+<h2 id="vscode-建議安裝套件"><a href="#vscode-建議安裝套件" class="headerlink" title="vscode 建議安裝套件"></a>vscode 建議安裝套件</h2><p>名稱: Angular Files<br>識別碼: alexiv.vscode-angular2-files<br>描述: Quickly scaffold angular file templates<br>版本: 1.6.4<br>發行者: Alexander Ivanichev<br>VS Marketplace 連結: <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=alexiv.vscode-angular2-files">https://marketplace.visualstudio.com/items?itemName=alexiv.vscode-angular2-files</a></p>
+<blockquote>
+<p>可以直接在 files 上面直接建立 component, servicer, guarde, 等等</p>
+</blockquote>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><p><a target="_blank" rel="noopener" href="https://angular.tw/cli/generate#component">Angular - ng generate</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/67acdd21f89c">Angular CLI 常用终端操作命令</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/angular/" rel="tag"># angular</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/directive/" rel="prev" title="[Angular] - Directive">
+                  <i class="fa fa-chevron-left"></i> [Angular] - Directive
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/form/" rel="next" title="[Angular] - Form">
+                  [Angular] - Form <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d370c41f30a9191297072b8f118ce835"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

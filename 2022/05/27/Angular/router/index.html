@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="Angular 路由建立 component 之後，去 &#x2F;src&#x2F;app&#x2F;app-routing.module.ts 引進 component 12345678910111213141516171819import &amp;#123; BrowserModule &amp;#125; from &quot;@angular&#x2F;platform-browser&quot;;import &amp;#123; NgModul">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Angular] - Router">
+<meta property="og:url" content="http://example.com/2022/05/27/Angular/router/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="Angular 路由建立 component 之後，去 &#x2F;src&#x2F;app&#x2F;app-routing.module.ts 引進 component 12345678910111213141516171819import &amp;#123; BrowserModule &amp;#125; from &quot;@angular&#x2F;platform-browser&quot;;import &amp;#123; NgModul">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-26T16:23:21.000Z">
+<meta property="article:modified_time" content="2022-08-16T05:22:13.672Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="angular">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/05/27/Angular/router/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/27/Angular/router/","path":"2022/05/27/Angular/router/","title":"[Angular] - Router"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Angular] - Router | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Angular-%E8%B7%AF%E7%94%B1"><span class="nav-number">1.</span> <span class="nav-text">Angular 路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%89%E5%9D%80"><span class="nav-number">2.</span> <span class="nav-text">轉址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5-URLs-and-the-lt-base-href-gt"><span class="nav-number">2.1.</span> <span class="nav-text">HTML5 URLs and the &lt;base href&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#template-%E5%AF%AB%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">template 寫法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8-function-%E8%BD%89%E8%B7%B3%E7%B6%B2%E5%9D%80"><span class="nav-number">2.3.</span> <span class="nav-text">用 function 轉跳網址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E5%BE%97%E5%8F%83%E6%95%B8"><span class="nav-number">2.4.</span> <span class="nav-text">取得參數</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%B6%E9%81%B2-Lazy-Page"><span class="nav-number">3.</span> <span class="nav-text">延遲 Lazy Page</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-feature-module-with-routing"><span class="nav-number">3.1.</span> <span class="nav-text">Create a feature module with routing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E5%AE%88%E8%A1%9B"><span class="nav-number">4.</span> <span class="nav-text">路由守衛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B1%BA%E4%BA%86%E4%BB%80%E9%BA%BC%E5%95%8F%E9%A1%8C%EF%BC%9F"><span class="nav-number">4.1.</span> <span class="nav-text">解決了什麼問題？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B-guard"><span class="nav-number">4.2.</span> <span class="nav-text">建立一個 guard</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matcher"><span class="nav-number">5.</span> <span class="nav-text">matcher</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#directive-router"><span class="nav-number">6.</span> <span class="nav-text">directive router</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RouterLink"><span class="nav-number">6.1.</span> <span class="nav-text">RouterLink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RouterLinkActive"><span class="nav-number">6.2.</span> <span class="nav-text">RouterLinkActive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RouterLinkWithHref"><span class="nav-number">6.3.</span> <span class="nav-text">RouterLinkWithHref</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RouterOutlet"><span class="nav-number">6.4.</span> <span class="nav-text">RouterOutlet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E5%8F%AF%E8%83%BD%E6%9C%83%E9%81%87%E5%88%B0%E7%9A%84%E5%95%8F%E9%A1%8C"><span class="nav-number">7.</span> <span class="nav-text">你可能會遇到的問題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E9%87%8D%E8%A4%87%E4%BD%BF%E7%94%A8-component-%E7%9A%84%E8%A9%B1"><span class="nav-number">7.1.</span> <span class="nav-text">*如果你重複使用 component 的話</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-parent-%E8%A6%81%E6%8B%BF%E5%88%B0%E6%9C%AC%E9%A0%81%E7%9A%84-component"><span class="nav-number">7.2.</span> <span class="nav-text">在 parent 要拿到本頁的 component</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">8.</span> <span class="nav-text">參考文章</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/router/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Angular] - Router
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-27 00:23:21" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Angular-路由"><a href="#Angular-路由" class="headerlink" title="Angular 路由"></a><strong>Angular 路由</strong></h2><p>建立 component 之後，去 <code>/src/app/app-routing.module.ts</code> 引進 component</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserModule &#125; from &quot;@angular/platform-browser&quot;;</span><br><span class="line">import &#123; NgModule &#125; from &quot;@angular/core&quot;;</span><br><span class="line">import &#123; AppRoutingModule &#125; from &quot;./app-routing.module&quot;;</span><br><span class="line">// CLI imports AppRoutingModule</span><br><span class="line">import &#123; AppComponent &#125; from &quot;./app.component&quot;;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    declarations: [</span><br><span class="line">        AppComponent,</span><br><span class="line">        // 在這裡引入 *** components</span><br><span class="line">    ],</span><br><span class="line">    imports: [</span><br><span class="line">        BrowserModule,</span><br><span class="line">        AppRoutingModule, // CLI adds AppRoutingModule to the AppModule&#x27;s imports array</span><br><span class="line">    ],</span><br><span class="line">    providers: [],</span><br><span class="line">    bootstrap: [AppComponent],</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>在去 <code>/src/app/app-routing-modules.ts</code> 加上 routers</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &#123; NgModule &#125; from &quot;@angular/core&quot;;</span><br><span class="line">import &#123; Routes, RouterModule &#125; from &quot;@angular/router&quot;; // CLI imports router</span><br><span class="line"></span><br><span class="line">const routes: Routes = []; // sets up routes constant where you define your routes</span><br><span class="line"></span><br><span class="line">// configures NgModule imports and exports</span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    imports: [RouterModule.forRoot(routes)],</span><br><span class="line">    exports: [RouterModule],</span><br><span class="line">&#125;)</span><br><span class="line">export class AppRoutingModule &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const routes: Routes = [</span><br><span class="line">    &#123; path: &quot;first-component&quot;, component: FirstComponent &#125;,</span><br><span class="line">    &#123; path: &quot;second-component&quot;, component: SecondComponent &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">// &lt;a routerLink=&quot;/first-component&quot;&gt;&lt;/a&gt;</span><br><span class="line">// RouterLinkActive =&gt; 這個是用來作什麼的？？</span><br></pre></td></tr></table></figure>
+
+<h2 id="轉址"><a href="#轉址" class="headerlink" title="轉址"></a>轉址</h2><h3 id="HTML5-URLs-and-the-lt-base-href-gt"><a href="#HTML5-URLs-and-the-lt-base-href-gt" class="headerlink" title="HTML5 URLs and the &lt;base href&gt;"></a>HTML5 URLs and the <code>&lt;base href&gt;</code></h3><p>The guidelines that follow will refer to different parts of a URL. This diagram outlines what those parts refer to:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foo://example.com:8042/over/there?name=ferret#nose</span><br><span class="line">\_/   \______________/\_________/ \_________/ \__/</span><br><span class="line"> |           |            |            |        |</span><br><span class="line">scheme    authority      path        query   fragment</span><br></pre></td></tr></table></figure>
+
+<h3 id="template-寫法"><a href="#template-寫法" class="headerlink" title="template 寫法"></a>template 寫法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">&quot;[&#x27;products&#x27;]&quot;</span> [<span class="attr">queryParams</span>]=<span class="string">&quot;&#123; id: 101 &#125;&quot;</span>&gt;</span>Prodcuts<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">routerLink</span>=<span class="string">&quot;products&quot;</span> [<span class="attr">queryParams</span>]=<span class="string">&quot;&#123; id: 101 &#125;&quot;</span>&gt;</span>Prodcuts<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">&quot;[&#x27;market&#x27;,&#x27;GP11011&#x27;]&quot;</span>&gt;</span>Prodcuts<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- hash url: router_name#fragment_name --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">&quot;[&#x27;router_name&#x27;]&quot;</span> <span class="attr">fragment</span>=<span class="string">&quot;fragment_name&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="用-function-轉跳網址"><a href="#用-function-轉跳網址" class="headerlink" title="用 function 轉跳網址"></a>用 function 轉跳網址</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Router &#125; from &quot;@angular/router&quot;;</span><br><span class="line">// constructor(private router: Router)&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const routes: Routes = [ &#123; path: &#x27;group/:id/:categories&#x27;, ... &#125;];</span><br><span class="line">//</span><br><span class="line">const routes: Routes = [ &#123; path: &#x27;group&#x27;, ... &#125;];</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// /market/categories/group/516/led-light</span><br><span class="line">this.router.navigate([&quot;group&quot;, 516, &quot;led-light&quot;]);</span><br><span class="line"></span><br><span class="line">// group;id=7</span><br><span class="line">this.router.navigate([&quot;group&quot;, &#123; id: 7 &#125;]);</span><br><span class="line"></span><br><span class="line">// group?id=7</span><br><span class="line">this.router.navigate([&quot;group&quot;], &#123; queryParams: &#123; id: 7 &#125; &#125;);</span><br><span class="line"></span><br><span class="line">// group#prodID</span><br><span class="line">this.router.navigate([&quot;group&quot;], &#123; fragment: prodID &#125;);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://waynestalk.com/angular-router-tutorial/">Angular Router 教學 - Wayne’s Talk</a></p>
+<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195347">[功能介紹-15] Router 進階介紹 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天</a></p>
+<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10209035">[Angular 深入淺出三十天] Day 25 - 路由總結（一） - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天</a></p>
+<h3 id="取得參數"><a href="#取得參數" class="headerlink" title="取得參數"></a>取得參數</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export class ProductsComponent implements OnInit &#123;</span><br><span class="line">    constructor(private route: ActivatedRoute) &#123;&#125;</span><br><span class="line">    ngOnInit() &#123;</span><br><span class="line">        // 第一種方式（較推薦）</span><br><span class="line">        this.route.queryParams.subscribe((queryParams) =&gt; &#123;</span><br><span class="line">            console.log(queryParams[&quot;id&quot;]);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        // 第二種方式</span><br><span class="line">        console.log(this.route.snapshot.queryParams[&quot;id&quot;]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="延遲-Lazy-Page"><a href="#延遲-Lazy-Page" class="headerlink" title="延遲 Lazy Page"></a>延遲 Lazy Page</h2><p>在網站一開始進來的時候，不把所有網站用到的資原全部載入，由 router 對應到的 module 各別載入</p>
+<h3 id="Create-a-feature-module-with-routing"><a href="#Create-a-feature-module-with-routing" class="headerlink" title="Create a feature module with routing"></a>Create a feature module with routing</h3><p>Next, you’ll need a feature module with a component to route to. To make one, enter the following command in the terminal, where <code>customers</code> is the name of the feature module. The path for loading the <code>customers</code> feature modules is also <code>customers</code> because it is specified with the <code>--route</code> option:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ng generate module customers --route customers --module app.module</span></span><br></pre></td></tr></table></figure>
+
+<p>This creates a <code>customers</code> folder having the new lazy-loadable feature module <code>CustomersModule</code> defined in the <code>customers.module.ts</code> file and the routing module <code>CustomersRoutingModule</code> defined in the <code>customers-routing.module.ts</code> file. The command automatically declares the <code>CustomersComponent</code> and imports <code>CustomersRoutingModule</code> inside the new feature module.</p>
+<p>Because the new module is meant to be lazy-loaded, the command does NOT add a reference to the new feature module in the application’s root module file, <code>app.module.ts</code>. Instead, it adds the declared route, <code>customers</code> to the <code>routes</code> array declared in the module provided as the <code>--module</code> option.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&quot;customers&quot;</span>,</span><br><span class="line">        <span class="attr">loadChildren</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&quot;./customers/customers.module&quot;</span>).then(<span class="function">(<span class="params">m</span>) =&gt;</span> m.CustomersModule),</span><br><span class="line">    &#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h2 id="路由守衛"><a href="#路由守衛" class="headerlink" title="路由守衛"></a>路由守衛</h2><h3 id="解決了什麼問題？"><a href="#解決了什麼問題？" class="headerlink" title="解決了什麼問題？"></a>解決了什麼問題？</h3><p>在 angular 中，路由守衛主要可以解決以下的問題</p>
+<ol>
+<li>對於用戶訪問頁面的權限能否進入（是否已經登錄？已經登錄的角色是否有權限？）</li>
+<li>在跳轉到組件之前獲取必須的數據 頁面時，提示用戶是否保存未提交的修改</li>
+<li>離開頁面時，提示用戶是否保存未提交的修改</li>
+</ol>
+<p>Angular 幾個路由模塊提供瞭如下的接口用於幫助我們解決上面的問題</p>
+<ol>
+<li>CanActivate 操作訪問處理系統跳轉到可以執行的地址：（判斷是否）</li>
+<li>CanActivateChild 功能同 CanActivate，加點菜</li>
+<li>CanDeactivate：使用處理從當前路由的情況（判斷是否存在未提交的信息）</li>
+<li>CanLoad 延遲加載的方式： 是否允許通過</li>
+</ol>
+<p>在經過了路由守衛，通過添加路由守衛返回的值，從而達到路由控制的最終目的</p>
+<ol>
+<li>true：導航繼續</li>
+<li>false：導航欄，用戶跳轉停留在當前的頁面或者是到指定的頁面</li>
+<li>UrlTree：取消當前的導航，並導航到路由守衛返回的這個 UrlTree 上（一個新的路由信息）</li>
+</ol>
+<h3 id="建立一個-guard"><a href="#建立一個-guard" class="headerlink" title="建立一個 guard"></a>建立一個 guard</h3><p>透過 <code>agnular CLI</code> 建立一個 <code>guard</code> 來實現路由守衛，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ng g guard auth/auth</span></span><br></pre></td></tr></table></figure>
+
+<p>在 router 建立一個路由守衛</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&quot;crisis-center&quot;</span>,</span><br><span class="line">        <span class="attr">component</span>: CrisisListComponent,</span><br><span class="line">        <span class="attr">canActivate</span>: [AuthGuard], <span class="comment">// 添加针对当前路由的 canActivate 路由守卫</span></span><br><span class="line">    &#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h2 id="matcher"><a href="#matcher" class="headerlink" title="matcher"></a>matcher</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> UserRoutes: Routes = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&quot;users&quot;</span>,</span><br><span class="line">        <span class="attr">component</span>: UserComponent,</span><br><span class="line">        <span class="attr">children</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">path</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">                <span class="attr">component</span>: UserListComponent,</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">matcher</span>: ComplexUrlMatcher(<span class="string">&quot;id&quot;</span>, <span class="regexp">/[0-9]+/</span>),</span><br><span class="line">                <span class="attr">component</span>: UserItemComponent,</span><br><span class="line">            &#125;,</span><br><span class="line">        ],</span><br><span class="line">    &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    <span class="attr">imports</span>: [RouterModule.forChild(UserRoutes)],</span><br><span class="line">    <span class="attr">exports</span>: [RouterModule],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">UserRoutingModule</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="directive-router"><a href="#directive-router" class="headerlink" title="directive router"></a>directive router</h2><h3 id="RouterLink"><a href="#RouterLink" class="headerlink" title="RouterLink"></a><a target="_blank" rel="noopener" href="https://angular.io/api/router/RouterLink">RouterLink</a></h3><h3 id="RouterLinkActive"><a href="#RouterLinkActive" class="headerlink" title="RouterLinkActive"></a><a target="_blank" rel="noopener" href="https://angular.io/api/router/RouterLinkActive">RouterLinkActive</a></h3><p>routerLinkActive 則是用來設定若現在的網址與所設定的連結一致時，要加上去的 Class 名稱，也可以利用來判斷顯示的邏輯</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;a</span><br><span class="line">    routerLink=<span class="string">&quot;/market/categories/note&quot;</span></span><br><span class="line">    #rla=<span class="string">&quot;routerLinkActive&quot;</span></span><br><span class="line">    routerLinkActive=<span class="string">&quot;active&quot;</span></span><br><span class="line">&gt;</span><br><span class="line">		&#123;&#123; rla.isActive ? <span class="string">&#x27;isActive&#x27;</span> : <span class="string">&#x27;noActive&#x27;</span> &#125;&#125; note</span><br><span class="line">&lt;/a&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">routerLink</span>=<span class="string">&quot;/market/categories/book&quot;</span>&gt;</span>book<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="RouterLinkWithHref"><a href="#RouterLinkWithHref" class="headerlink" title="RouterLinkWithHref"></a><a target="_blank" rel="noopener" href="https://angular.io/api/router/RouterLinkWithHref">RouterLinkWithHref</a></h3><h3 id="RouterOutlet"><a href="#RouterOutlet" class="headerlink" title="RouterOutlet"></a><a target="_blank" rel="noopener" href="https://angular.io/api/router/RouterOutlet">RouterOutlet</a></h3><h2 id="你可能會遇到的問題"><a href="#你可能會遇到的問題" class="headerlink" title="你可能會遇到的問題"></a>你可能會遇到的問題</h2><hr>
+<h3 id="如果你重複使用-component-的話"><a href="#如果你重複使用-component-的話" class="headerlink" title="*如果你重複使用 component 的話"></a>*如果你重複使用 component 的話</h3><p>觸發 events 的 subscribe 會經過很多的 event</p>
+<p><a target="_blank" rel="noopener" href="https://angular.io/api/router/Event">Angular</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/de4479ce5b19">Angular 框架中去监听路由的改变（Router 中的 events: Observable ）</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.router.events.subscribe(<span class="function">(<span class="params">ev</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// ev 是在 event 的觸發時會跑過很多的 event</span></span><br><span class="line">    <span class="comment">// 這個 if 是在判斷如果 event 是 ActivationStart 的時候</span></span><br><span class="line">    <span class="comment">// 並且 component 同為 SupplierProductsPageComponent 時 unsubscribe</span></span><br><span class="line">    <span class="keyword">if</span> (ev <span class="keyword">instanceof</span> ActivationStart &amp;&amp; <span class="built_in">Object</span>.is(ev?.snapshot?.component, SupplierProductsPageComponent)) &#123;</span><br><span class="line">        <span class="built_in">this</span>.getDataSubscribe.unsubscribe();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="在-parent-要拿到本頁的-component"><a href="#在-parent-要拿到本頁的-component" class="headerlink" title="在 parent 要拿到本頁的 component"></a>在 parent 要拿到本頁的 component</h3><p>情境說明，在 header 因為要透過頁面 router 的 data 來判斷資料顯示。但在此處的 route 是直向最外面的 <code>app.component</code> ，但真正想要拿到的東西是在 firstChild 裡面，所以透過 <code>while</code> 來取得最後一個 component</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> current = <span class="built_in">this</span>.route.firstChild;</span><br><span class="line"><span class="keyword">while</span> (current.firstChild) &#123;</span><br><span class="line">    current = current.firstChild;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[ 注意 ] 如果是 lazy page 的話，中間會有一層 <code>component</code> 為 undefine</p>
+</blockquote>
+<hr>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195346"><strong>Router 基礎介紹</strong></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.codingame.com/playgrounds/8104/angular-router-tutorial">Angular Router Tutorial</a></p>
+<p><a target="_blank" rel="noopener" href="https://matthung0807.blogspot.com/2019/06/angular-7-router-parameters.html">Angular 使用 Router Parameters 路由參數</a></p>
+<p><a target="_blank" rel="noopener" href="https://jonny-huang.github.io/angular/training/11_angular_lazy_loading/">Angular 延遲載入</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/danvic712/p/getting-started-with-angular-route-guards.html">Angular 从入坑到挖坑 - 路由守卫连连看</a></p>
+<p><a target="_blank" rel="noopener" href="https://tw511.com/a/01/26032.html">詳解 Angular 中的路由守衛</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/angular/" rel="tag"># angular</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/life_hooks/" rel="prev" title="[Angular] - Life Hooks">
+                  <i class="fa fa-chevron-left"></i> [Angular] - Life Hooks
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/resolver/" rel="next" title="[Angular] - Resolver">
+                  [Angular] - Resolver <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"407e1e84800d4e79240ee3cb55bbb136"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

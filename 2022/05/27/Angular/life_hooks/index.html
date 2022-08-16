@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="生命週期">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Angular] - Life Hooks">
+<meta property="og:url" content="http://example.com/2022/05/27/Angular/life_hooks/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="生命週期">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.39.40_g3w-n1T7hS9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802618366">
+<meta property="og:image" content="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.34.35_Dg4tjbQDl.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802619918">
+<meta property="article:published_time" content="2022-05-26T16:23:21.000Z">
+<meta property="article:modified_time" content="2022-08-16T05:22:13.672Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="angular">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.39.40_g3w-n1T7hS9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802618366">
+
+
+<link rel="canonical" href="http://example.com/2022/05/27/Angular/life_hooks/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/27/Angular/life_hooks/","path":"2022/05/27/Angular/life_hooks/","title":"[Angular] - Life Hooks"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Angular] - Life Hooks | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F"><span class="nav-number">1.</span> <span class="nav-text">生命週期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">1.1.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngOnInit"><span class="nav-number">1.2.</span> <span class="nav-text">ngOnInit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngOnChanges"><span class="nav-number">1.3.</span> <span class="nav-text">ngOnChanges</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngDoCheck"><span class="nav-number">1.4.</span> <span class="nav-text">ngDoCheck</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngAfterContentInit"><span class="nav-number">1.5.</span> <span class="nav-text">ngAfterContentInit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngAfterViewInit"><span class="nav-number">1.6.</span> <span class="nav-text">ngAfterViewInit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngAfterViewChecked"><span class="nav-number">1.7.</span> <span class="nav-text">ngAfterViewChecked</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngOnDestroy"><span class="nav-number">1.8.</span> <span class="nav-text">ngOnDestroy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%B6%E6%95%B8%E6%93%9A%E6%94%B9%E8%AE%8A%E7%9A%84%E6%99%82%E5%80%99"><span class="nav-number">2.</span> <span class="nav-text">當數據改變的時候</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/life_hooks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Angular] - Life Hooks
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-27 00:23:21" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="生命週期"><a href="#生命週期" class="headerlink" title="生命週期"></a>生命週期</h2><p><img src="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.39.40_g3w-n1T7hS9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802618366" alt="Life%20Hooks%208fbaa02f1ad44ff3b76564995fcd6b7a/_2021-07-21_1.34.35.png"></p>
+<hr>
+<span id="more"></span>
+
+<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>初始話一些參數</p>
+<h3 id="ngOnInit"><a href="#ngOnInit" class="headerlink" title="ngOnInit"></a>ngOnInit</h3><p>一些 api 請求</p>
+<h3 id="ngOnChanges"><a href="#ngOnChanges" class="headerlink" title="ngOnChanges"></a>ngOnChanges</h3><p>輸入屬性的值發生改變</p>
+<h3 id="ngDoCheck"><a href="#ngDoCheck" class="headerlink" title="ngDoCheck"></a>ngDoCheck</h3><p>檢測頁面上任何的變動</p>
+<h3 id="ngAfterContentInit"><a href="#ngAfterContentInit" class="headerlink" title="ngAfterContentInit"></a>ngAfterContentInit</h3><p>ContentChild 與 ContentChildren 初始化之後調用，只調用一次</p>
+<h3 id="ngAfterViewInit"><a href="#ngAfterViewInit" class="headerlink" title="ngAfterViewInit"></a>ngAfterViewInit</h3><p>ViewChild 與 ViewChildren 初始化之後調用，只調用一次</p>
+<h3 id="ngAfterViewChecked"><a href="#ngAfterViewChecked" class="headerlink" title="ngAfterViewChecked"></a>ngAfterViewChecked</h3><p>檢測，並在發生 Angular 無法或不願意自己檢測的變化時作出反應。<br>在每個變更檢測週期中，緊跟在 ngOnChanges() 和 ngOnInit() 後面調用,<br>有些特殊情況，有的時候我們需要真實的 dom 節點，可以再 ngDoCheck 判斷</p>
+<h3 id="ngOnDestroy"><a href="#ngOnDestroy" class="headerlink" title="ngOnDestroy"></a>ngOnDestroy</h3><p>去除訂閱，銷毀事件</p>
+<hr>
+<h2 id="當數據改變的時候"><a href="#當數據改變的時候" class="headerlink" title="當數據改變的時候"></a>當數據改變的時候</h2><p>第一次進來時的生命週期</p>
+<ol>
+<li>OnChanges ⇒ 在 ngOnInit() 之前以及所繫結的一個或多個輸入屬性的值發生變化時都會呼叫。注意，如果你的元件沒有輸入，或者你使用它時沒有提供任何輸入，那麼框架就不會呼叫 ngOnChanges()。</li>
+<li>OnInit ⇒ 在第一輪 ngOnChanges() 完成之後呼叫，只調用一次。</li>
+<li>ngDoCheck</li>
+<li>AfterContentInit</li>
+<li>AfterContentChecked</li>
+<li>AfterViewInit</li>
+<li>AfterViewChecked</li>
+</ol>
+<p><code>@input</code>數據發生變化 (這個有一點點像是 vue 的 props)</p>
+<ol>
+<li>ngDoCheck</li>
+<li>AfterContentChecked</li>
+<li>AfterViewChecked</li>
+<li>OnChanges</li>
+<li>DoCheck ⇒ 意自己檢測的變化時作出反應。 欲知詳情和範例，參閱本文件中的<a target="_blank" rel="noopener" href="https://angular.tw/guide/lifecycle-hooks#docheck">自訂變更檢測</a>。緊跟在每次執行變更檢測時的  <code>ngOnChanges()</code>  和 首次執行變更檢測時的  <code>ngOnInit()</code>  後呼叫。</li>
+<li>AfterContentChecked</li>
+<li>AfterViewChecked</li>
+</ol>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/96509858">Angular 生命周期</a></p>
+<p><a target="_blank" rel="noopener" href="https://angular.tw/guide/lifecycle-hooks">Angular - 生命週期鉤子</a></p>
+<p><img src="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.34.35_Dg4tjbQDl.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802619918" alt="Life%20Hooks%208fbaa02f1ad44ff3b76564995fcd6b7a"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/angular/" rel="tag"># angular</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/08/20/GMT-UTC/" rel="prev" title="GMT-UTC">
+                  <i class="fa fa-chevron-left"></i> GMT-UTC
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/router/" rel="next" title="[Angular] - Router">
+                  [Angular] - Router <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"1b2fd962fed39f01beec45607229d8f1"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

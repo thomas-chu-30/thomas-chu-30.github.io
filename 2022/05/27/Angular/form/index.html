@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="引用 mat 樣式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Angular] - Form">
+<meta property="og:url" content="http://example.com/2022/05/27/Angular/form/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="引用 mat 樣式">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-26T16:23:21.000Z">
+<meta property="article:modified_time" content="2022-08-16T05:22:13.671Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="angular">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/05/27/Angular/form/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/27/Angular/form/","path":"2022/05/27/Angular/form/","title":"[Angular] - Form"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Angular] - Form | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8-mat-%E6%A8%A3%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">引用 mat 樣式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#form-%E8%A1%A8%E5%96%AE"><span class="nav-number">2.</span> <span class="nav-text">form 表單</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#invalid-function"><span class="nav-number">3.</span> <span class="nav-text">invalid function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FormGroup"><span class="nav-number">4.</span> <span class="nav-text">FormGroup</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nested-FormGroup"><span class="nav-number">4.1.</span> <span class="nav-text">Nested FormGroup</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validations"><span class="nav-number">5.</span> <span class="nav-text">Validations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#updateValidations"><span class="nav-number">5.1.</span> <span class="nav-text">updateValidations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hasError"><span class="nav-number">5.2.</span> <span class="nav-text">hasError</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reset-Reactive-Form"><span class="nav-number">6.</span> <span class="nav-text">Reset Reactive Form</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ValueChange"><span class="nav-number">7.</span> <span class="nav-text">ValueChange</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Custom-Async-Validators"><span class="nav-number">8.</span> <span class="nav-text">Custom Async Validators</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/form/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Angular] - Form
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-27 00:23:21" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="引用-mat-樣式"><a href="#引用-mat-樣式" class="headerlink" title="引用 mat 樣式"></a>引用 mat 樣式</h2><span id="more"></span>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mat-form-field</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mat-label</span>&gt;</span>Input<span class="tag">&lt;/<span class="name">mat-label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">matInput</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mat-form-field</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mat-form-field</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mat-label</span>&gt;</span>Select<span class="tag">&lt;/<span class="name">mat-label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mat-select</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mat-option</span> <span class="attr">value</span>=<span class="string">&quot;one&quot;</span>&gt;</span>First option<span class="tag">&lt;/<span class="name">mat-option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mat-option</span> <span class="attr">value</span>=<span class="string">&quot;two&quot;</span>&gt;</span>Second option<span class="tag">&lt;/<span class="name">mat-option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mat-select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mat-form-field</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mat-form-field</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mat-label</span>&gt;</span>Textarea<span class="tag">&lt;/<span class="name">mat-label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">matInput</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mat-form-field</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="form-表單"><a href="#form-表單" class="headerlink" title="form 表單"></a>form 表單</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;form [formGroup]=<span class="string">&quot;subscribeForm&quot;</span> (ngSubmit)=<span class="string">&quot;submit()&quot;</span>&gt;</span><br><span class="line">   <span class="xml"><span class="tag">&lt;<span class="name">mat-form-field</span> <span class="attr">class</span>=<span class="string">&quot;w-full&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">       <span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">           <span class="attr">matInput</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">           <span class="attr">required</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">           <span class="attr">type</span>=<span class="string">&quot;email&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">           <span class="attr">formControlName</span>=<span class="string">&quot;email&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">        /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">mat-error</span>&gt;</span> Please enter a valid email address <span class="tag">&lt;/<span class="name">mat-error</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">mat-form-field</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="invalid-function"><a href="#invalid-function" class="headerlink" title="invalid function"></a>invalid function</h2><p><a target="_blank" rel="noopener" href="https://www.tektutorialshub.com/angular/angular-formbuilder-in-reactive-forms/">https://www.tektutorialshub.com/angular/angular-formbuilder-in-reactive-forms/</a></p>
+<h2 id="FormGroup"><a href="#FormGroup" class="headerlink" title="FormGroup"></a>FormGroup</h2><p>How do I restrict an input to only accept numbers?</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;number&quot;</span> ng-model=<span class="string">&quot;myText&quot;</span> name=<span class="string">&quot;inputName&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/14615236/how-do-i-restrict-an-input-to-only-accept-numbers">How do I restrict an input to only accept numbers?</a></p>
+<h3 id="Nested-FormGroup"><a href="#Nested-FormGroup" class="headerlink" title="Nested FormGroup"></a>Nested FormGroup</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.contactForm = <span class="built_in">this</span>.formBuilder.group(&#123;</span><br><span class="line">    <span class="attr">firstname</span>: [<span class="string">&quot;&quot;</span>, [Validators.required, Validators.minLength(<span class="number">10</span>)]],</span><br><span class="line">    <span class="attr">lastname</span>: [<span class="string">&quot;&quot;</span>, [Validators.required, Validators.maxLength(<span class="number">15</span>), Validators.pattern(<span class="string">&quot;^[a-zA-Z]+$&quot;</span>)]],</span><br><span class="line">    <span class="attr">email</span>: [<span class="string">&quot;&quot;</span>, [Validators.required, Validators.email]],</span><br><span class="line">    <span class="attr">gender</span>: [<span class="string">&quot;&quot;</span>, [Validators.required]],</span><br><span class="line">    <span class="attr">isMarried</span>: [<span class="string">&quot;&quot;</span>, [Validators.required]],</span><br><span class="line">    <span class="attr">country</span>: [<span class="string">&quot;&quot;</span>, [Validators.required]],</span><br><span class="line">    <span class="attr">address</span>: <span class="built_in">this</span>.formBuilder.group(&#123;</span><br><span class="line">        <span class="attr">city</span>: [<span class="string">&quot;&quot;</span>, [Validators.required]],</span><br><span class="line">        <span class="attr">street</span>: [<span class="string">&quot;&quot;</span>, [Validators.required]],</span><br><span class="line">        <span class="attr">pincode</span>: [<span class="string">&quot;&quot;</span>, [Validators.required]],</span><br><span class="line">    &#125;),</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Validations"><a href="#Validations" class="headerlink" title="Validations"></a>Validations</h2><p><a target="_blank" rel="noopener" href="https://angular.io/api/forms/Validators#compose">Angular</a></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Validators</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> min(min: number): ValidatorFn</span><br><span class="line">  <span class="keyword">static</span> max(max: number): ValidatorFn</span><br><span class="line">  <span class="keyword">static</span> required(control: AbstractControl): ValidationErrors | <span class="literal">null</span></span><br><span class="line">  <span class="keyword">static</span> requiredTrue(control: AbstractControl): ValidationErrors | <span class="literal">null</span></span><br><span class="line">  <span class="keyword">static</span> email(control: AbstractControl): ValidationErrors | <span class="literal">null</span></span><br><span class="line">  <span class="keyword">static</span> minLength(minLength: number): ValidatorFn</span><br><span class="line">  <span class="keyword">static</span> maxLength(maxLength: number): ValidatorFn</span><br><span class="line">  <span class="keyword">static</span> pattern(pattern: string | <span class="built_in">RegExp</span>): ValidatorFn</span><br><span class="line">  <span class="keyword">static</span> nullValidator(control: AbstractControl): ValidationErrors | <span class="literal">null</span></span><br><span class="line">  <span class="keyword">static</span> compose(validators: ValidatorFn[]): ValidatorFn | <span class="literal">null</span></span><br><span class="line">  <span class="keyword">static</span> composeAsync(validators: AsyncValidatorFn[]): AsyncValidatorFn | <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="updateValidations"><a href="#updateValidations" class="headerlink" title="updateValidations"></a>updateValidations</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.fromName.get(<span class="string">&quot;formControlName&quot;</span>).setValidators([Validators.required]);</span><br><span class="line"><span class="comment">//setting validations</span></span><br><span class="line"><span class="built_in">this</span>.fromName.get(<span class="string">&quot;formControlName&quot;</span>).setErrors(&#123; <span class="attr">required</span>: <span class="literal">true</span> &#125;);</span><br><span class="line"><span class="comment">//error message</span></span><br><span class="line"><span class="built_in">this</span>.myForm.controls[<span class="string">&quot;controlName&quot;</span>].clearValidators();</span><br><span class="line"><span class="comment">//clear valiations</span></span><br><span class="line"><span class="built_in">this</span>.fromName.updateValueAndValidity();</span><br><span class="line"><span class="comment">//update validation</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/51300628/angular-reactive-forms-set-and-clear-validators">Angular reactive forms set and clear validators</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.tektutorialshub.com/angular/how-to-add-validators-dynamically-using-setvalidators-in-angular/">https://www.tektutorialshub.com/angular/how-to-add-validators-dynamically-using-setvalidators-in-angular/</a></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private destroy$: ReplaySubject&lt;boolean&gt; = <span class="keyword">new</span> ReplaySubject(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="hasError"><a href="#hasError" class="headerlink" title="hasError"></a>hasError</h3><p>在操作 js 的時候，需要有一個特定的 error style 可以用 <code>setErrors</code> 來設定 <code>boolean</code> 讓 <code>template</code> 來使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.productsForm[index].controls[<span class="string">&quot;unit_price&quot;</span>].setErrors(&#123; <span class="attr">bottomPrice</span>: <span class="literal">true</span> &#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mat-error</span> *<span class="attr">ngIf</span>=<span class="string">&quot;productsForm[index].get(&#x27;unit_price&#x27;).hasError(&#x27;bottomPrice&#x27;)&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>Please enter bottomPrice.<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mat-error</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>清楚不需要 error style 可以把此方法，我原本設用的 error 移除</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.addProductForm.controls[<span class="string">&quot;part_no&quot;</span>].setErrors(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">note;</span><br><span class="line"><span class="keyword">const</span> pattern = <span class="regexp">/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,6&#125;/</span>;</span><br><span class="line"><span class="comment">// REF: https://www.w3resource.com/javascript/form/email-validation.php</span></span><br><span class="line"><span class="keyword">const</span> pattern = <span class="regexp">/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w&#123;2,3&#125;)+$/</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Reset-Reactive-Form"><a href="#Reset-Reactive-Form" class="headerlink" title="Reset Reactive Form"></a>Reset Reactive Form</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> [<span class="attr">formGroup</span>]=<span class="string">&quot;addProductForm&quot;</span> (<span class="attr">ngSubmit</span>)=<span class="string">&quot;addProduct()&quot;</span> #<span class="attr">formDirective</span>=<span class="string">&quot;ngForm&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">CorporateQuotationPageComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">   @ViewChild(<span class="string">&#x27;formDirective&#x27;</span>) formDirective;</span><br><span class="line">	 ...</span><br><span class="line">   <span class="function"><span class="title">resetForm</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  		<span class="built_in">this</span>.formDirective.resetForm(); <span class="comment">//重新的把值清空</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="ValueChange"><a href="#ValueChange" class="headerlink" title="ValueChange"></a>ValueChange</h2><p><a target="_blank" rel="noopener" href="https://www.tektutorialshub.com/angular/valuechanges-in-angular-forms/">value change</a></p>
+<h2 id="Custom-Async-Validators"><a href="#Custom-Async-Validators" class="headerlink" title="Custom Async Validators"></a>Custom Async Validators</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;AbstractControl, FormControl, FormGroup, ValidationErrors&#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/forms&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;Observable, <span class="keyword">of</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;delay, map&#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs/operators&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">  <span class="attr">providedIn</span>: <span class="string">&#x27;root&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ZipcodeService</span> </span>&#123;</span><br><span class="line">  private validZipcodes = [<span class="string">&#x27;00001&#x27;</span>, <span class="string">&#x27;00002&#x27;</span>, <span class="string">&#x27;00003&#x27;</span>, <span class="string">&#x27;00004&#x27;</span>];</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">fakeHttp</span>(<span class="params">value: string</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">of</span>(<span class="built_in">this</span>.validZipcodes.includes(value)).pipe(delay(<span class="number">5000</span>));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ZipcodeService &#125; <span class="keyword">from</span> <span class="string">&quot;./zipcode.service&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AbstractControl, AsyncValidatorFn, ValidationErrors &#125; <span class="keyword">from</span> <span class="string">&quot;@angular/forms&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Observable &#125; <span class="keyword">from</span> <span class="string">&quot;rxjs&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; map &#125; <span class="keyword">from</span> <span class="string">&quot;rxjs/operators&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ZipcodeValidator</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> createValidator(zipcodeService: ZipcodeService): AsyncValidatorFn &#123;</span><br><span class="line">        <span class="keyword">return</span> (control: AbstractControl): Observable&lt;ValidationErrors&gt; =&gt; &#123;</span><br><span class="line">            <span class="keyword">return</span> zipcodeService.fakeHttp(control.value).pipe(map(<span class="function">(<span class="params">result: boolean</span>) =&gt;</span> (result ? <span class="literal">null</span> : &#123; <span class="attr">invalidAsync</span>: <span class="literal">true</span> &#125;)));</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;Component, OnInit&#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; FormControl, FormGroup, Validators&#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/forms&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;ZipcodeService&#125; <span class="keyword">from</span> <span class="string">&#x27;./zipcode.service&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;ZipcodeValidator&#125; <span class="keyword">from</span> <span class="string">&#x27;./zipcode-validator&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  <span class="attr">selector</span>: <span class="string">&#x27;app-async-validator-demo&#x27;</span>,</span><br><span class="line">  <span class="attr">templateUrl</span>: <span class="string">&#x27;./async-validator-demo.component.html&#x27;</span>,</span><br><span class="line">  <span class="attr">styleUrls</span>: [<span class="string">&#x27;./async-validator-demo.component.scss&#x27;</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AsyncValidatorDemoComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">  <span class="attr">address</span>: FormGroup;</span><br><span class="line">  zipcodeSyncValidators = [</span><br><span class="line">    Validators.required,</span><br><span class="line">    Validators.pattern(<span class="string">&#x27;\\d&#123;5&#125;&#x27;</span>)</span><br><span class="line">  ];</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">private zipcodeService: ZipcodeService</span>)</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.address = <span class="keyword">new</span> FormGroup(&#123;</span><br><span class="line">      <span class="attr">zipcode</span>: <span class="keyword">new</span> FormControl(<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">       <span class="built_in">this</span>.zipcodeSyncValidators,</span><br><span class="line">       ZipcodeValidator.createValidator(<span class="built_in">this</span>.zipcodeService))</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://medium.com/@rinciarijoc/angular-custom-async-validators-13a648d688d8">Angular: Custom Async Validators</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/angular/" rel="tag"># angular</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/guides/" rel="prev" title="[Angular] - Guides">
+                  <i class="fa fa-chevron-left"></i> [Angular] - Guides
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/element/" rel="next" title="[Angular] - Element">
+                  [Angular] - Element <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"e8405d4e373fa2904217f8b509c21d14"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

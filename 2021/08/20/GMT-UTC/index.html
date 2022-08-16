@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="常常聽到 GMT 和 UTC 這兩個時間，但是確不了解它們兩個的差異，所以紀錄個文章成為筆記。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GMT-UTC">
+<meta property="og:url" content="http://example.com/2021/08/20/GMT-UTC/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="常常聽到 GMT 和 UTC 這兩個時間，但是確不了解它們兩個的差異，所以紀錄個文章成為筆記。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-20T02:36:52.000Z">
+<meta property="article:modified_time" content="2022-08-16T05:22:13.673Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="physics">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/08/20/GMT-UTC/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/08/20/GMT-UTC/","path":"2021/08/20/GMT-UTC/","title":"GMT-UTC"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>GMT-UTC | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GMT"><span class="nav-number">1.</span> <span class="nav-text">GMT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UTC"><span class="nav-number">2.</span> <span class="nav-text">UTC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B8%BD%E7%B5%90"><span class="nav-number">3.</span> <span class="nav-text">總結</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/20/GMT-UTC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          GMT-UTC
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-08-20 10:36:52" itemprop="dateCreated datePublished" datetime="2021-08-20T10:36:52+08:00">2021-08-20</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%95%B7%E7%9F%A5%E8%AD%98/" itemprop="url" rel="index"><span itemprop="name">生活長知識</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>常常聽到 <strong>GMT</strong> 和 <strong>UTC</strong> 這兩個時間，但是確不了解它們兩個的差異，所以紀錄個文章成為筆記。</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="GMT"><a href="#GMT" class="headerlink" title="GMT"></a>GMT</h1><p><strong>GMT</strong> 的全名是<strong>格林威治標準時間</strong>或<strong>格林威治平時</strong> （Greenwich Mean Time），這個時間系統的概念在 1884 年確立，由英國倫敦的格林威治皇家天文台計算並維護，並在往後的幾十年往歐陸其他國家擴散。在 1924 年開始，格林威治天文台每小時就會向全世界播報時間。</p>
+<blockquote>
+<p>在剛開始的幾十年，GMT 的測量方法非常簡單：觀測者隨時監控太陽在天空的位置，並且把每天太陽爬升到仰角最高的時候記錄下來，這個時間點稱呼為「過中天」。一般人對於一天 24 小時的理解，大致上就相等於兩次太陽過中天的時間間隔。不過由於地球是以橢圓軌道繞著太陽，在軌道上的行進速率不一，導致一年之中會有「比較長的一天」與「比較短的一天」，所以格林威治的觀測者必須要至少連續觀測一年，然後求取 365 個長度不一的「天」，再把他們全部平均後，得到固定的一天長度，之後再細分成時、分、秒等單位。這個就是 GMT。</p>
+</blockquote>
+<h1 id="UTC"><a href="#UTC" class="headerlink" title="UTC"></a>UTC</h1><p>自從 1967 年國際度量衡大會把秒的定義改成銫原子進行固定震盪次數的時間後，時間的測量就可以與星球的自轉脫節了。只利用原子鐘計算時間與日期的系統，稱作國際原子時 （International Atomic Time），這是一種只有「天」的系統，時分秒都以「天」的小數點零頭來表示。以國際原子時為計算基準，把時間格式與 UT1 對齊，讓一般人都方便使用的時間系統，就叫做協調世界時 （Universal Time Coordinated），也就是 **<em>UTC</em>**。這也就是 UTC 為什麼與 GMT 幾乎一樣的關係。由於 UTC 直接與國際度量衡標準相聯繫，所以目前所有的國際通訊系統，像是衛星、航空、GPS 等等，全部都協議採用 UTC 時間。</p>
+<blockquote>
+<p>但是，透過原子鐘 （UTC）模擬平均太陽日（UT1 = GMT），會出現一個很嚴重的問題：由於地球的自轉正在緩慢減速，導致平均太陽日會逐漸變長。也就是說，GMT 的一秒會越來越久，但是只要我們不改度量衡對於秒的定義，那麼 UTC 的一秒就會始終如一。長久下來，UTC 一定會超前 GMT 一秒以上，而且會越來越多！因此，目前負責管理 UTC 的專責機構 ── 國際地球自轉服務 （International Earth Rotation and Reference Systems Service，又稱為 IERS）決定在 UTC 超前 GMT 快一秒時，選擇適當的時間加入閏秒，來抵銷超前的量。上一次的閏秒是在今年的 6 月 30 日，不知各位還有沒有印象？</p>
+</blockquote>
+<h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><p><strong>UTC 很潮的使用原子鐘計時，也成為國際通訊的公用標準。UTC 努力符合 GMT 的計時格式與概念</strong>，因此雖然不會差太多，但每隔三五年就要加一個閏秒來「多等 GMT 一秒鐘」。</p>
+<p><a target="_blank" rel="noopener" href="https://pansci.asia/archives/84978">參考文章</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/physics/" rel="tag"># physics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/08/19/home-brew/" rel="prev" title="Homebrew [NOTE]">
+                  <i class="fa fa-chevron-left"></i> Homebrew [NOTE]
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/life_hooks/" rel="next" title="[Angular] - Life Hooks">
+                  [Angular] - Life Hooks <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"3596eee41aae73bcacbc13912faf6265"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

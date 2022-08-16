@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="信相前端工程師在切版下過一點功夫的人，一定都聽過 tailwind css ，但不一定有聽過 windicss ，這兩個東西都被稱作是下一個世代的 css ，今天來比較兩個的差異。 本文章不會說明太多的寫法，只會針對差別來作一個比較">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tailwind vs windicss">
+<meta property="og:url" content="http://example.com/2021/08/15/tailwind-vs-windicss/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="信相前端工程師在切版下過一點功夫的人，一定都聽過 tailwind css ，但不一定有聽過 windicss ，這兩個東西都被稱作是下一個世代的 css ，今天來比較兩個的差異。 本文章不會說明太多的寫法，只會針對差別來作一個比較">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-15T09:24:44.000Z">
+<meta property="article:modified_time" content="2022-08-16T05:22:13.674Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="css">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/08/15/tailwind-vs-windicss/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/08/15/tailwind-vs-windicss/","path":"2021/08/15/tailwind-vs-windicss/","title":"tailwind vs windicss"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>tailwind vs windicss | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tailindcss-vs-windicss-%E7%9C%8B%E7%9C%8B%E8%AA%B0%E6%AF%94%E8%BC%83%E7%8B%82"><span class="nav-number">1.</span> <span class="nav-text">tailindcss vs windicss 看看誰比較狂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B7%E9%BB%9E-Break-point"><span class="nav-number">2.</span> <span class="nav-text">斷點 Break point</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tailwind"><span class="nav-number">2.1.</span> <span class="nav-text">tailwind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#windicss"><span class="nav-number">2.2.</span> <span class="nav-text">windicss</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">3.</span> <span class="nav-text">CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%8E%E8%AB%96%E5%BA%A6"><span class="nav-number">4.</span> <span class="nav-text">討論度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E4%BE%86%E7%99%BC%E5%B1%95"><span class="nav-number">5.</span> <span class="nav-text">未來發展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B5%90"><span class="nav-number">6.</span> <span class="nav-text">小結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E9%97%9C%E6%96%87%E7%AB%A0"><span class="nav-number">7.</span> <span class="nav-text">相關文章</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/15/tailwind-vs-windicss/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          tailwind vs windicss
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-08-15 17:24:44" itemprop="dateCreated datePublished" datetime="2021-08-15T17:24:44+08:00">2021-08-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>信相前端工程師在切版下過一點功夫的人，一定都聽過 tailwind css ，但不一定有聽過 windicss ，這兩個東西都被稱作是下一個世代的 css ，今天來比較兩個的差異。</p>
+<p>本文章不會說明太多的寫法，只會針對差別來作一個比較</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="tailindcss-vs-windicss-看看誰比較狂"><a href="#tailindcss-vs-windicss-看看誰比較狂" class="headerlink" title="tailindcss vs windicss 看看誰比較狂"></a>tailindcss vs windicss 看看誰比較狂</h2><table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="center">Tailwind</th>
+<th align="center">Windicss</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">支援度</td>
+<td align="center">Angular, Vue,React, Nuxt, Next, larval</td>
+<td align="center">Vue, Nuxt, Svelte</td>
+</tr>
+<tr>
+<td align="right"><a href="/2021/08/15/tailwind-vs-windicss/#%E6%96%B7%E9%BB%9E-Break-point">斷點 Break point</a></td>
+<td align="center">只能依照 config 的法式撰寫</td>
+<td align="center">輕鬆的變換 breakpointer 的寫法</td>
+</tr>
+<tr>
+<td align="right"><a href="/2021/08/15/tailwind-vs-windicss/#CSS">CSS</a></td>
+<td align="center">一般你想的到都有支援</td>
+<td align="center">比起 tailwind 有更多的 css 支援度</td>
+</tr>
+<tr>
+<td align="right"><a href="/2021/08/15/tailwind-vs-windicss/#%E8%A8%8E%E8%AB%96%E5%BA%A6">討論度</a></td>
+<td align="center">較多人討論，進版進度快</td>
+<td align="center">討論度沒有 tailwind 高</td>
+</tr>
+<tr>
+<td align="right"><a href="/2021/08/15/tailwind-vs-windicss/#%E6%9C%AA%E4%BE%86%E7%99%BC%E5%B1%95">未來發展</a></td>
+<td align="center">開始有 UI 系統出現</td>
+<td align="center">在寫法上有更好的歸類方式</td>
+</tr>
+</tbody></table>
+<h2 id="斷點-Break-point"><a href="#斷點-Break-point" class="headerlink" title="斷點 Break point"></a>斷點 Break point</h2><h3 id="tailwind"><a href="#tailwind" class="headerlink" title="tailwind"></a>tailwind</h3><p>預設是使用 min-width 的方式去作切版，也可以自己設定 max-width</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// tailwind.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">theme</span>: &#123;</span><br><span class="line">    <span class="attr">screens</span>: &#123;</span><br><span class="line">      <span class="attr">sm</span>: <span class="string">&quot;640px&quot;</span>,</span><br><span class="line">      <span class="comment">// =&gt; @media (min-width: 640px) &#123; ... &#125;</span></span><br><span class="line"></span><br><span class="line">      <span class="attr">md</span>: <span class="string">&quot;768px&quot;</span>,</span><br><span class="line">      <span class="comment">// =&gt; @media (min-width: 768px) &#123; ... &#125;</span></span><br><span class="line"></span><br><span class="line">      <span class="attr">lg</span>: <span class="string">&quot;1024px&quot;</span>,</span><br><span class="line">      <span class="comment">// =&gt; @media (min-width: 1024px) &#123; ... &#125;</span></span><br><span class="line"></span><br><span class="line">      <span class="attr">xl</span>: <span class="string">&quot;1280px&quot;</span>,</span><br><span class="line">      <span class="comment">// =&gt; @media (min-width: 1280px) &#123; ... &#125;</span></span><br><span class="line"></span><br><span class="line">      <span class="string">&quot;2xl&quot;</span>: <span class="string">&quot;1536px&quot;</span>,</span><br><span class="line">      <span class="comment">// =&gt; @media (min-width: 1536px) &#123; ... &#125;</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="windicss"><a href="#windicss" class="headerlink" title="windicss"></a>windicss</h3><p>預設也和 tailwind 一樣，但可用 <code>&lt;</code> <code>@</code> ，直接變為 max-width 和 max-width &amp; min-width，可以說是非常的方便。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">sm:bg-red-500</span> @<span class="attr">sm:hover:bg-green-300</span> <span class="attr">dark:bg-white</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://windicss.org/utilities/variants.html#screen-variants">windicss docs</a></p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p><code>tailwind css</code> 基本上可說是該有的都有了，只是<code>windicss</code> 更狂，有更多的 effect css ，如下列：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://windicss.org/utilities/effects.html#mix-blend-mode">Mix Blend Mode</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://windicss.org/utilities/behaviors.html#caret-color">Caret Color</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://windicss.org/utilities/behaviors.html#image-rendering">Image Rendering</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://windicss.org/utilities/behaviors.html#list-style-type"> List Style Type</a></p>
+</li>
+</ul>
+<h2 id="討論度"><a href="#討論度" class="headerlink" title="討論度"></a>討論度</h2><p>Tailwind css 在這個上面比較熱絡，也有 youtube, Facebook 的社群可以參考，windicss 在這個上更比相較比較遜色一點，雖然在 tailwind 還沒有 jit mode 的時候，tailwind 的作者還去請教 windicss 的作者是如何作到速度不變慢，還可以持續開發。</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/elgqxmdVms8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="未來發展"><a href="#未來發展" class="headerlink" title="未來發展"></a>未來發展</h2><p>Tailwind 在 1.9 到 2.0 可以說是有一個很大的跳躍，因為多了一個 jit mode 加速了，編譯的速度，不然過去 complier 的時候絕對讓你懷疑人生，在來也加上了 UI 系統，雖然自己切的東西最可以改，但是有時候為速度，還是要有一個寫的東西，這樣子比較可加速開發。</p>
+<p><a target="_blank" rel="noopener" href="https://tailwindui.com/">Beautiful UI components</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.tailwindcss.com/">tailwindcss mile stone</a></p>
+<p>Windicss 在寫法上越來越有規劃的去撰寫你的<code>css</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;bg-blue-400 hover:bg-blue-500 text-sm text-white font-mono font-light py-2 px-4 rounded border-2 border-blue-200 dark:bg-blue-500 dark:hover:bg-blue-600&quot;</span>&gt;</span></span><br><span class="line">  Button</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在這個瞬間你可以沒有辦法看到這個 <code>button</code> 的樣式，但是如果你換成這樣子呢？</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span></span></span><br><span class="line"><span class="tag">  <span class="attr">bg</span>=<span class="string">&quot;blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">text</span>=<span class="string">&quot;sm white hover:blue-500&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">font</span>=<span class="string">&quot;mono light&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">p</span>=<span class="string">&quot;y-2 x-4&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">border</span>=<span class="string">&quot;2 rounded blue-200 hover:blue-500&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">  Button</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>真的是很想給 windicss 一個起立掌聲 ( 拍手 )</p>
+<p><a target="_blank" rel="noopener" href="https://windicss.org/posts/v30.html">WindiCSS v3.0 now in Beta</a></p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>這兩個神器只能說，各有好壞，只是 windicss 的支援度，可能在開發專案上遇到一點點界線，不然其它的地方覺得都是很優秀的，但沒辦法現行的話可能還是會以 tailwind 為首選，同時也是希望 windicss 可以把這個小缺點補上。</p>
+<h2 id="相關文章"><a href="#相關文章" class="headerlink" title="相關文章"></a>相關文章</h2><p><a target="_blank" rel="noopener" href="https://lucas-yang.vercel.app/post/windicss/">Windi CSS - Tailwind CSS 的上位替代</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/css/" rel="tag"># css</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/08/14/git-command/" rel="prev" title="Git 時光之術">
+                  <i class="fa fa-chevron-left"></i> Git 時光之術
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/08/19/home-brew/" rel="next" title="Homebrew [NOTE]">
+                  Homebrew [NOTE] <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"21ef1f68e7ae0842b26cfdf2bbdc800d"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

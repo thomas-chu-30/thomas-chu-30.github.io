@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="Decorators 是 function 掛有 @前綴符號，可以用於 class、paramemter、method 或 property的前面。用來提供額外的資訊。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Angular] - Decorators">
+<meta property="og:url" content="http://example.com/2022/05/27/Angular/decorators/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="Decorators 是 function 掛有 @前綴符號，可以用於 class、paramemter、method 或 property的前面。用來提供額外的資訊。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-26T16:23:21.000Z">
+<meta property="article:modified_time" content="2022-08-16T05:22:13.671Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="angular">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/05/27/Angular/decorators/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/27/Angular/decorators/","path":"2022/05/27/Angular/decorators/","title":"[Angular] - Decorators"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Angular] - Decorators | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HostListener"><span class="nav-number">1.</span> <span class="nav-text">HostListener</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HostBinding"><span class="nav-number">2.</span> <span class="nav-text">HostBinding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NgModule"><span class="nav-number">3.</span> <span class="nav-text">NgModule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">4.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">5.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VeiwChild"><span class="nav-number">6.</span> <span class="nav-text">VeiwChild</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VeiwChildren"><span class="nav-number">7.</span> <span class="nav-text">VeiwChildren</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Injectable-amp-Inject"><span class="nav-number">8.</span> <span class="nav-text">Injectable &amp; Inject</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#inject-%E7%AC%AC%E4%B8%80%E7%A8%AE"><span class="nav-number">8.1.</span> <span class="nav-text">inject 第一種</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inject-%E7%AC%AC%E4%BA%8C%E7%A8%AE"><span class="nav-number">8.2.</span> <span class="nav-text">inject 第二種</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inject-%E7%AC%AC%E4%B8%89%E7%A8%AE"><span class="nav-number">8.3.</span> <span class="nav-text">inject 第三種</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">9.</span> <span class="nav-text">參考文章</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/decorators/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Angular] - Decorators
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-27 00:23:21" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>Decorators 是 function 掛有 <code>@</code>前綴符號，可以用於 <code>class</code>、<code>paramemter</code>、<code>method</code> 或 <code>property</code>的前面。用來提供額外的資訊。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="HostListener"><a href="#HostListener" class="headerlink" title="HostListener"></a>HostListener</h2><p>@hostListener 可以監聽宿主元素上的事件，監聽 JS 的 event click | keydown | mouseleave …</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class CountClicks &#123;</span><br><span class="line">    numberOfClicks = 0;</span><br><span class="line">    // 這裡的 onClick 可以自行命名</span><br><span class="line">    @HostListener(&quot;window:click&quot;, [&quot;$event&quot;])</span><br><span class="line">    onClick(btn): void &#123;</span><br><span class="line">        console.log(&quot;button&quot;, btn, &quot;number of clicks:&quot;, this.numberOfClicks++);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="HostBinding"><a href="#HostBinding" class="headerlink" title="HostBinding"></a>HostBinding</h2><p>@HostBinding()可以為指令的宿主元素新增類、樣式、屬性等</p>
+<p>@HostBinding()和@HostListener()不僅僅用在自定義指令，只是在自定義指令中用的較多</p>
+<p>下面我們通過實現一個在輸入時實時改變字型和邊框顏色的指令，學習@HostBinding()和@HostListener()的用法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AddRainbowDirective</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;&#125;</span><br><span class="line">    possibleColors = [<span class="string">&quot;darksalmon&quot;</span>, <span class="string">&quot;hotpink&quot;</span>, <span class="string">&quot;lightskyblue&quot;</span>, <span class="string">&quot;goldenrod&quot;</span>, <span class="string">&quot;peachpuff&quot;</span>, <span class="string">&quot;mediumspringgreen&quot;</span>, <span class="string">&quot;cornflowerblue&quot;</span>, <span class="string">&quot;blanchedalmond&quot;</span>, <span class="string">&quot;lightslategrey&quot;</span>];</span><br><span class="line">    @HostBinding(<span class="string">&quot;style.color&quot;</span>) color: string;</span><br><span class="line">    @HostBinding(<span class="string">&quot;style.borderColor&quot;</span>) borderColor: string;</span><br><span class="line">    @HostListener(<span class="string">&quot;keydown&quot;</span>) <span class="function"><span class="title">onKeydown</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> colorPick = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="built_in">this</span>.possibleColors.length);</span><br><span class="line">        <span class="built_in">this</span>.color = <span class="built_in">this</span>.borderColor = <span class="built_in">this</span>.possibleColors[colorPick];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">appRainbow</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="NgModule"><a href="#NgModule" class="headerlink" title="NgModule"></a>NgModule</h2><ul>
+<li>  <strong>declarations</strong>－屬於此 NgModule 的 Component、Directive 與 Pipe 皆放置於此。</li>
+<li>  <strong>imports</strong>－此 NgModule 需要使用、依賴的其他 NgModule 皆放置於此（好像有點饒舌）。</li>
+<li>  <strong>providers</strong>－可以被整個應用程式中的任何部分被使用的 Service 皆放置於此，也可以將 Service 直接放置在 Component 的 Metadata 裡的  <code>providers</code> <em>（但放置在不同地方會有一些需要特別注意的事項，後續在說明 Service 時會提到。另外，在 Angular 6 之後，在 Service 之中也可以使用 Metadata 裡的  <code>providedIn</code>  宣告，該 Service 要  <code>provided</code>  到哪裡。詳細可以參考<a target="_blank" rel="noopener" href="https://blog.ninja-squad.com/2018/05/04/what-is-new-angular-6/">此篇文章</a>或是隔壁棚<a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10203876">Angular 大師之路</a>也有提到）</em> 。</li>
+<li>  <strong>exports</strong>－此處放置的是，當在其他 NgModule 裡 import 了當前的 Module 後，可以在其他 NgModule 裡的 Component Template 使用的 Component、Directive 與 Pipe。</li>
+<li>  <strong>entryComponents</strong>－放在這裡的元件通常是用不通過 Route 的方式，而採用動態加入的元件。</li>
+<li>  <strong>bootstrap</strong>－在此設置的是應用程式通常稱之為 Root Component <em>（根元件）</em> ，而且只有 Root Module 才要設置此屬性。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195338">[功能介紹-11] NgModules - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天</a></p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>父層的 html</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;app-bank-account [bank]=&quot;RBC&quot; [account-id]=&quot;4747&quot;&gt;&lt;/app-bank-account&gt;</span><br></pre></td></tr></table></figure>
+
+<p>子層的 component</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class BankAccount &#123;</span><br><span class="line">    @Input() bankName: string;</span><br><span class="line">    @Input(&quot;account-id&quot;) id: string; //可以用此方把名稱改為自已想要的東西</span><br><span class="line">    // TODO: 還有一個可以直接 set() 值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>要使用 output 有三個步驟</p>
+<ol>
+<li>引入 Output &amp; EventEmitter 的 function 在 angular</li>
+<li>讓你的 Output 有一個 EventEmitter</li>
+<li>建立一個 function 把資料 emt 上去</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Output, EventEmitter &#125; from &#x27;@angular/core&#x27;; // step1</span><br><span class="line"></span><br><span class="line">@Output() newItemEvent = new EventEmitter&lt;string&gt;(); // step2</span><br><span class="line"></span><br><span class="line">addNewItem(value: string) &#123;</span><br><span class="line">    this.newItemEvent.emit(value); // step3 用這個方式 emit 資料上去</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// html &lt;app-item (newItemEvent)=&quot;addItem($event)&quot;&gt;&lt;/app-item&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="VeiwChild"><a href="#VeiwChild" class="headerlink" title="VeiwChild"></a>VeiwChild</h2><p>抓取 DOM 也可以抓取 component 得到裡面的定義變數的值</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@ViewChild(<span class="string">&#x27;historyBlock&#x27;</span>) historyBlock;</span><br><span class="line"></span><br><span class="line">ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">this</span>.historyBlock.nativeElement) <span class="comment">// get DOM</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// html</span></span><br><span class="line">&lt;div #historyBlock&gt; &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="VeiwChildren"><a href="#VeiwChildren" class="headerlink" title="VeiwChildren"></a>VeiwChildren</h2><p>用於配置檢視查詢的引數裝飾器。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ng-container</span> *<span class="attr">ngFor</span>=<span class="string">&quot;let item of arrName&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">hello</span> #<span class="attr">item</span> [<span class="attr">name</span>]=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">hello</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ng-container</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; AfterViewInit, Component, VERSION, ViewChild &#125; <span class="keyword">from</span> <span class="string">&quot;@angular/core&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HelloComponent &#125; <span class="keyword">from</span> <span class="string">&quot;./hello.component&quot;</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">    <span class="attr">selector</span>: <span class="string">&quot;my-app&quot;</span>,</span><br><span class="line">    <span class="attr">templateUrl</span>: <span class="string">&quot;./app.component.html&quot;</span>,</span><br><span class="line">    <span class="attr">styleUrls</span>: [<span class="string">&quot;./app.component.css&quot;</span>],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> <span class="title">implements</span> <span class="title">AfterViewInit</span> </span>&#123;</span><br><span class="line">    arrName = [<span class="string">&quot;aa&quot;</span>, <span class="string">&quot;bb&quot;</span>, <span class="string">&quot;cc&quot;</span>];</span><br><span class="line">    @ViewChildren(<span class="string">&quot;item&quot;</span>) itemElement: QueryList&lt;HelloComponent&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">ngAfterViewInit</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.itemElement.map(<span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&quot;itemElement&quot;</span>, e.name); <span class="comment">// 依序提出子組件裡的值</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：<code>ViewChildren</code>  一定要搭配  <code>QueryList</code>  一起使用，不然就不能實現列表更新這件事了因生命週期關係  <code>ViewChild</code>  與  <code>ViewChildren</code>  要在  <code>ngAfterViewInit</code>  裡才能實現</p>
+<h2 id="Injectable-amp-Inject"><a href="#Injectable-amp-Inject" class="headerlink" title="Injectable &amp; Inject"></a>Injectable &amp; Inject</h2><p>Angular 其實提供了三種註冊 Service 的方式。</p>
+<h3 id="inject-第一種"><a href="#inject-第一種" class="headerlink" title="inject 第一種"></a>inject 第一種</h3><p>第一種方式最簡單，也是 Angular CLI 在產生 Service 時預設使用的方式：</p>
+<p>這種方式是在 Service 自己的 Metadata 裡加上 <code>providedIn: &#39;root&#39;</code> 的屬性，來告訴 Angular 說：「請把我註冊在整個系統都是使用同一個實體的注射器裡」。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Injectable(&#123;</span><br><span class="line">		<span class="attr">providedIn</span>: <span class="string">&#x27;root&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="inject-第二種"><a href="#inject-第二種" class="headerlink" title="inject 第二種"></a>inject 第二種</h3><p>這種方式是告訴 Angular 說：「請把我註冊在這整個 NgModule 都用同一個實體的注射器裡」。也就是說，假設當初 A Service 是註冊在 A Module 裡，那麼在整個 A Module 裡就會使用同一個實體。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@NgModule(&#123;</span><br><span class="line">		<span class="attr">providers</span>: [</span><br><span class="line">				BackendService,</span><br><span class="line">				Logger</span><br><span class="line">		],</span><br><span class="line">  	...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>那在 B Module 裡可以用 A Service 嗎？ 可以。</p>
+<p>那在 B Module 裡的 A Service 跟在 A Module 裡的 A Service 是同一個實體嗎？同一個&lt;心中存疑？？&gt;</p>
+</blockquote>
+<h3 id="inject-第三種"><a href="#inject-第三種" class="headerlink" title="inject 第三種"></a>inject 第三種</h3><p>這種方式是告訴 Angular 說：「請把我註冊在這整個 Component 都用同一個實體的注射器裡」。意思是每個 Component 拿到的 Service 實體都不是同一個。</p>
+<p>絕對不是同一個</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123;</span><br><span class="line">  <span class="attr">selector</span>:    <span class="string">&#x27;app-hero-list&#x27;</span>,</span><br><span class="line">  <span class="attr">templateUrl</span>: <span class="string">&#x27;./hero-list.component.html&#x27;</span>,</span><br><span class="line">  <span class="attr">providers</span>:  [ HeroService ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>這個要常常看一下，重要</p>
+<p><a target="_blank" rel="noopener" href="https://blog.kevinyang.net/2018/01/19/angular-viewproviders-providers/">https://blog.kevinyang.net/2018/01/19/angular-viewproviders-providers/</a></p>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><p><a target="_blank" rel="noopener" href="https://blog.kevinyang.net/2017/01/30/angular2-decorators/">自訂 Decorators</a></p>
+<p><a target="_blank" rel="noopener" href="https://jiaming0708.github.io/2017/03/27/angular-hostbinding-listener/">HostBinding&amp;HostListener</a></p>
+<p><a target="_blank" rel="noopener" href="https://jiaming0708.github.io/2017/03/27/angular-hostbinding-listener/">HostBinding&amp;HostListener</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/angular/" rel="tag"># angular</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/element/" rel="prev" title="[Angular] - Element">
+                  <i class="fa fa-chevron-left"></i> [Angular] - Element
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/SSR/" rel="next" title="[Angular] - Server Side Render">
+                  [Angular] - Server Side Render <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"4d0d57970005536ad3e24d1474214ddd"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

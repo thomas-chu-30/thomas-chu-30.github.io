@@ -702,7 +702,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-11-24 21:37:29" itemprop="dateModified" datetime="2022-11-24T21:37:29+08:00">2022-11-24</time>
+        <time title="Modified: 2022-11-24 21:47:12" itemprop="dateModified" datetime="2022-11-24T21:47:12+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -727,84 +727,14 @@
           <blockquote>
 <p>angular 原生的 number 需要特別去看一下 decimaPipe</p>
 </blockquote>
-<h2 id="Common-Pipe"><a href="#Common-Pipe" class="headerlink" title="Common Pipe"></a>Common Pipe</h2><p><code>pipe</code> 的使用如下，也可以加上 params 的透過<code>:</code> 來傳入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;today | date:&#x27;yyyy/MM/dd HH:mm:ss&#x27;&#125;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>下列是 <code>angular</code> 所提供的 <code>pipe</code> ，如下列：</p>
-<ul>
-<li>處理日期 format 的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/DatePipe">DatePipe</a></li>
-<li>處理貨幣單位非常方便的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/CurrencyPipe">CurrencyPipe</a></li>
-<li>自動 JSON 格式化的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/JsonPipe">JsonPipe</a></li>
-<li>幫你自動訂閱的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/AsyncPipe">AsyncPipe</a></li>
-<li>英文大小寫處理的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/UpperCasePipe">UpperCasePipe</a>、<a target="_blank" rel="noopener" href="https://angular.io/api/common/LowerCasePipe">LowerCasePipe</a> 與 <a target="_blank" rel="noopener" href="https://angular.io/api/common/TitleCasePipe">TitleCasePipe</a></li>
-<li>專門處理小數的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/DecimalPipe">DecimalPipe</a></li>
-<li>小數點轉百分比很方便的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/PercentPipe">PercentPipe</a></li>
-<li>陣列跟字串都可以用的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/SlicePipe">SlicePipe</a></li>
-<li>多國語系處理專門的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/I18nSelectPipe">I18nSelectPipe</a> 與 <a target="_blank" rel="noopener" href="https://angular.io/api/common/I18nPluralPipe">I18nPluralPipe</a></li>
-<li>暫時想不到用途的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/KeyValuePipe">KeyValuePipe</a></li>
-</ul>
-<h3 id="DecimalPipe-number"><a href="#DecimalPipe-number" class="headerlink" title="DecimalPipe [ | number ]"></a>DecimalPipe [ | number ]</h3><p>使用方式如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; value_expression | number [ : digitsInfo [ : locale ] ] &#125;&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>value 是輸入值</li>
-<li>number 是這個 Pipes 元件的名稱</li>
-<li>digitsInfo 為字串型態的參數，非必填項目<ul>
-<li>格式如 <code>&#123;minIntegerDigits&#125;.&#123;minFractionDigits&#125;-&#123;maxFractionDigits&#125;</code></li>
-<li>minIntegerDigits：在小数点前的最小位数。默认为 1。</li>
-<li>minFractionDigits：小数点后的最小位数。默认为 0。</li>
-<li>maxFractionDigits：小数点后的最大为数，默认为 3。</li>
-</ul>
-</li>
-<li>locale 為字串型態的參數，非必填項目<ul>
-<li>用來設定這一串數字要用哪一個地區的數值格式呈現</li>
-</ul>
-</li>
-</ul>
-<p>因此可以按照官方提供的範例，複製一份並且在 Template 內隨意找個地方貼上玩看看：</p>
-<p><strong>Template</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;2.718&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>e (no formatting): &#123;&#123;e | number&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;002.71828&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>e (3.1-5): &#123;&#123;e | number:&#x27;3.1-5&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;0,002.71828&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>e (4.5-5): &#123;&#123;e | number:&#x27;4.5-5&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;0 002,71828&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>e (french): &#123;&#123;e | number:&#x27;4.5-5&#x27;:&#x27;fr&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;3.14&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>pi (no formatting): &#123;&#123;pi | number&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;003.14&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>pi (3.1-5): &#123;&#123;pi | number:&#x27;3.1-5&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;003.14000&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>pi (3.5-5): &#123;&#123;pi | number:&#x27;3.5-5&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;-3&#x27; / unlike &#x27;-2&#x27; by Math.round()--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>-2.5 (1.0-0): &#123;&#123;-2.5 | number:&#x27;1.0-0&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>Template 有用到 <code>e</code> 以及 <code>pi</code> 這兩個內嵌繫結，因此必須在 class 內補上這兩個屬性。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</span><br><span class="line">  inputValue = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  pi: number = <span class="number">3.14</span>;</span><br><span class="line">  e: number = <span class="number">2.718281828459045</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>運行開發伺服器，看看效果如何～</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://i.imgur.com/zqZBBLG.png"><img src="https://i.imgur.com/zqZBBLG.png" alt="img"></a></p>
-<ul>
-<li>第一個結果 e 輸出是 2.718 ，對照後也就是說預設的情況下 DecimalPipe 會輸出小數點後三位的數字，其餘全部捨去。<ul>
-<li>而這個結果是因為沒有填寫任何參數，是參數的默認值導致</li>
-</ul>
-</li>
-<li>第二個結果傳入一個參數 <code>3.1-5</code> ，對照上面的格式與參數解釋後，得到結果 e 為 002.71828</li>
-</ul>
-<blockquote>
-<p>可透過修改第一個參數達成想要的數字格式。</p>
-</blockquote>
-<ul>
-<li>第四個結果，傳入的第二個參數為 fr ，代表採用法國的數值格式<ul>
-<li>在法國，小數點是當作千分號使用，而千分號則是使用空白替代</li>
-<li>透過不同的國家的 locale id 就可以轉換成對應的地區數值格式<ul>
-<li>台灣為 zh-TW</li>
-<li>日本為 jp</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>不僅僅第一個參數可以利用，配合第二個參數一起使用才是王道。</strong></p>
-<blockquote>
-<p>而這個 Pipes 元件好玩的地方是，它的名稱叫做 DecimalPipe ，但實際使用卻是輸入 number ，這是容易搞混的地方要特別注意。</p>
-</blockquote>
-<h2 id="Customer-pipe"><a href="#Customer-pipe" class="headerlink" title="Customer pipe"></a>Customer pipe</h2><p>下列是客製化 pipe 的用法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Pipe, PipeTransform &#125; from &#x27;@angular/core&#x27;;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * Raise the value exponentially</span><br><span class="line"> * Takes an exponent argument that defaults to 1.</span><br><span class="line"> * Usage:</span><br><span class="line"> *   value | exponentialStrength:exponent</span><br><span class="line"> * Example:</span><br><span class="line"> *   &#123;&#123; 2 | exponentialStrength:10 &#125;&#125;</span><br><span class="line"> *   formats to: 1024</span><br><span class="line">*/</span><br><span class="line">@Pipe(&#123;name: &#x27;exponentialStrength&#x27;&#125;)</span><br><span class="line">export class ExponentialStrengthPipe implements PipeTransform &#123;</span><br><span class="line">  transform(value: number, exponent: string): number &#123;</span><br><span class="line">    let exp = parseFloat(exponent);</span><br><span class="line">    return Math.pow(value, isNaN(exp) ? 1 : exp);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://stackblitz.com/edit/custom-pipe-demo?file=app/pipes/truncate.pipe.ts">custom-pipe-demo - StackBlitz</a></p>
-<p><a target="_blank" rel="noopener" href="https://pvt5r486.github.io/f2e/20190529/2426750085/">[從 0 開始的 Angular 生活]No.22 使用 Pipes 管線元件</a></p>
-<h2 id="在-JS-中-call-pip-function"><a href="#在-JS-中-call-pip-function" class="headerlink" title="在 JS 中 call pip function"></a>在 JS 中 call pip function</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; FirstUpperCasePipe &#125; <span class="keyword">from</span> <span class="string">&#x27;src/app/pipes/first-upper-case.pipe&#x27;</span>;</span><br><span class="line"><span class="comment">// new 一個新的 class </span></span><br><span class="line"><span class="keyword">const</span> slugUpperCase = <span class="keyword">new</span> FirstUpperCasePipe().transform(<span class="built_in">this</span>.slug);</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/27/Angular/pipe/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1036,7 +966,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-11-24 21:37:29" itemprop="dateModified" datetime="2022-11-24T21:37:29+08:00">2022-11-24</time>
+        <time title="Modified: 2022-11-24 21:47:20" itemprop="dateModified" datetime="2022-11-24T21:47:20+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1060,92 +990,14 @@
     <div class="post-body" itemprop="articleBody">
           <p><img src="https://ik.imagekit.io/14v7jwku5tz/Blog/%E6%88%AA%E5%9C%96_2022-10-24_%E4%B8%8B%E5%8D%8810.02.43_gU7sEkE6u.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666620253816"></p>
 <p>Angular life hoooks</p>
-<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><ol>
-<li>初始化一些參數</li>
-<li>放外部的 <code>service</code> 引入</li>
-</ol>
-<h3 id="ngOnInit"><a href="#ngOnInit" class="headerlink" title="ngOnInit"></a>ngOnInit</h3><p>畫面在一開始進來的時候會執行過一次，建議在此處放 subscribe 的 function，作一些 <code>api</code> 請求動作</p>
-<h3 id="ngOnChanges"><a href="#ngOnChanges" class="headerlink" title="ngOnChanges"></a>ngOnChanges</h3><p>當 <code>@Input()</code> 的值變化的時候，此處的就會在發生變化，執行 JS</p>
-<blockquote>
-<p>注意：</p>
-<p>如果 csr 的方式，在 default 值就會進來，input 值在進來的時候就會在進來一次。但如果是 ssr 的話，只會在 input 傳入時候才會進來</p>
-</blockquote>
-<h3 id="ngDoCheck"><a href="#ngDoCheck" class="headerlink" title="ngDoCheck"></a>ngDoCheck</h3><p>檢測頁面上任何的變動</p>
-<h3 id="ngAfterContentInit"><a href="#ngAfterContentInit" class="headerlink" title="ngAfterContentInit"></a>ngAfterContentInit</h3><p>ContentChild與ContentChildren初始化之後調用，只調用一次</p>
-<h3 id="ngAfterViewInit"><a href="#ngAfterViewInit" class="headerlink" title="ngAfterViewInit"></a>ngAfterViewInit</h3><p>ViewChild與ViewChildren初始化之後調用，只調用一次</p>
-<h3 id="ngAfterViewChecked"><a href="#ngAfterViewChecked" class="headerlink" title="ngAfterViewChecked"></a>ngAfterViewChecked</h3><p>檢測，並在發生 Angular 無法或不願意自己檢測的變化時作出反應。<br>在每個變更檢測週期中，緊跟在 ngOnChanges() 和 ngOnInit() 後面調用,<br>有些特殊情況，有的時候我們需要真實的dom節點，可以再ngDoCheck判斷</p>
-<h3 id="ngOnDestroy"><a href="#ngOnDestroy" class="headerlink" title="ngOnDestroy"></a>ngOnDestroy</h3><p>去除 <code>subscribe</code>，銷毀事件</p>
-<hr>
-<h2 id="當數據改變的時候"><a href="#當數據改變的時候" class="headerlink" title="當數據改變的時候"></a>當數據改變的時候</h2><p>第一次進來時的生命週期</p>
-<ol>
-<li>OnChanges ⇒ 在 ngOnInit() 之前以及所繫結的一個或多個輸入屬性的值發生變化時都會呼叫。注意，如果你的元件沒有輸入，或者你使用它時沒有提供任何輸入，那麼框架就不會呼叫 ngOnChanges()。</li>
-<li>OnInit ⇒ 在第一輪 ngOnChanges() 完成之後呼叫，只調用一次。</li>
-<li>ngDoCheck</li>
-<li>AfterContentInit</li>
-<li>AfterContentChecked</li>
-<li>AfterViewInit</li>
-<li>AfterViewChecked</li>
-</ol>
-<p><code>@input</code>數據發生變化 (這個有一點點像是 vue 的 props)</p>
-<ol>
-<li>ngDoCheck</li>
-<li>AfterContentChecked</li>
-<li>AfterViewChecked</li>
-<li>OnChanges</li>
-<li>DoCheck  ⇒ 意自己檢測的變化時作出反應。 欲知詳情和範例，參閱本文件中的<a target="_blank" rel="noopener" href="https://angular.tw/guide/lifecycle-hooks#docheck">自訂變更檢測</a>。緊跟在每次執行變更檢測時的 <code>ngOnChanges()</code> 和 首次執行變更檢測時的 <code>ngOnInit()</code> 後呼叫。</li>
-<li>AfterContentChecked</li>
-<li>AfterViewChecked</li>
-</ol>
-<h2 id="Angular-vs-Vue"><a href="#Angular-vs-Vue" class="headerlink" title="Angular vs Vue"></a>Angular vs Vue</h2><table>
-<thead>
-<tr>
-<th>不同點</th>
-<th>Angualar</th>
-<th>Vue</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>屬性, 方法獲得</td>
-<td>任何生命週期都可以</td>
-<td>除了 beforeCreate 生命周期，其它都可以</td>
-</tr>
-<tr>
-<td>dom 節點獲取</td>
-<td>只能透過 ngDoCheck (包括 ngAfterView, ngAgteContentCheck)</td>
-<td>Mounted 生命週期後的皆可以</td>
-</tr>
-<tr>
-<td>ngDoCheck</td>
-<td>檢測頁面上的任何變動</td>
-<td>Vue 沒有類似的東西</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p><strong>NOTE</strong> [angular]ngOnChange 同 [vue]update，[angular]ngOnDestory 同 [vue]destory</p>
-<p><strong>參考資料</strong></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/96509858">Angular生命周期</a></p>
-<p><a target="_blank" rel="noopener" href="https://angular.tw/guide/lifecycle-hooks">Angular - 生命週期鉤子</a></p>
-<p><img src="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.34.35_Dg4tjbQDl.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802619918" alt="Life%20Hooks%208fbaa02f1ad44ff3b76564995fcd6b7a"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/27/Angular/life_hooks/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

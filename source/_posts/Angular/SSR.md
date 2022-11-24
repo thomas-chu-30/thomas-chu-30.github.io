@@ -1,7 +1,7 @@
 ---
-title: "[Angular] - Server Side Render"
+tags: [angular]
+title: Server Side Render
 date: 2022-05-27 00:23:21
-tags: angular
 categories: FrontEnd
 ---
 
@@ -10,6 +10,8 @@ categories: FrontEnd
 ```bash
 ng add @nguniversal/express-engine
 ```
+
+<!--more-->
 
 ng 會幫你新建立一些資料，資料結構如下
 

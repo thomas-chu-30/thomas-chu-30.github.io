@@ -1,13 +1,15 @@
 ---
-title: "[Angular] - Router"
+tags: [angular]
+title: Router
 date: 2022-05-27 00:23:21
-tags: angular
 categories: FrontEnd
 ---
 
 ## **Angular 路由**
 
 建立 component 之後，去 `/src/app/app-routing.module.ts` 引進 component
+
+<!--more-->
 
 ```tsx
 import { BrowserModule } from "@angular/platform-browser";
@@ -30,8 +32,6 @@ import { AppComponent } from "./app.component";
 })
 export class AppModule {}
 ```
-
-<!--more-->
 
 在去 `/src/app/app-routing-modules.ts` 加上 routers
 

@@ -1,7 +1,7 @@
 ---
-title: "[Angular] - Decorators"
+tags: [angular]
+title: Decorators
 date: 2022-05-27 00:23:21
-tags: angular
 categories: FrontEnd
 ---
 

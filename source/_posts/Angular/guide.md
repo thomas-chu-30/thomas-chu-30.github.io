@@ -1,7 +1,8 @@
 ---
-title: "[Angular] - Guides"
+sidebar_position: 1
+tags: [angular]
+title: Guides
 date: 2022-05-27 00:23:21
-tags: angular
 categories: FrontEnd
 ---
 
@@ -17,14 +18,19 @@ categories: FrontEnd
 
 > 可參考 CLI 命令參考手冊，下列為 generate component 的 command
 
+<!--more-->
+
 ```bash
 $ ng g component home/component/my-new-component
-# => 组件 | 相對生成組件生成位置在項目的根目錄的  src/app/home/component（指令其他等等都可以用該方式生成）
+# => 组件 | 相對生成組件生成位置在項目的根目錄的
+# src/app/home/component（指令其他等等都可以用該方式生成）
 # ng g component my-component | home/component/my-new-component
 
 $ ng g directive my-new-directive =>  指令
 
 $ ng g pipe my-new-pipe => 管道
+
+$ ng g guard my-new-guard => 守護層
 
 $ ng g service my-new-service => 服務
 
@@ -37,23 +43,42 @@ $ ng g enum my-new-enum => 枚舉
 $ ng g module my-module => 模塊
 ```
 
-<!--more-->
-
-## 建立一 angular 專案
+## 建立 angular 專案
 
 ```shell
 $ ng new angular-tour-of-heroes
 ```
 
-angular 入門到實踐
-
-[样式](https://cipchk.gitbooks.io/angular-practice/content/component/styles.html)
-
 ## 資料夾結構說明
 
-[[Angular 深入淺出三十天] Day 04 - 資料夾結構說明 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10203534)
+Angular 有 lazy page 的功能，可以把相同 modules 的分為一類，因此就以此來作為專案的分類
 
-[[Angular #3]認識 Angular CLI 產生的專案目錄結構](https://medium.com/angular-%E7%9A%84%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/angular-3-%E8%AA%8D%E8%AD%98-angular-cli-%E7%94%A2%E7%94%9F%E7%9A%84%E5%B0%88%E6%A1%88%E7%9B%AE%E9%8C%84%E7%B5%90%E6%A7%8B-ba20c77d0029)
+```
+├── logs          // Server Side Render 預設 log 路徑
+├── server        // 做伺服器渲染使用的 module
+├── src           // 專案主要程式
+    ├── app
+        ├── assets
+            ├── fonts
+            ├── i18n        // 多語系檔案
+            └── image
+        ├── config
+        ├── modules         // 所有 modules, 包含 core module, lazyload module, share module
+          ├──  ...
+          ├── core                 // 主要模組
+              ├── components       // 非頁面類型的 component
+              ├── directive
+              ├── guard
+              ├── models           // factory, base class (放一些不知道放哪的類別，需要再討論)
+              ├── pages            // 頁面類型的 component
+              ├── pipes
+              └── services
+        ├── styles
+            └── font-icon
+    ├── environments
+    └── ...
+└── ...
+```
 
 ## NgModule
 
@@ -86,77 +111,6 @@ platformBrowserDynamic().bootstrapModule(AppModule); //用這一串文字來運�
 
 在 bootstrap 的動作裡，會建立好執行環境並把在`src/app/app.module.ts`裡設定的 bootstrap 陣列裡的元素取出來並透過在該成員裡設定的 selector，讓我們可以在`src/index.html`來顯示這個元件的 VIEW。
 
-### **Service providers**
-
-可以看到`app.module.ts`的 providers 會增加一個名為 UserService 的類別
-
-```
-providers: [ UserService ]
-```
-
-在使用上，如果已經有設定好 providers 後，只要在元件的 constructor 裡面宣告一個變數是 providers 裡面設定好的 service，就可以在元件裡直接取用了
-
-```jsx
-constructor(userService: UserService) {
-    this.user = userService.userName;
-}
-```
-
-![http://claire-chang.com/wp-content/uploads/2017/12/injector-injects.png](http://claire-chang.com/wp-content/uploads/2017/12/injector-injects.png)
-
-[[功能介紹-11] NgModules - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10195338)
-
-### Services Inject
-
-[[Angular 深入淺出三十天] Day 17 - 基礎結構說明（四） - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10207283)
-
-### Service
-
-在 Angular 裡，Service 其實一個滿核心的元件，任何你在應用程式裡會需要用到的值、函式或是功能都會用到它。而它也通常是一個有著明確定義的 Class，專門用來處理某件事。
-
-而 Angular 之所以會有 Service 這個元件是因為它想要讓我們在使用 Angular 撰寫應用時，能夠寫的更模組化一點、重用性更高一點。
-
-所以在理想狀況下， Component 只負責處理畫面、資料綁定，而 Service 則負責像是取得資料、表單驗證等等的邏輯處理，來讓我們的應用程式擁有更好的結構與彈性。
-
-那 Angular 是怎麼讓 Component 能夠很便利的使用 Service 呢？
-
-答案是：**DI** *（**D**ependency **I**njection，依賴注入）*`@Injectable`
-
-**_第一種 injectable_**
-
-使用 `@Injectable` 的話，可以在每一個 component 作引用
-
-```tsx
-@Injectable({
-  providedIn: 'root'
-}) // 預設的寫法
-```
-
-**_第二種 injectable_**
-
-這種方式是告訴 Angular 說：「請把我註冊在這整個 NgModule 都用同一個實體的注射器裡」。也就是說，假設當初 A Service 是註冊在 A Module 裡，那麼在整個 A Module 裡就會使用同一個實體。
-
-```tsx
-// src/app/app.modules.ts
-@NgModule({
-  providers: [
-    BackendService, // 加在這裡
-  ],
-})
-```
-
-**_第三種 injectable_**
-
-註冊在 Component 裡，這種方式是告訴 Angular 說：「請把我註冊在這整個 Component 都用同一個實體的注射器裡」。意思是每個 Component 拿到的 Service 實體都不是同一個。
-
-```tsx
-@Component({
-  selector:    'app-hero-list',
-  templateUrl: './hero-list.component.html',
-  providers:  [ HeroService ]
-})
-```
-
 ## 繼承
 
 [How To Extend Classes with Angular Component Inheritance | DigitalOcean](https://www.digitalocean.com/community/tutorials/angular-component-inheritance)
@@ -165,7 +119,7 @@ constructor(userService: UserService) {
 
 ````這部分還沒有很熟悉 ~~~~~~
 
-```jsx
+
 // app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -291,3 +245,11 @@ VS Marketplace 連結: https://marketplace.visualstudio.com/items?itemName=alexi
 [Angular - ng generate](https://angular.tw/cli/generate#component)
 
 [Angular CLI 常用终端操作命令](https://www.jianshu.com/p/67acdd21f89c)
+
+[样式](https://cipchk.gitbooks.io/angular-practice/content/component/styles.html)
+
+[[Angular 深入淺出三十天] Day 04 - 資料夾結構說明 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10203534)
+
+[[Angular #3]認識 Angular CLI 產生的專案目錄結構](https://medium.com/angular-%E7%9A%84%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/angular-3-%E8%AA%8D%E8%AD%98-angular-cli-%E7%94%A2%E7%94%9F%E7%9A%84%E5%B0%88%E6%A1%88%E7%9B%AE%E9%8C%84%E7%B5%90%E6%A7%8B-ba20c77d0029)
+
+##

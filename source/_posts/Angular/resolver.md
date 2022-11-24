@@ -1,9 +1,11 @@
 ---
-title: "[Angular] - Resolver"
+tags: [angular]
+title: Resolver
 date: 2022-05-27 00:23:21
-tags: angular
 categories: FrontEnd
 ---
+
+# Resolver
 
 router 轉址後會先經過 resolver 在去到另一個 router ，因此可先在此取得資料，到新頁面時就可直接賦予值
 
@@ -25,11 +27,11 @@ router setting
 
 ```javascript
 {
-        path: 'categories',
-        component: ProductsPageComponent,
-        resolve: {
-            category: CategoryResolver,
-        }
+	path: 'categories',
+	component: ProductsPageComponent,
+	resolve: {
+		category: CategoryResolver,
+	}
 },
 ```
 

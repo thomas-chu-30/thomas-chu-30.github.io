@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="這個資料夾通常是放 modules 常用到的 class 用來定義 interface type extend class ，為了方便使用所以特別拉出來">
+<meta property="og:type" content="article">
+<meta property="og:title" content="models">
+<meta property="og:url" content="http://example.com/2022/05/27/Angular/models/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="這個資料夾通常是放 modules 常用到的 class 用來定義 interface type extend class ，為了方便使用所以特別拉出來">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-26T16:23:21.000Z">
+<meta property="article:modified_time" content="2022-11-24T13:38:42.907Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="angular">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/05/27/Angular/models/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/27/Angular/models/","path":"2022/05/27/Angular/models/","title":"models"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>models | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#class"><span class="nav-number">1.</span> <span class="nav-text">class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interfece"><span class="nav-number">2.</span> <span class="nav-text">interfece</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type"><span class="nav-number">3.</span> <span class="nav-text">type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enum-%E5%88%97%E8%88%89"><span class="nav-number">4.</span> <span class="nav-text">enum (列舉)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%83%85%E5%A2%83"><span class="nav-number">5.</span> <span class="nav-text">使用情境</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/models/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          models
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-27 00:23:21" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-11-24 21:38:42" itemprop="dateModified" datetime="2022-11-24T21:38:42+08:00">2022-11-24</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>這個資料夾通常是放 modules 常用到的 class 用來定義 <code>interface</code> <code>type</code> <code>extend class</code> ，為了方便使用所以特別拉出來</p>
+<span id="more"></span>
+
+<h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><ol>
+<li>可以定義 fields, 也可以有建構子, 可用於檢查資料欄位</li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> rawPayload = &#123; ... &#125;</span><br><span class="line"><span class="keyword">const</span> payload = <span class="keyword">new</span> Class(rawPayload)</span><br><span class="line"><span class="built_in">this</span>.apiPostService.subscribe(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>可直接繼承 class 定義的變數和 function</li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ProductsBasic</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> openLoadingImg: <span class="built_in">boolean</span> = <span class="literal">false</span></span><br><span class="line">	<span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Category, Products, ProductsBasic &#125; <span class="keyword">from</span> <span class="string">&#x27;src/app/modules/emarket/models/products-basic&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ProductsPageComponent</span> <span class="keyword">extends</span> <span class="title">ProductsBasic</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">		...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="interfece"><a href="#interfece" class="headerlink" title="interfece"></a>interfece</h2><p>命名的時候可在前面寫一個 prefix <code>I</code> 來定義這個是 interface</p>
+<ol>
+<li>可以定義 fields, 可用於檢查資料欄位</li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> ISuggestedGroup &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="built_in">string</span>;</span><br><span class="line">    title_en: <span class="built_in">string</span>;</span><br><span class="line">    title: <span class="built_in">string</span>;</span><br><span class="line">    count: <span class="built_in">number</span>;</span><br><span class="line">    children: ISuggestedGroup[];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>可以規定統一需要實作的 function</li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> IBasicResponse&lt;T&gt; &#123;</span><br><span class="line">    <span class="attr">ReturnCode</span>: <span class="built_in">number</span>;</span><br><span class="line">    data: T;</span><br><span class="line">    status: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> IMenuData &#123;</span><br><span class="line">    <span class="attr">manufacturers</span>: IManufacturer[];</span><br><span class="line">    applications: IManufacturer[];</span><br><span class="line">    functions: IManufacturer[];</span><br><span class="line">    components: IManufacturer[];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> &#123; data &#125; = <span class="keyword">await</span> useFetch&lt;IBasicResponse&lt;IMenu&gt;&gt;(<span class="string">&quot;/api/config/getMenu&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><ol>
+<li>可以定義 fields, 可用於檢查資料欄位</li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> SizeType = <span class="string">&quot;sm&quot;</span> | <span class="string">&quot;base&quot;</span> | <span class="string">&quot;md&quot;</span> | <span class="string">&quot;md-bold&quot;</span> | <span class="string">&quot;lg&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="enum-列舉"><a href="#enum-列舉" class="headerlink" title="enum (列舉)"></a>enum (列舉)</h2><ol>
+<li>用於定義選單資料</li>
+<li>用於定義某些欄位只能存特定 string</li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="built_in">enum</span> PaymentMethod &#123;</span><br><span class="line">    Stripe = <span class="string">&quot;Stripe&quot;</span>,</span><br><span class="line">    Paypal = <span class="string">&quot;Paypal&quot;</span>,</span><br><span class="line">    WireTransfer = <span class="string">&quot;WireTransfer&quot;</span>,</span><br><span class="line">    CashCoupon = <span class="string">&quot;Cash Coupon&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (method) &#123;</span><br><span class="line">	<span class="keyword">case</span> PaymentMethod.Stripe:</span><br><span class="line">		...</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> PaymentMethod.Paypal:</span><br><span class="line">		...</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="使用情境"><a href="#使用情境" class="headerlink" title="使用情境"></a>使用情境</h2><ol>
+<li><p>與後端 API 溝通使用，可以是 request payload 或 response<br>可用於檢查資料，當資料欄位修改時，可以依賴 IDE 做檢查，ng 編譯也會檢查</p>
+</li>
+<li><p>可用於選單的製作</p>
+</li>
+<li><p>可用於定義某資料欄位的限定值</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://medium.com/@notwist123/typescript-%E5%88%97%E8%88%89%E5%9E%8B%E5%88%A5-enumerate-96fc2eedd581">https://medium.com/@notwist123/typescript-%E5%88%97%E8%88%89%E5%9E%8B%E5%88%A5-enumerate-96fc2eedd581</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/angular/" rel="tag"># angular</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/other/" rel="prev" title="移除 ModuleConcatenationPlugin 以加快 Angular 建置速度">
+                  <i class="fa fa-chevron-left"></i> 移除 ModuleConcatenationPlugin 以加快 Angular 建置速度
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/material/" rel="next" title="material">
+                  material <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"90946b32820d6249acf8470c0e9744ec"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

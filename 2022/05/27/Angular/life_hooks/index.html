@@ -21,31 +21,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-<link rel="manifest" href="/manifest.json"><meta name="description" content="生命週期">
+<link rel="manifest" href="/manifest.json"><meta name="description" content="Angular life hoooks constructor 初始化一些參數 放外部的 service 引入  ngOnInit畫面在一開始進來的時候會執行過一次，建議在此處放 subscribe 的 function，作一些 api 請求動作 ngOnChanges當 @Input() 的值變化的時候，此處的就會在發生變化，執行 JS  注意： 如果 csr 的方式，在 default 值就">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Angular] - Life Hooks">
+<meta property="og:title" content="生命週期 (Life Hooks)">
 <meta property="og:url" content="http://example.com/2022/05/27/Angular/life_hooks/index.html">
 <meta property="og:site_name" content="Life × Ex × Code">
-<meta property="og:description" content="生命週期">
+<meta property="og:description" content="Angular life hoooks constructor 初始化一些參數 放外部的 service 引入  ngOnInit畫面在一開始進來的時候會執行過一次，建議在此處放 subscribe 的 function，作一些 api 請求動作 ngOnChanges當 @Input() 的值變化的時候，此處的就會在發生變化，執行 JS  注意： 如果 csr 的方式，在 default 值就">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.39.40_g3w-n1T7hS9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802618366">
+<meta property="og:image" content="https://ik.imagekit.io/14v7jwku5tz/Blog/%E6%88%AA%E5%9C%96_2022-10-24_%E4%B8%8B%E5%8D%8810.02.43_gU7sEkE6u.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666620253816">
 <meta property="og:image" content="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.34.35_Dg4tjbQDl.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802619918">
 <meta property="article:published_time" content="2022-05-26T16:23:21.000Z">
-<meta property="article:modified_time" content="2022-08-16T05:22:13.672Z">
+<meta property="article:modified_time" content="2022-11-24T13:37:29.421Z">
 <meta property="article:author" content="Thomas_chu">
 <meta property="article:tag" content="angular">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.39.40_g3w-n1T7hS9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802618366">
+<meta name="twitter:image" content="https://ik.imagekit.io/14v7jwku5tz/Blog/%E6%88%AA%E5%9C%96_2022-10-24_%E4%B8%8B%E5%8D%8810.02.43_gU7sEkE6u.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666620253816">
 
 
 <link rel="canonical" href="http://example.com/2022/05/27/Angular/life_hooks/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/27/Angular/life_hooks/","path":"2022/05/27/Angular/life_hooks/","title":"[Angular] - Life Hooks"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/27/Angular/life_hooks/","path":"2022/05/27/Angular/life_hooks/","title":"生命週期 (Life Hooks)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[Angular] - Life Hooks | Life × Ex × Code</title>
+<title>生命週期 (Life Hooks) | Life × Ex × Code</title>
   
 
 
@@ -122,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F"><span class="nav-number">1.</span> <span class="nav-text">生命週期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">1.1.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngOnInit"><span class="nav-number">1.2.</span> <span class="nav-text">ngOnInit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngOnChanges"><span class="nav-number">1.3.</span> <span class="nav-text">ngOnChanges</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngDoCheck"><span class="nav-number">1.4.</span> <span class="nav-text">ngDoCheck</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngAfterContentInit"><span class="nav-number">1.5.</span> <span class="nav-text">ngAfterContentInit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngAfterViewInit"><span class="nav-number">1.6.</span> <span class="nav-text">ngAfterViewInit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngAfterViewChecked"><span class="nav-number">1.7.</span> <span class="nav-text">ngAfterViewChecked</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngOnDestroy"><span class="nav-number">1.8.</span> <span class="nav-text">ngOnDestroy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%B6%E6%95%B8%E6%93%9A%E6%94%B9%E8%AE%8A%E7%9A%84%E6%99%82%E5%80%99"><span class="nav-number">2.</span> <span class="nav-text">當數據改變的時候</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">1.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngOnInit"><span class="nav-number">2.</span> <span class="nav-text">ngOnInit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngOnChanges"><span class="nav-number">3.</span> <span class="nav-text">ngOnChanges</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngDoCheck"><span class="nav-number">4.</span> <span class="nav-text">ngDoCheck</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngAfterContentInit"><span class="nav-number">5.</span> <span class="nav-text">ngAfterContentInit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngAfterViewInit"><span class="nav-number">6.</span> <span class="nav-text">ngAfterViewInit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngAfterViewChecked"><span class="nav-number">7.</span> <span class="nav-text">ngAfterViewChecked</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngOnDestroy"><span class="nav-number">8.</span> <span class="nav-text">ngOnDestroy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%B6%E6%95%B8%E6%93%9A%E6%94%B9%E8%AE%8A%E7%9A%84%E6%99%82%E5%80%99"><span class="nav-number"></span> <span class="nav-text">當數據改變的時候</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Angular-vs-Vue"><span class="nav-number"></span> <span class="nav-text">Angular vs Vue</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -138,7 +138,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -210,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [Angular] - Life Hooks
+          生命週期 (Life Hooks)
         </h1>
 
         <div class="post-meta-container">
@@ -228,7 +228,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+        <time title="Modified: 2022-11-24 21:37:29" itemprop="dateModified" datetime="2022-11-24T21:37:29+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -250,18 +250,23 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="生命週期"><a href="#生命週期" class="headerlink" title="生命週期"></a>生命週期</h2><p><img src="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.39.40_g3w-n1T7hS9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802618366" alt="Life%20Hooks%208fbaa02f1ad44ff3b76564995fcd6b7a/_2021-07-21_1.34.35.png"></p>
-<hr>
-<span id="more"></span>
-
-<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>初始話一些參數</p>
-<h3 id="ngOnInit"><a href="#ngOnInit" class="headerlink" title="ngOnInit"></a>ngOnInit</h3><p>一些 api 請求</p>
-<h3 id="ngOnChanges"><a href="#ngOnChanges" class="headerlink" title="ngOnChanges"></a>ngOnChanges</h3><p>輸入屬性的值發生改變</p>
+        <p><img src="https://ik.imagekit.io/14v7jwku5tz/Blog/%E6%88%AA%E5%9C%96_2022-10-24_%E4%B8%8B%E5%8D%8810.02.43_gU7sEkE6u.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666620253816"></p>
+<p>Angular life hoooks</p>
+<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><ol>
+<li>初始化一些參數</li>
+<li>放外部的 <code>service</code> 引入</li>
+</ol>
+<h3 id="ngOnInit"><a href="#ngOnInit" class="headerlink" title="ngOnInit"></a>ngOnInit</h3><p>畫面在一開始進來的時候會執行過一次，建議在此處放 subscribe 的 function，作一些 <code>api</code> 請求動作</p>
+<h3 id="ngOnChanges"><a href="#ngOnChanges" class="headerlink" title="ngOnChanges"></a>ngOnChanges</h3><p>當 <code>@Input()</code> 的值變化的時候，此處的就會在發生變化，執行 JS</p>
+<blockquote>
+<p>注意：</p>
+<p>如果 csr 的方式，在 default 值就會進來，input 值在進來的時候就會在進來一次。但如果是 ssr 的話，只會在 input 傳入時候才會進來</p>
+</blockquote>
 <h3 id="ngDoCheck"><a href="#ngDoCheck" class="headerlink" title="ngDoCheck"></a>ngDoCheck</h3><p>檢測頁面上任何的變動</p>
-<h3 id="ngAfterContentInit"><a href="#ngAfterContentInit" class="headerlink" title="ngAfterContentInit"></a>ngAfterContentInit</h3><p>ContentChild 與 ContentChildren 初始化之後調用，只調用一次</p>
-<h3 id="ngAfterViewInit"><a href="#ngAfterViewInit" class="headerlink" title="ngAfterViewInit"></a>ngAfterViewInit</h3><p>ViewChild 與 ViewChildren 初始化之後調用，只調用一次</p>
-<h3 id="ngAfterViewChecked"><a href="#ngAfterViewChecked" class="headerlink" title="ngAfterViewChecked"></a>ngAfterViewChecked</h3><p>檢測，並在發生 Angular 無法或不願意自己檢測的變化時作出反應。<br>在每個變更檢測週期中，緊跟在 ngOnChanges() 和 ngOnInit() 後面調用,<br>有些特殊情況，有的時候我們需要真實的 dom 節點，可以再 ngDoCheck 判斷</p>
-<h3 id="ngOnDestroy"><a href="#ngOnDestroy" class="headerlink" title="ngOnDestroy"></a>ngOnDestroy</h3><p>去除訂閱，銷毀事件</p>
+<h3 id="ngAfterContentInit"><a href="#ngAfterContentInit" class="headerlink" title="ngAfterContentInit"></a>ngAfterContentInit</h3><p>ContentChild與ContentChildren初始化之後調用，只調用一次</p>
+<h3 id="ngAfterViewInit"><a href="#ngAfterViewInit" class="headerlink" title="ngAfterViewInit"></a>ngAfterViewInit</h3><p>ViewChild與ViewChildren初始化之後調用，只調用一次</p>
+<h3 id="ngAfterViewChecked"><a href="#ngAfterViewChecked" class="headerlink" title="ngAfterViewChecked"></a>ngAfterViewChecked</h3><p>檢測，並在發生 Angular 無法或不願意自己檢測的變化時作出反應。<br>在每個變更檢測週期中，緊跟在 ngOnChanges() 和 ngOnInit() 後面調用,<br>有些特殊情況，有的時候我們需要真實的dom節點，可以再ngDoCheck判斷</p>
+<h3 id="ngOnDestroy"><a href="#ngOnDestroy" class="headerlink" title="ngOnDestroy"></a>ngOnDestroy</h3><p>去除 <code>subscribe</code>，銷毀事件</p>
 <hr>
 <h2 id="當數據改變的時候"><a href="#當數據改變的時候" class="headerlink" title="當數據改變的時候"></a>當數據改變的時候</h2><p>第一次進來時的生命週期</p>
 <ol>
@@ -279,11 +284,57 @@
 <li>AfterContentChecked</li>
 <li>AfterViewChecked</li>
 <li>OnChanges</li>
-<li>DoCheck ⇒ 意自己檢測的變化時作出反應。 欲知詳情和範例，參閱本文件中的<a target="_blank" rel="noopener" href="https://angular.tw/guide/lifecycle-hooks#docheck">自訂變更檢測</a>。緊跟在每次執行變更檢測時的  <code>ngOnChanges()</code>  和 首次執行變更檢測時的  <code>ngOnInit()</code>  後呼叫。</li>
+<li>DoCheck  ⇒ 意自己檢測的變化時作出反應。 欲知詳情和範例，參閱本文件中的<a target="_blank" rel="noopener" href="https://angular.tw/guide/lifecycle-hooks#docheck">自訂變更檢測</a>。緊跟在每次執行變更檢測時的 <code>ngOnChanges()</code> 和 首次執行變更檢測時的 <code>ngOnInit()</code> 後呼叫。</li>
 <li>AfterContentChecked</li>
 <li>AfterViewChecked</li>
 </ol>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/96509858">Angular 生命周期</a></p>
+<h2 id="Angular-vs-Vue"><a href="#Angular-vs-Vue" class="headerlink" title="Angular vs Vue"></a>Angular vs Vue</h2><table>
+<thead>
+<tr>
+<th>不同點</th>
+<th>Angualar</th>
+<th>Vue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>屬性, 方法獲得</td>
+<td>任何生命週期都可以</td>
+<td>除了 beforeCreate 生命周期，其它都可以</td>
+</tr>
+<tr>
+<td>dom 節點獲取</td>
+<td>只能透過 ngDoCheck (包括 ngAfterView, ngAgteContentCheck)</td>
+<td>Mounted 生命週期後的皆可以</td>
+</tr>
+<tr>
+<td>ngDoCheck</td>
+<td>檢測頁面上的任何變動</td>
+<td>Vue 沒有類似的東西</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>NOTE</strong> [angular]ngOnChange 同 [vue]update，[angular]ngOnDestory 同 [vue]destory</p>
+<p><strong>參考資料</strong></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/96509858">Angular生命周期</a></p>
 <p><a target="_blank" rel="noopener" href="https://angular.tw/guide/lifecycle-hooks">Angular - 生命週期鉤子</a></p>
 <p><img src="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.34.35_Dg4tjbQDl.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802619918" alt="Life%20Hooks%208fbaa02f1ad44ff3b76564995fcd6b7a"></p>
 
@@ -302,13 +353,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/08/20/GMT-UTC/" rel="prev" title="GMT-UTC">
-                  <i class="fa fa-chevron-left"></i> GMT-UTC
+                <a href="/2022/05/27/Angular/Angular%20CLI/" rel="prev" title="Angular CLI 操作筆記">
+                  <i class="fa fa-chevron-left"></i> Angular CLI 操作筆記
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/05/27/Angular/router/" rel="next" title="[Angular] - Router">
-                  [Angular] - Router <i class="fa fa-chevron-right"></i>
+                <a href="/2022/05/27/Angular/router/" rel="next" title="Router">
+                  Router <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

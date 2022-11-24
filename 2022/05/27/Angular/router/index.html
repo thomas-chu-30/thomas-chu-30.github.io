@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-<link rel="manifest" href="/manifest.json"><meta name="description" content="Angular 路由建立 component 之後，去 &#x2F;src&#x2F;app&#x2F;app-routing.module.ts 引進 component 12345678910111213141516171819import &amp;#123; BrowserModule &amp;#125; from &quot;@angular&#x2F;platform-browser&quot;;import &amp;#123; NgModul">
+<link rel="manifest" href="/manifest.json"><meta name="description" content="Angular 路由建立 component 之後，去 &#x2F;src&#x2F;app&#x2F;app-routing.module.ts 引進 component">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Angular] - Router">
+<meta property="og:title" content="Router">
 <meta property="og:url" content="http://example.com/2022/05/27/Angular/router/index.html">
 <meta property="og:site_name" content="Life × Ex × Code">
-<meta property="og:description" content="Angular 路由建立 component 之後，去 &#x2F;src&#x2F;app&#x2F;app-routing.module.ts 引進 component 12345678910111213141516171819import &amp;#123; BrowserModule &amp;#125; from &quot;@angular&#x2F;platform-browser&quot;;import &amp;#123; NgModul">
+<meta property="og:description" content="Angular 路由建立 component 之後，去 &#x2F;src&#x2F;app&#x2F;app-routing.module.ts 引進 component">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-26T16:23:21.000Z">
-<meta property="article:modified_time" content="2022-08-16T05:22:13.672Z">
+<meta property="article:modified_time" content="2022-11-24T13:38:58.123Z">
 <meta property="article:author" content="Thomas_chu">
 <meta property="article:tag" content="angular">
 <meta name="twitter:card" content="summary">
@@ -39,10 +39,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/27/Angular/router/","path":"2022/05/27/Angular/router/","title":"[Angular] - Router"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/27/Angular/router/","path":"2022/05/27/Angular/router/","title":"Router"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[Angular] - Router | Life × Ex × Code</title>
+<title>Router | Life × Ex × Code</title>
   
 
 
@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -207,7 +207,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [Angular] - Router
+          Router
         </h1>
 
         <div class="post-meta-container">
@@ -225,7 +225,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+        <time title="Modified: 2022-11-24 21:38:58" itemprop="dateModified" datetime="2022-11-24T21:38:58+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,9 +248,9 @@
     
     <div class="post-body" itemprop="articleBody">
         <h2 id="Angular-路由"><a href="#Angular-路由" class="headerlink" title="Angular 路由"></a><strong>Angular 路由</strong></h2><p>建立 component 之後，去 <code>/src/app/app-routing.module.ts</code> 引進 component</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserModule &#125; from &quot;@angular/platform-browser&quot;;</span><br><span class="line">import &#123; NgModule &#125; from &quot;@angular/core&quot;;</span><br><span class="line">import &#123; AppRoutingModule &#125; from &quot;./app-routing.module&quot;;</span><br><span class="line">// CLI imports AppRoutingModule</span><br><span class="line">import &#123; AppComponent &#125; from &quot;./app.component&quot;;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    declarations: [</span><br><span class="line">        AppComponent,</span><br><span class="line">        // 在這裡引入 *** components</span><br><span class="line">    ],</span><br><span class="line">    imports: [</span><br><span class="line">        BrowserModule,</span><br><span class="line">        AppRoutingModule, // CLI adds AppRoutingModule to the AppModule&#x27;s imports array</span><br><span class="line">    ],</span><br><span class="line">    providers: [],</span><br><span class="line">    bootstrap: [AppComponent],</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123;&#125;</span><br></pre></td></tr></table></figure>
-
 <span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserModule &#125; from &quot;@angular/platform-browser&quot;;</span><br><span class="line">import &#123; NgModule &#125; from &quot;@angular/core&quot;;</span><br><span class="line">import &#123; AppRoutingModule &#125; from &quot;./app-routing.module&quot;;</span><br><span class="line">// CLI imports AppRoutingModule</span><br><span class="line">import &#123; AppComponent &#125; from &quot;./app.component&quot;;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    declarations: [</span><br><span class="line">        AppComponent,</span><br><span class="line">        // 在這裡引入 *** components</span><br><span class="line">    ],</span><br><span class="line">    imports: [</span><br><span class="line">        BrowserModule,</span><br><span class="line">        AppRoutingModule, // CLI adds AppRoutingModule to the AppModule&#x27;s imports array</span><br><span class="line">    ],</span><br><span class="line">    providers: [],</span><br><span class="line">    bootstrap: [AppComponent],</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123;&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在去 <code>/src/app/app-routing-modules.ts</code> 加上 routers</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &#123; NgModule &#125; from &quot;@angular/core&quot;;</span><br><span class="line">import &#123; Routes, RouterModule &#125; from &quot;@angular/router&quot;; // CLI imports router</span><br><span class="line"></span><br><span class="line">const routes: Routes = []; // sets up routes constant where you define your routes</span><br><span class="line"></span><br><span class="line">// configures NgModule imports and exports</span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    imports: [RouterModule.forRoot(routes)],</span><br><span class="line">    exports: [RouterModule],</span><br><span class="line">&#125;)</span><br><span class="line">export class AppRoutingModule &#123;&#125;</span><br></pre></td></tr></table></figure>
@@ -347,13 +347,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/05/27/Angular/life_hooks/" rel="prev" title="[Angular] - Life Hooks">
-                  <i class="fa fa-chevron-left"></i> [Angular] - Life Hooks
+                <a href="/2022/05/27/Angular/life_hooks/" rel="prev" title="生命週期 (Life Hooks)">
+                  <i class="fa fa-chevron-left"></i> 生命週期 (Life Hooks)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/05/27/Angular/resolver/" rel="next" title="[Angular] - Resolver">
-                  [Angular] - Resolver <i class="fa fa-chevron-right"></i>
+                <a href="/2022/05/27/Angular/resolver/" rel="next" title="Resolver">
+                  Resolver <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

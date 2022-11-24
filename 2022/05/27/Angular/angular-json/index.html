@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="angular.json 是 Angular CLI 的控制塔，它提供了 Angular workspace 和 project 的預設配置。 講解了一些 angular.json 的資料架構。 什麼是 Architect 和 Builders 與他們之間的關係。 Angular CLI 是如何透過 Architect 解析命令的。 如何透過 assets 在打包專案時複製完整的資料。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular JSON">
+<meta property="og:url" content="http://example.com/2022/05/27/Angular/angular-json/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="angular.json 是 Angular CLI 的控制塔，它提供了 Angular workspace 和 project 的預設配置。 講解了一些 angular.json 的資料架構。 什麼是 Architect 和 Builders 與他們之間的關係。 Angular CLI 是如何透過 Architect 解析命令的。 如何透過 assets 在打包專案時複製完整的資料。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ithelp.ithome.com.tw/upload/images/20210729/20124767ZvVJbw5arN.png">
+<meta property="og:image" content="https://ithelp.ithome.com.tw/upload/images/20210729/20124767Stj9kOMC1l.png">
+<meta property="article:published_time" content="2022-05-26T16:23:21.000Z">
+<meta property="article:modified_time" content="2022-11-24T13:38:07.110Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="angular">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ithelp.ithome.com.tw/upload/images/20210729/20124767ZvVJbw5arN.png">
+
+
+<link rel="canonical" href="http://example.com/2022/05/27/Angular/angular-json/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/27/Angular/angular-json/","path":"2022/05/27/Angular/angular-json/","title":"Angular JSON"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Angular JSON | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overall-JSON-structure"><span class="nav-number">1.</span> <span class="nav-text">Overall JSON structure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#root"><span class="nav-number">1.1.</span> <span class="nav-text">root</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#project"><span class="nav-number">1.2.</span> <span class="nav-text">project</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Architect"><span class="nav-number">2.</span> <span class="nav-text">What is Architect ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Builders"><span class="nav-number">3.</span> <span class="nav-text">What is Builders ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Understanding-the-command-mapping"><span class="nav-number">4.</span> <span class="nav-text">Understanding the command mapping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Assets-configuration"><span class="nav-number">5.</span> <span class="nav-text">Assets configuration</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/angular-json/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Angular JSON
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-27 00:23:21" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-11-24 21:38:07" itemprop="dateModified" datetime="2022-11-24T21:38:07+08:00">2022-11-24</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<ol>
+<li>angular.json 是 Angular CLI 的控制塔，它提供了 Angular workspace 和 project 的預設配置。</li>
+<li>講解了一些 angular.json 的資料架構。</li>
+<li>什麼是 Architect 和 Builders 與他們之間的關係。</li>
+<li>Angular CLI 是如何透過 Architect 解析命令的。</li>
+<li>如何透過 assets 在打包專案時複製完整的資料。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>Angular workspace root level 的一個文件，主要是提供 workspace 的配置與 project 的預設配置，供 Angular CLI 中 build 和 development tool 使用。</p>
+<p>A file named angular.json at the root level of an Angular workspace provides workspace-wide and project-specific configuration defaults for build and development tools provided by the Angular CLI. Path values given in the configuration are relative to the root workspace folder.</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="Overall-JSON-structure"><a href="#Overall-JSON-structure" class="headerlink" title="Overall JSON structure"></a>Overall JSON structure</h2><p>angular.json 主要分為兩個區域： root 和 project。</p>
+<h3 id="root"><a href="#root" class="headerlink" title="root"></a>root</h3><p>root 的部分主要是關於 workspace 的一些信息，主要用於配置 workspace，你會在上面找到：</p>
+<ul>
+<li>  <strong>version</strong>：你的 workspace 配置版本</li>
+<li>  <strong>newProjectRoot</strong>：這是用於創建新項目的路徑，比如使用 ng generate application 或 ng generate library ，那麼 Angular CLI 會藉由這個路徑知道要從哪裡生成 applicatioon 或 library。</li>
+<li>  <strong>defaultProject</strong>：這是在你使用 ng new 時所創建的屬性，他對應著你創建這個項目時給定的初始名稱，如果在使用 Angular CLI 時沒有填入項目名稱，則會直接將這個屬性帶入，比如說你要執行 app 時所使用的 ng server ，你可以直接執行 ng server 而不會出錯的原因就是它會自動將名稱帶入變成 ng server my-app。</li>
+<li>  <strong>projects</strong>：這裡包含了你的 application 和 library 所有必要的訊息。</li>
+<li>  <strong>schematics</strong>：用於客製化 ng generation 命令的預設選項。</li>
+</ul>
+<h3 id="project"><a href="#project" class="headerlink" title="project"></a>project</h3><p>project 的部分包含 CLI 可以使用的特定訊息，你會在上面找到：</p>
+<ul>
+<li>  <strong>root</strong>：這是 project 相對於 workspace 的路徑。</li>
+<li>  <strong>sourceroot</strong>：這是包含當前項目 source file 的文件夾路徑。</li>
+<li>  <strong>projectType</strong>：可以是 application 或 library，CLI 需要知道專案類型，因為每種類型都有對應的需求與限制，比如說 library 需要被打包才能分發並且不能在與 application 相反的瀏覽器中提供服務。</li>
+<li>  <strong>prefix</strong>：這是當前項目 selectors 的前綴字串，當使用 ng generate component 時會將這個前綴字加在你的 component 前面，比如你的 prefix 這制為 gna，那麼使用 ng generate component hello-world 所創建出來的 component 的 selectors 就會是 “gna-hello-world”。</li>
+<li>  <strong>schematics</strong>：用於這是當前 project 中某些 schematics 所使用到的默認選項，比如你要將你專案的樣是從 CSS 變為 SCSS，就可以在這個屬性中添加 “styleext”:“scss”。</li>
+<li>  <strong>architect</strong>：為這個 project 各個 architect 提供預設值。</li>
+</ul>
+<h2 id="What-is-Architect"><a href="#What-is-Architect" class="headerlink" title="What is Architect ?"></a>What is Architect ?</h2><p>可能看到這邊很多人都會覺得還可以，畢竟這些 porperty 大概都能了解在幹嘛而且也可以在自己的 Angular app 中找到對應的位置，但是！ “Architect” 這個到底是什麼？，可能對很多新手來說相當的複雜（我現在也迷迷糊糊，有說錯的話歡迎指正），接下來我們就來看看 Angular 官網是怎麼描述這個東西的。</p>
+<blockquote>
+<p>Architect is the tool that the CLI uses to perform complex tasks, such as compilation and test running</p>
+</blockquote>
+<p>Architect 是 CLI 用來執行複雜任務的工具，例如 compilation 和 test running，而 Architect 是一個 shell，它根據 target configuration 執行指定的 Builder 來執行給定的任務</p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20210729/20124767ZvVJbw5arN.png"></p>
+<p>可以把它看作是 <code>Angular CLI 與 builder 之間的 &quot;中間人&quot;</code>，Architect 是可以訪問或修改特定 builder 選項或添加選項配置的地方，<code>當你輸入 command 後 Architect 會對 command 進行分析、解析最後對正確的 builder 執行請求操作</code>。</p>
+<h2 id="What-is-Builders"><a href="#What-is-Builders" class="headerlink" title="What is Builders ?"></a>What is Builders ?</h2><p>大概了解 Architect 是什麼並且他在做什麼之後，那麼什麼是 Builders？， Builders 是 Architect 要處理特定任務時所運行的工具，通常他會對應到 npm package，例如 packageing your libreay 或 building，和 serving application。</p>
+<p>通常 builders 會接收兩個參數，一組輸入 option ( a JSON object )，和一個 context ( a BuilderContext object )，option object 由 CLI 使用者提供，而 context 由 CLI Builder API 提供。</p>
+<p>Angular 提供了一些由 CLI 用於 ng build 和 ng test 等命令的 builders，這些內建的 CLI Builders 可以在 angular.json 的 “Architect” 部分找到，當然你也可以當然你也可以使用 ng run 來自定你想要的 builders，不過這有點過於深入不在本章節的討論範圍。</p>
+<h2 id="Understanding-the-command-mapping"><a href="#Understanding-the-command-mapping" class="headerlink" title="Understanding the command mapping"></a>Understanding the command mapping</h2><p><img src="https://ithelp.ithome.com.tw/upload/images/20210729/20124767Stj9kOMC1l.png" alt="https://ithelp.ithome.com.tw/upload/images/20210729/20124767Stj9kOMC1l.png"></p>
+<p>正如我們前面所說的，當你輸入 command 後 Architect 會對 command 進行分析、解析最後對正確的 builder 執行請求操作，所以當我們輸入了簡化的 command 後，實際上他會被 Architect 轉化成通用的 command : ng run projectName:architectTarget。</p>
+<p>Example: build: ng build… → ng run :build</p>
+<p>知道了這一點後我們可以推敲一下這些命令在 Architect 轉換後會變成什麼：</p>
+<ul>
+<li>  build: ng build … → ng run my-app:build;</li>
+<li>  serve: ng serve … → ng run my-app:serve;</li>
+<li>  e2e: ng e2e … → ng run my-app:e2e;</li>
+<li>  test: ng test … → ng run my-app:test;</li>
+<li>  lint: ng lint … → ng run my-app:lint;</li>
+<li>  extract-i18n: ng xi18n … → ng run my-app:xi18n</li>
+</ul>
+<h2 id="Assets-configuration"><a href="#Assets-configuration" class="headerlink" title="Assets configuration"></a>Assets configuration</h2><p>在每一個 build target 中都可以有一個陣列，裡面可以放你想要的文件或文件夾，他會在你 build 專案的時候按照原樣複製一份，不會對他進行壓縮或打包，通常會把圖片放在這邊。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;assets&quot;</span>: [</span><br><span class="line">  <span class="string">&quot;src/assets&quot;</span>,</span><br><span class="line">  <span class="string">&quot;src/favicon.ico&quot;</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>你可以把 Assets 的內容變為一個一個的物件，這樣相較於只有填入檔案名稱或路徑會更清楚與更清晰，將 Assets 的內容變為物件可以具有以下個 key：</p>
+<ul>
+<li>  glob：使用 node-glob 設置的基本目錄</li>
+<li>  input：相對於 root 目錄的路徑</li>
+<li>  output：相對於 outDir 的路徑，簡單來說就是 build 後存放的位置，預設是 dist / project-name</li>
+<li>  ignore：要排除的 glob 列表</li>
+<li>  followSymlinks：使否允許搜尋符號鏈接的子目錄，默認為 false</li>
+</ul>
+<p>舉個例子你可以使用這些 key 更詳細描述你的 asset 路徑：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;assets&quot;</span>: [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">&quot;glob&quot;</span>: <span class="string">&quot;**/*&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;input&quot;</span>: <span class="string">&quot;src/assets/&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;output&quot;</span>: <span class="string">&quot;/assets/&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">&quot;glob&quot;</span>: <span class="string">&quot;favicon.ico&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;input&quot;</span>: <span class="string">&quot;src/&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;output&quot;</span>: <span class="string">&quot;/&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10259757">https://ithelp.ithome.com.tw/articles/10259757</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/angular/" rel="tag"># angular</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/guide/" rel="prev" title="Guides">
+                  <i class="fa fa-chevron-left"></i> Guides
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/Angular%20CLI/" rel="next" title="Angular CLI 操作筆記">
+                  Angular CLI 操作筆記 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"84efb91c32a1efa5e51273b128df8a7d"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

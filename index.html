@@ -129,7 +129,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -200,7 +200,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular/SSR/" class="post-title-link" itemprop="url">[Angular] - Server Side Render</a>
+          <a href="/2022/05/27/Angular/SSR/" class="post-title-link" itemprop="url">Server Side Render</a>
         </h2>
 
         <div class="post-meta-container">
@@ -218,7 +218,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+        <time title="Modified: 2022-11-24 21:39:06" itemprop="dateModified" datetime="2022-11-24T21:39:06+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -242,16 +242,14 @@
     <div class="post-body" itemprop="articleBody">
           <p>首先把你的專案改為 ssr</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng add @nguniversal/express-engine</span><br></pre></td></tr></table></figure>
-
-<p>ng 會幫你新建立一些資料，資料結構如下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">src/</span><br><span class="line">  index.html                 app web page</span><br><span class="line">  main.ts                    bootstrapper <span class="keyword">for</span> client app</span><br><span class="line">  main.server.ts             * bootstrapper <span class="keyword">for</span> server app</span><br><span class="line">  style.css                  styles <span class="keyword">for</span> the app</span><br><span class="line">  app/ ...                   application code</span><br><span class="line">    app.server.module.ts     * server-side application module</span><br><span class="line">server.ts                    * express web server</span><br><span class="line">tsconfig.json                TypeScript base configuration</span><br><span class="line">tsconfig.app.json            TypeScript browser application configuration</span><br><span class="line">tsconfig.server.json         TypeScript server application configuration</span><br><span class="line">tsconfig.spec.json           TypeScript tests configuration</span><br><span class="line"><span class="comment"># The files marked with * are new and not in the original tutorial sample.</span></span><br></pre></td></tr></table></figure>
-
-<p>在來啟動你的專案</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev:ssr</span><br></pre></td></tr></table></figure>
-
-<p>透過 routerLinks 導航時能正常工作，因為它們使用的是原生的連結標籤<code>&lt;a&gt;</code></p>
-<h2 id="解決-ssr-畫面閃爍問題-重要"><a href="#解決-ssr-畫面閃爍問題-重要" class="headerlink" title="解決 ssr 畫面閃爍問題(重要)"></a>解決 ssr 畫面閃爍問題(重要)</h2><p><a target="_blank" rel="noopener" href="https://fullstackladder.dev/blog/2021/10/31/angular-universal-transfer-state/">[Angular Universal] 使用 TransferState 解決畫面閃爍問題 | 全端開發人員天梯</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/27/Angular/SSR/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -290,7 +288,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular/decorators/" class="post-title-link" itemprop="url">[Angular] - Decorators</a>
+          <a href="/2022/05/27/Angular/decorators/" class="post-title-link" itemprop="url">Decorators</a>
         </h2>
 
         <div class="post-meta-container">
@@ -308,7 +306,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+        <time title="Modified: 2022-11-24 21:37:46" itemprop="dateModified" datetime="2022-11-24T21:37:46+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -379,7 +377,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular/element/" class="post-title-link" itemprop="url">[Angular] - Element</a>
+          <a href="/2022/05/27/Angular/element/" class="post-title-link" itemprop="url">Element</a>
         </h2>
 
         <div class="post-meta-container">
@@ -397,7 +395,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+        <time title="Modified: 2022-11-24 21:37:29" itemprop="dateModified" datetime="2022-11-24T21:37:29+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -419,7 +417,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="ng-container"><a href="#ng-container" class="headerlink" title="ng-container"></a>ng-container</h2><h2 id="ng-content"><a href="#ng-content" class="headerlink" title="ng-content"></a>ng-content</h2><h2 id="ng-template"><a href="#ng-template" class="headerlink" title="ng-template"></a>ng-template</h2>
+          <h1 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h1><h2 id="ng-container"><a href="#ng-container" class="headerlink" title="ng-container"></a>ng-container</h2><h2 id="ng-content"><a href="#ng-content" class="headerlink" title="ng-content"></a>ng-content</h2><h2 id="ng-template"><a href="#ng-template" class="headerlink" title="ng-template"></a>ng-template</h2>
       
     </div>
 
@@ -458,7 +456,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular/form/" class="post-title-link" itemprop="url">[Angular] - Form</a>
+          <a href="/2022/05/27/Angular/form/" class="post-title-link" itemprop="url">Form</a>
         </h2>
 
         <div class="post-meta-container">
@@ -476,94 +474,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="引用-mat-樣式"><a href="#引用-mat-樣式" class="headerlink" title="引用 mat 樣式"></a>引用 mat 樣式</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/27/Angular/form/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/guides/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Thomas_chu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Life × Ex × Code">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular/guides/" class="post-title-link" itemprop="url">[Angular] - Guides</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-05-27 00:23:21" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+        <time title="Modified: 2022-11-24 21:38:18" itemprop="dateModified" datetime="2022-11-24T21:38:18+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -586,18 +497,11 @@
     
     <div class="post-body" itemprop="articleBody">
           <blockquote>
-<p>開發時常用的參考資料</p>
-<p><a target="_blank" rel="noopener" href="https://docs.w3cub.com/angular/api/router">強大的文件資料</a></p>
-<p><a target="_blank" rel="noopener" href="https://fonts.google.com/icons?selected=Material+Icons">可查詢 Google Fonts</a></p>
-<p><a target="_blank" rel="noopener" href="https://angular.io/api">Angular api</a></p>
+<p><em>響應式表單</em>提供了一種模型驅動的方式來處理表單輸入，其中的值會隨時間而變化。本文會向你展示如何建立和更新基本的表單控制元件，接下來還會在一個表單組中使用多個控制元件，驗證表單的值，以及建立動態表單，也就是在執行期新增或移除控制元件。</p>
 </blockquote>
-<h2 id="常用-command-line-大全"><a href="#常用-command-line-大全" class="headerlink" title="常用 command line 大全"></a>常用 command line 大全</h2><blockquote>
-<p>可參考 CLI 命令參考手冊，下列為 generate component 的 command</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ ng g component home/component/my-new-component</span><br><span class="line"><span class="comment"># =&gt; 组件 | 相對生成組件生成位置在項目的根目錄的  src/app/home/component（指令其他等等都可以用該方式生成）</span></span><br><span class="line"><span class="comment"># ng g component my-component | home/component/my-new-component</span></span><br><span class="line"></span><br><span class="line">$ ng g directive my-new-directive =&gt;  指令</span><br><span class="line"></span><br><span class="line">$ ng g pipe my-new-pipe =&gt; 管道</span><br><span class="line"></span><br><span class="line">$ ng g service my-new-service =&gt; 服務</span><br><span class="line"></span><br><span class="line">$ ng g class my-new-class =&gt; 類</span><br><span class="line"></span><br><span class="line">$ ng g interface my-new-interface =&gt; 接口</span><br><span class="line"></span><br><span class="line">$ ng g enum my-new-enum =&gt; 枚舉</span><br><span class="line"></span><br><span class="line">$ ng g module my-module =&gt; 模塊</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/05/27/Angular/guides/#more" rel="contents">
+              <a class="btn" href="/2022/05/27/Angular/form/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -641,7 +545,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular/directive/" class="post-title-link" itemprop="url">[Angular] - Directive</a>
+          <a href="/2022/05/27/Angular/directive/" class="post-title-link" itemprop="url">Directive</a>
         </h2>
 
         <div class="post-meta-container">
@@ -659,7 +563,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+        <time title="Modified: 2022-11-24 21:37:29" itemprop="dateModified" datetime="2022-11-24T21:37:29+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -681,15 +585,67 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Commom-11"><a href="#Commom-11" class="headerlink" title="Commom (11)"></a>Commom (11)</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/27/Angular/directive/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h2 id="Commom-11"><a href="#Commom-11" class="headerlink" title="Commom (11)"></a>Commom (11)</h2><h2 id="class-style-bind"><a href="#class-style-bind" class="headerlink" title="class style bind"></a>class style bind</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Native Class and Style Attributes --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;is-danger my-button&quot;</span> <span class="attr">style</span>=<span class="string">&quot;border: none; color: blue&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Angular class and style Bindings --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> [<span class="attr">class.is-danger</span>]=<span class="string">&quot;booleanProp&quot;</span> [<span class="attr">style.border</span>]=<span class="string">&quot;borderProp&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- ngClass --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> [<span class="attr">ngClass</span>]=<span class="string">&quot;&#123;&#x27;is-danger&#x27;: booleanProp, &#x27;myButton&#x27;: true&#125;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> [<span class="attr">ngClass</span>]=<span class="string">&quot;isDangerButton&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- ngStyle --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> [<span class="attr">ngStyle</span>]=<span class="string">&quot;&#123;&#x27;border&#x27;: borderProp, &#x27;color&#x27;: colorProp&#125;&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> [<span class="attr">ngStyle</span>]=<span class="string">&quot;hasColorBorder&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/95490706">精通 Angular 之 NgClass 和 NgStyle</a></p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000008393758">angularJs 中关于 ng-class 的三种使用方式说明</a></p>
+<p><a target="_blank" rel="noopener" href="https://angular.tw/guide/attribute-binding">Angular - Attribute 繫結、類別繫結和樣式繫結</a></p>
+<h2 id="ngFor"><a href="#ngFor" class="headerlink" title="ngFor"></a>ngFor</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*ngFor=<span class="string">&quot;</span></span><br><span class="line"><span class="string">  let item of items;</span></span><br><span class="line"><span class="string">  let idx = index;</span></span><br><span class="line"><span class="string">  let first = first;</span></span><br><span class="line"><span class="string">  let last = last;</span></span><br><span class="line"><span class="string">  let even = even;</span></span><br><span class="line"><span class="string">  let odd = odd&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用 NgFor 時，我們可以同時搭配使用五個不同的變數，分別是：</p>
+<ul>
+<li>  index：整數值；代表目前資料在陣列中的 index</li>
+<li>  first：布林值；代表目前資料是否為 第一筆</li>
+<li>  last：布林值；代表目前資料是否為 最後一筆</li>
+<li>  even：布林值；代表目前資料的 index 是否為 第偶數筆</li>
+<li>  odd：布林值；代表目前資料的 index 是否為 第奇數筆</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://dotblogs.com.tw/wellwind/2017/01/01/angular2-ngfor-vars">全端開發人員天梯</a></p>
+<h2 id="ngIf"><a href="#ngIf" class="headerlink" title="ngIf"></a>ngIf</h2><blockquote>
+<p>ngIf 會直接看 DOM 不見，而 <code>[hidden]</code> 的這個寫法只會讓 dom 看不見</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngIf</span>=<span class="string">&quot;false&quot;</span>&gt;</span>test<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> [<span class="attr">hidden</span>]=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">&lt;!- [style.display]=&quot;!isLoading ? &#x27;block&#x27; : &#x27;none&#x27;&quot; -&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>ngIf</code> <code>else</code> 的 組合技</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngIf</span>=<span class="string">&quot;display; else anotherWord&quot;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ng-template</span> #<span class="attr">anotherWord</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>World<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ng-template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">&quot;display = !display&quot;</span>&gt;</span>Toggle Display<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="ngModel"><a href="#ngModel" class="headerlink" title="[(ngModel)]"></a>[(ngModel)]</h2><blockquote>
+<p>一定要引用 <code>import &#123; FormsModule &#125; from &#39;@angular/forms&#39;;</code> &gt; <code>imports: [FormsModule]</code><br>不然會沒有辦法使用</p>
+</blockquote>
+<p>有三種寫法都可以達到雙向綁定的效果</p>
+<h3 id="綁定方法1"><a href="#綁定方法1" class="headerlink" title="綁定方法1"></a>綁定方法1</h3><p>使用 <code>[()]</code> 的寫法</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> [(<span class="attr">ngModel</span>)]=<span class="string">&quot;username&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello &#123;&#123;username&#125;&#125;!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="綁定方法2"><a href="#綁定方法2" class="headerlink" title="綁定方法2"></a>綁定方法2</h3><p>將 <code>[]</code> <code>()</code> 分開寫</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> [<span class="attr">ngModel</span>]=<span class="string">&quot;username&quot;</span> (<span class="attr">ngModelChange</span>)=<span class="string">&quot;username = $event&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello &#123;&#123;username&#125;&#125;!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="綁定方法3"><a href="#綁定方法3" class="headerlink" title="綁定方法3"></a>綁定方法3</h3><p>不使用 <code>ngModel</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> [<span class="attr">value</span>]=<span class="string">&quot;username&quot;</span> (<span class="attr">input</span>)=<span class="string">&quot;username = $event.target.value&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello &#123;&#123;username&#125;&#125;!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://blog.kevinyang.net/2017/08/14/angular-two-way-binding/">ngMode 底層說明l</a></p>
+<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10205162">[Angular 深入淺出三十天] Day 09 - Angular 小學堂（二） - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天</a></p>
+<h2 id="NgTemplateOutLet"><a href="#NgTemplateOutLet" class="headerlink" title="NgTemplateOutLet"></a>NgTemplateOutLet</h2><p><a target="_blank" rel="noopener" href="https://www.tektutorialshub.com/angular/ngtemplateoutlet-in-angular/"></a></p>
+<h2 id="NgPlural"><a href="#NgPlural" class="headerlink" title="NgPlural"></a>NgPlural</h2><h2 id="NgPluraCase"><a href="#NgPluraCase" class="headerlink" title="NgPluraCase"></a>NgPluraCase</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">some-element</span> [<span class="attr">ngPlural</span>]=<span class="string">&quot;value&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ng-template</span> <span class="attr">ngPluralCase</span>=<span class="string">&quot;=0&quot;</span>&gt;</span>there is nothing<span class="tag">&lt;/<span class="name">ng-template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ng-template</span> <span class="attr">ngPluralCase</span>=<span class="string">&quot;=1&quot;</span>&gt;</span>there is one<span class="tag">&lt;/<span class="name">ng-template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ng-template</span> <span class="attr">ngPluralCase</span>=<span class="string">&quot;few&quot;</span>&gt;</span>there are a few<span class="tag">&lt;/<span class="name">ng-template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">some-element</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="NgSwitch"><a href="#NgSwitch" class="headerlink" title="NgSwitch"></a>NgSwitch</h2><h2 id="NgSwitchCase"><a href="#NgSwitchCase" class="headerlink" title="NgSwitchCase"></a>NgSwitchCase</h2><h2 id="NgSwitchDefault"><a href="#NgSwitchDefault" class="headerlink" title="NgSwitchDefault"></a><strong>NgSwitchDefault</strong></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// homepage.component.html</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ng-container</span> *<span class="attr">ngFor</span>=<span class="string">&quot;let link of links&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> [<span class="attr">ngSwitch</span>]=<span class="string">&quot;link?.name&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngSwitchCase</span>=<span class="string">&quot;&#x27;HOME&#x27;&quot;</span> <span class="attr">style</span>=<span class="string">&quot;color: blue&quot;</span>&gt;</span>&#123;&#123;link?.name&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngSwitchCase</span>=<span class="string">&quot;&#x27;ABOUT US&#x27;&quot;</span> <span class="attr">style</span>=<span class="string">&quot;color:red&quot;</span>&gt;</span>&#123;&#123;link?.name&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngSwitchCase</span>=<span class="string">&quot;&#x27;Students&#x27;&quot;</span> <span class="attr">style</span>=<span class="string">&quot;color: green&quot;</span>&gt;</span>&#123;&#123;link?.name&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngSwitchCase</span>=<span class="string">&quot;&#x27;Teachers&#x27;&quot;</span> <span class="attr">style</span>=<span class="string">&quot;color:violet&quot;</span>&gt;</span>&#123;&#123;link?.name&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngSwitchDefault</span>&gt;</span>output2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ng-container</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Forms-27"><a href="#Forms-27" class="headerlink" title="Forms (27)"></a>Forms (27)</h2><h2 id="Router-4"><a href="#Router-4" class="headerlink" title="Router (4)"></a>Router (4)</h2><p><a href="/docs/Angular-Framework/router">參考 router page</a></p>
+<p><a target="_blank" rel="noopener" href="https://angular.io/api?type=directive">angular api</a></p>
+<h2 id="upgrade-static-1"><a href="#upgrade-static-1" class="headerlink" title="upgrade/static (1)"></a>upgrade/static (1)</h2><h2 id="customer-directive"><a href="#customer-directive" class="headerlink" title="customer directive"></a>customer directive</h2><p>建立一個客制化的 directive</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ng g directive [NEW_DIRECTIVE]</span></span><br></pre></td></tr></table></figure>
+
+<p>下列是一個監聽 input event 來改變數值寫法</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Directive, ElementRef, HostListener, Input &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NgControl &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/forms&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Directive</span>(&#123; <span class="attr">selector</span>: <span class="string">&#x27;[appOnlyNumber]&#x27;</span> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">OnlyNumberDirective</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Input</span>() includeFloat: <span class="built_in">boolean</span> = <span class="literal">false</span>;</span><br><span class="line">    <span class="meta">@Input</span>() floatLength: <span class="built_in">number</span> = -<span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"><span class="keyword">private</span> el: ElementRef, <span class="keyword">private</span> control: NgControl</span>)</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="title">run</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> element = <span class="built_in">this</span>.el.nativeElement <span class="keyword">as</span> HTMLInputElement;</span><br><span class="line">        <span class="keyword">let</span> re = <span class="built_in">this</span>.includeFloat ? <span class="regexp">/[^\d.]/g</span> : <span class="regexp">/[^\d]/g</span>;</span><br><span class="line">        <span class="keyword">const</span> overTwoDots = element.value.split(<span class="string">&#x27;&#x27;</span>).filter(<span class="function">(<span class="params">item</span>) =&gt;</span> item === <span class="string">&#x27;.&#x27;</span>).length &gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (overTwoDots) &#123;</span><br><span class="line">            <span class="keyword">const</span> newValue = element.value.split(<span class="string">&#x27;&#x27;</span>).slice(<span class="number">0</span>, -<span class="number">1</span>).join(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">            <span class="built_in">this</span>.control.control.setValue(newValue);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">const</span> newValue = element.value.replace(re, <span class="string">&#x27;&#x27;</span>);</span><br><span class="line">        <span class="built_in">this</span>.control.control.setValue(newValue);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@HostListener</span>(<span class="string">&#x27;input&#x27;</span>, [<span class="string">&#x27;$event&#x27;</span>])</span><br><span class="line">    <span class="function"><span class="title">onInput</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.run();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ngOnDestroy(): <span class="built_in">void</span> &#123;</span><br><span class="line">        <span class="built_in">window</span>.removeEventListener(<span class="string">&#x27;input&#x27;</span>, <span class="built_in">this</span>.onInput.bind(<span class="built_in">this</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="how-to-add-image-in-assets-in-angular"><a href="#how-to-add-image-in-assets-in-angular" class="headerlink" title="how to add image in assets in angular"></a>how to add image in assets in angular</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> [<span class="attr">src</span>]=<span class="string">&quot;imageSrc&quot;</span> [<span class="attr">alt</span>]=<span class="string">&quot;imageAlt&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;&#123;&#123;imageSrc&#125;&#125;&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&#123;&#123;imageAlt&#125;&#125;&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">sample</span> <span class="title">Component</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">   imageSrc = <span class="string">&#x27;assets/images/iphone.png&#x27;</span></span><br><span class="line">   imageAlt = <span class="string">&#x27;iPhone&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -728,7 +684,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular/pipe/" class="post-title-link" itemprop="url">[Angular] - Pipe</a>
+          <a href="/2022/05/27/Angular/pipe/" class="post-title-link" itemprop="url">Pipe</a>
         </h2>
 
         <div class="post-meta-container">
@@ -746,7 +702,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+        <time title="Modified: 2022-11-24 21:37:29" itemprop="dateModified" datetime="2022-11-24T21:37:29+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -769,31 +725,86 @@
     
     <div class="post-body" itemprop="articleBody">
           <blockquote>
-<p>angular 原生的 number 需要特別去看一下</p>
+<p>angular 原生的 number 需要特別去看一下 decimaPipe</p>
 </blockquote>
-<h2 id="Common-13"><a href="#Common-13" class="headerlink" title="Common (13)"></a>Common (13)</h2><ol>
-<li>AsyncPipe</li>
-<li>DecimalPipe</li>
-<li>JsonPipe</li>
-<li>PercentPipe</li>
-<li>UpperCasePipe</li>
-<li>CurrencyPipe</li>
-<li>I18nPluraPipe</li>
-<li>KeyValuePipe</li>
-<li>SlicePipe</li>
-<li>DatePipe</li>
-<li>I18nSelectPipe</li>
-<li>LowCasePipe</li>
-<li>TitleCasePipe</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/27/Angular/pipe/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<h2 id="Common-Pipe"><a href="#Common-Pipe" class="headerlink" title="Common Pipe"></a>Common Pipe</h2><p><code>pipe</code> 的使用如下，也可以加上 params 的透過<code>:</code> 來傳入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;today | date:&#x27;yyyy/MM/dd HH:mm:ss&#x27;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下列是 <code>angular</code> 所提供的 <code>pipe</code> ，如下列：</p>
+<ul>
+<li>處理日期 format 的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/DatePipe">DatePipe</a></li>
+<li>處理貨幣單位非常方便的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/CurrencyPipe">CurrencyPipe</a></li>
+<li>自動 JSON 格式化的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/JsonPipe">JsonPipe</a></li>
+<li>幫你自動訂閱的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/AsyncPipe">AsyncPipe</a></li>
+<li>英文大小寫處理的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/UpperCasePipe">UpperCasePipe</a>、<a target="_blank" rel="noopener" href="https://angular.io/api/common/LowerCasePipe">LowerCasePipe</a> 與 <a target="_blank" rel="noopener" href="https://angular.io/api/common/TitleCasePipe">TitleCasePipe</a></li>
+<li>專門處理小數的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/DecimalPipe">DecimalPipe</a></li>
+<li>小數點轉百分比很方便的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/PercentPipe">PercentPipe</a></li>
+<li>陣列跟字串都可以用的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/SlicePipe">SlicePipe</a></li>
+<li>多國語系處理專門的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/I18nSelectPipe">I18nSelectPipe</a> 與 <a target="_blank" rel="noopener" href="https://angular.io/api/common/I18nPluralPipe">I18nPluralPipe</a></li>
+<li>暫時想不到用途的 <a target="_blank" rel="noopener" href="https://angular.io/api/common/KeyValuePipe">KeyValuePipe</a></li>
+</ul>
+<h3 id="DecimalPipe-number"><a href="#DecimalPipe-number" class="headerlink" title="DecimalPipe [ | number ]"></a>DecimalPipe [ | number ]</h3><p>使用方式如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; value_expression | number [ : digitsInfo [ : locale ] ] &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>value 是輸入值</li>
+<li>number 是這個 Pipes 元件的名稱</li>
+<li>digitsInfo 為字串型態的參數，非必填項目<ul>
+<li>格式如 <code>&#123;minIntegerDigits&#125;.&#123;minFractionDigits&#125;-&#123;maxFractionDigits&#125;</code></li>
+<li>minIntegerDigits：在小数点前的最小位数。默认为 1。</li>
+<li>minFractionDigits：小数点后的最小位数。默认为 0。</li>
+<li>maxFractionDigits：小数点后的最大为数，默认为 3。</li>
+</ul>
+</li>
+<li>locale 為字串型態的參數，非必填項目<ul>
+<li>用來設定這一串數字要用哪一個地區的數值格式呈現</li>
+</ul>
+</li>
+</ul>
+<p>因此可以按照官方提供的範例，複製一份並且在 Template 內隨意找個地方貼上玩看看：</p>
+<p><strong>Template</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;2.718&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>e (no formatting): &#123;&#123;e | number&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;002.71828&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>e (3.1-5): &#123;&#123;e | number:&#x27;3.1-5&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;0,002.71828&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>e (4.5-5): &#123;&#123;e | number:&#x27;4.5-5&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;0 002,71828&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>e (french): &#123;&#123;e | number:&#x27;4.5-5&#x27;:&#x27;fr&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;3.14&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>pi (no formatting): &#123;&#123;pi | number&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;003.14&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>pi (3.1-5): &#123;&#123;pi | number:&#x27;3.1-5&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;003.14000&#x27;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>pi (3.5-5): &#123;&#123;pi | number:&#x27;3.5-5&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--output &#x27;-3&#x27; / unlike &#x27;-2&#x27; by Math.round()--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>-2.5 (1.0-0): &#123;&#123;-2.5 | number:&#x27;1.0-0&#x27;&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Template 有用到 <code>e</code> 以及 <code>pi</code> 這兩個內嵌繫結，因此必須在 class 內補上這兩個屬性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</span><br><span class="line">  inputValue = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  pi: number = <span class="number">3.14</span>;</span><br><span class="line">  e: number = <span class="number">2.718281828459045</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>運行開發伺服器，看看效果如何～</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://i.imgur.com/zqZBBLG.png"><img src="https://i.imgur.com/zqZBBLG.png" alt="img"></a></p>
+<ul>
+<li>第一個結果 e 輸出是 2.718 ，對照後也就是說預設的情況下 DecimalPipe 會輸出小數點後三位的數字，其餘全部捨去。<ul>
+<li>而這個結果是因為沒有填寫任何參數，是參數的默認值導致</li>
+</ul>
+</li>
+<li>第二個結果傳入一個參數 <code>3.1-5</code> ，對照上面的格式與參數解釋後，得到結果 e 為 002.71828</li>
+</ul>
+<blockquote>
+<p>可透過修改第一個參數達成想要的數字格式。</p>
+</blockquote>
+<ul>
+<li>第四個結果，傳入的第二個參數為 fr ，代表採用法國的數值格式<ul>
+<li>在法國，小數點是當作千分號使用，而千分號則是使用空白替代</li>
+<li>透過不同的國家的 locale id 就可以轉換成對應的地區數值格式<ul>
+<li>台灣為 zh-TW</li>
+<li>日本為 jp</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>不僅僅第一個參數可以利用，配合第二個參數一起使用才是王道。</strong></p>
+<blockquote>
+<p>而這個 Pipes 元件好玩的地方是，它的名稱叫做 DecimalPipe ，但實際使用卻是輸入 number ，這是容易搞混的地方要特別注意。</p>
+</blockquote>
+<h2 id="Customer-pipe"><a href="#Customer-pipe" class="headerlink" title="Customer pipe"></a>Customer pipe</h2><p>下列是客製化 pipe 的用法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Pipe, PipeTransform &#125; from &#x27;@angular/core&#x27;;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * Raise the value exponentially</span><br><span class="line"> * Takes an exponent argument that defaults to 1.</span><br><span class="line"> * Usage:</span><br><span class="line"> *   value | exponentialStrength:exponent</span><br><span class="line"> * Example:</span><br><span class="line"> *   &#123;&#123; 2 | exponentialStrength:10 &#125;&#125;</span><br><span class="line"> *   formats to: 1024</span><br><span class="line">*/</span><br><span class="line">@Pipe(&#123;name: &#x27;exponentialStrength&#x27;&#125;)</span><br><span class="line">export class ExponentialStrengthPipe implements PipeTransform &#123;</span><br><span class="line">  transform(value: number, exponent: string): number &#123;</span><br><span class="line">    let exp = parseFloat(exponent);</span><br><span class="line">    return Math.pow(value, isNaN(exp) ? 1 : exp);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://stackblitz.com/edit/custom-pipe-demo?file=app/pipes/truncate.pipe.ts">custom-pipe-demo - StackBlitz</a></p>
+<p><a target="_blank" rel="noopener" href="https://pvt5r486.github.io/f2e/20190529/2426750085/">[從 0 開始的 Angular 生活]No.22 使用 Pipes 管線元件</a></p>
+<h2 id="在-JS-中-call-pip-function"><a href="#在-JS-中-call-pip-function" class="headerlink" title="在 JS 中 call pip function"></a>在 JS 中 call pip function</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; FirstUpperCasePipe &#125; <span class="keyword">from</span> <span class="string">&#x27;src/app/pipes/first-upper-case.pipe&#x27;</span>;</span><br><span class="line"><span class="comment">// new 一個新的 class </span></span><br><span class="line"><span class="keyword">const</span> slugUpperCase = <span class="keyword">new</span> FirstUpperCasePipe().transform(<span class="built_in">this</span>.slug);</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -832,7 +843,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular/resolver/" class="post-title-link" itemprop="url">[Angular] - Resolver</a>
+          <a href="/2022/05/27/Angular/resolver/" class="post-title-link" itemprop="url">Resolver</a>
         </h2>
 
         <div class="post-meta-container">
@@ -850,7 +861,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+        <time title="Modified: 2022-11-24 21:38:51" itemprop="dateModified" datetime="2022-11-24T21:38:51+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -872,7 +883,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>router 轉址後會先經過 resolver 在去到另一個 router ，因此可先在此取得資料，到新頁面時就可直接賦予值</p>
+          <h1 id="Resolver"><a href="#Resolver" class="headerlink" title="Resolver"></a>Resolver</h1><p>router 轉址後會先經過 resolver 在去到另一個 router ，因此可先在此取得資料，到新頁面時就可直接賦予值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng generate resolver &lt;folder/name&gt; [options eg. --skip-tests]</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
@@ -920,7 +931,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular/router/" class="post-title-link" itemprop="url">[Angular] - Router</a>
+          <a href="/2022/05/27/Angular/router/" class="post-title-link" itemprop="url">Router</a>
         </h2>
 
         <div class="post-meta-container">
@@ -938,7 +949,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+        <time title="Modified: 2022-11-24 21:38:58" itemprop="dateModified" datetime="2022-11-24T21:38:58+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -961,7 +972,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="Angular-路由"><a href="#Angular-路由" class="headerlink" title="Angular 路由"></a><strong>Angular 路由</strong></h2><p>建立 component 之後，去 <code>/src/app/app-routing.module.ts</code> 引進 component</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserModule &#125; from &quot;@angular/platform-browser&quot;;</span><br><span class="line">import &#123; NgModule &#125; from &quot;@angular/core&quot;;</span><br><span class="line">import &#123; AppRoutingModule &#125; from &quot;./app-routing.module&quot;;</span><br><span class="line">// CLI imports AppRoutingModule</span><br><span class="line">import &#123; AppComponent &#125; from &quot;./app.component&quot;;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    declarations: [</span><br><span class="line">        AppComponent,</span><br><span class="line">        // 在這裡引入 *** components</span><br><span class="line">    ],</span><br><span class="line">    imports: [</span><br><span class="line">        BrowserModule,</span><br><span class="line">        AppRoutingModule, // CLI adds AppRoutingModule to the AppModule&#x27;s imports array</span><br><span class="line">    ],</span><br><span class="line">    providers: [],</span><br><span class="line">    bootstrap: [AppComponent],</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123;&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/05/27/Angular/router/#more" rel="contents">
@@ -1008,7 +1018,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/27/Angular/life_hooks/" class="post-title-link" itemprop="url">[Angular] - Life Hooks</a>
+          <a href="/2022/05/27/Angular/life_hooks/" class="post-title-link" itemprop="url">生命週期 (Life Hooks)</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1026,7 +1036,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-08-16 13:22:13" itemprop="dateModified" datetime="2022-08-16T13:22:13+08:00">2022-08-16</time>
+        <time title="Modified: 2022-11-24 21:37:29" itemprop="dateModified" datetime="2022-11-24T21:37:29+08:00">2022-11-24</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1048,11 +1058,176 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="生命週期"><a href="#生命週期" class="headerlink" title="生命週期"></a>生命週期</h2><p><img src="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.39.40_g3w-n1T7hS9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802618366" alt="Life%20Hooks%208fbaa02f1ad44ff3b76564995fcd6b7a/_2021-07-21_1.34.35.png"></p>
+          <p><img src="https://ik.imagekit.io/14v7jwku5tz/Blog/%E6%88%AA%E5%9C%96_2022-10-24_%E4%B8%8B%E5%8D%8810.02.43_gU7sEkE6u.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666620253816"></p>
+<p>Angular life hoooks</p>
+<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><ol>
+<li>初始化一些參數</li>
+<li>放外部的 <code>service</code> 引入</li>
+</ol>
+<h3 id="ngOnInit"><a href="#ngOnInit" class="headerlink" title="ngOnInit"></a>ngOnInit</h3><p>畫面在一開始進來的時候會執行過一次，建議在此處放 subscribe 的 function，作一些 <code>api</code> 請求動作</p>
+<h3 id="ngOnChanges"><a href="#ngOnChanges" class="headerlink" title="ngOnChanges"></a>ngOnChanges</h3><p>當 <code>@Input()</code> 的值變化的時候，此處的就會在發生變化，執行 JS</p>
+<blockquote>
+<p>注意：</p>
+<p>如果 csr 的方式，在 default 值就會進來，input 值在進來的時候就會在進來一次。但如果是 ssr 的話，只會在 input 傳入時候才會進來</p>
+</blockquote>
+<h3 id="ngDoCheck"><a href="#ngDoCheck" class="headerlink" title="ngDoCheck"></a>ngDoCheck</h3><p>檢測頁面上任何的變動</p>
+<h3 id="ngAfterContentInit"><a href="#ngAfterContentInit" class="headerlink" title="ngAfterContentInit"></a>ngAfterContentInit</h3><p>ContentChild與ContentChildren初始化之後調用，只調用一次</p>
+<h3 id="ngAfterViewInit"><a href="#ngAfterViewInit" class="headerlink" title="ngAfterViewInit"></a>ngAfterViewInit</h3><p>ViewChild與ViewChildren初始化之後調用，只調用一次</p>
+<h3 id="ngAfterViewChecked"><a href="#ngAfterViewChecked" class="headerlink" title="ngAfterViewChecked"></a>ngAfterViewChecked</h3><p>檢測，並在發生 Angular 無法或不願意自己檢測的變化時作出反應。<br>在每個變更檢測週期中，緊跟在 ngOnChanges() 和 ngOnInit() 後面調用,<br>有些特殊情況，有的時候我們需要真實的dom節點，可以再ngDoCheck判斷</p>
+<h3 id="ngOnDestroy"><a href="#ngOnDestroy" class="headerlink" title="ngOnDestroy"></a>ngOnDestroy</h3><p>去除 <code>subscribe</code>，銷毀事件</p>
 <hr>
+<h2 id="當數據改變的時候"><a href="#當數據改變的時候" class="headerlink" title="當數據改變的時候"></a>當數據改變的時候</h2><p>第一次進來時的生命週期</p>
+<ol>
+<li>OnChanges ⇒ 在 ngOnInit() 之前以及所繫結的一個或多個輸入屬性的值發生變化時都會呼叫。注意，如果你的元件沒有輸入，或者你使用它時沒有提供任何輸入，那麼框架就不會呼叫 ngOnChanges()。</li>
+<li>OnInit ⇒ 在第一輪 ngOnChanges() 完成之後呼叫，只調用一次。</li>
+<li>ngDoCheck</li>
+<li>AfterContentInit</li>
+<li>AfterContentChecked</li>
+<li>AfterViewInit</li>
+<li>AfterViewChecked</li>
+</ol>
+<p><code>@input</code>數據發生變化 (這個有一點點像是 vue 的 props)</p>
+<ol>
+<li>ngDoCheck</li>
+<li>AfterContentChecked</li>
+<li>AfterViewChecked</li>
+<li>OnChanges</li>
+<li>DoCheck  ⇒ 意自己檢測的變化時作出反應。 欲知詳情和範例，參閱本文件中的<a target="_blank" rel="noopener" href="https://angular.tw/guide/lifecycle-hooks#docheck">自訂變更檢測</a>。緊跟在每次執行變更檢測時的 <code>ngOnChanges()</code> 和 首次執行變更檢測時的 <code>ngOnInit()</code> 後呼叫。</li>
+<li>AfterContentChecked</li>
+<li>AfterViewChecked</li>
+</ol>
+<h2 id="Angular-vs-Vue"><a href="#Angular-vs-Vue" class="headerlink" title="Angular vs Vue"></a>Angular vs Vue</h2><table>
+<thead>
+<tr>
+<th>不同點</th>
+<th>Angualar</th>
+<th>Vue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>屬性, 方法獲得</td>
+<td>任何生命週期都可以</td>
+<td>除了 beforeCreate 生命周期，其它都可以</td>
+</tr>
+<tr>
+<td>dom 節點獲取</td>
+<td>只能透過 ngDoCheck (包括 ngAfterView, ngAgteContentCheck)</td>
+<td>Mounted 生命週期後的皆可以</td>
+</tr>
+<tr>
+<td>ngDoCheck</td>
+<td>檢測頁面上的任何變動</td>
+<td>Vue 沒有類似的東西</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>NOTE</strong> [angular]ngOnChange 同 [vue]update，[angular]ngOnDestory 同 [vue]destory</p>
+<p><strong>參考資料</strong></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/96509858">Angular生命周期</a></p>
+<p><a target="_blank" rel="noopener" href="https://angular.tw/guide/lifecycle-hooks">Angular - 生命週期鉤子</a></p>
+<p><img src="https://ik.imagekit.io/14v7jwku5tz/Blogger/Docusaurus/_2021-07-21_1.34.35_Dg4tjbQDl.png?ik-sdk-version=javascript-1.4.3&updatedAt=1644802619918" alt="Life%20Hooks%208fbaa02f1ad44ff3b76564995fcd6b7a"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/27/Angular/Angular%20CLI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/27/Angular/Angular%20CLI/" class="post-title-link" itemprop="url">Angular CLI 操作筆記</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-27 00:23:21" itemprop="dateCreated datePublished" datetime="2022-05-27T00:23:21+08:00">2022-05-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-11-24 21:37:56" itemprop="dateModified" datetime="2022-11-24T21:37:56+08:00">2022-11-24</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/FrontEnd/" itemprop="url" rel="index"><span itemprop="name">FrontEnd</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>開發 Angular 就不能不知道 Angular CLI 這個超級好用的命令列工具，有了這個工具，原本渾沌的開發環境，頓時清晰，許多繁瑣的瑣事，一個命令就搞定！這邊是我自己的操作筆記，讓記憶力不佳的我，有個地方可以方便查詢。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/05/27/Angular/life_hooks/#more" rel="contents">
+              <a class="btn" href="/2022/05/27/Angular/Angular%20CLI/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1076,7 +1251,7 @@
 
 
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>

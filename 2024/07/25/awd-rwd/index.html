@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+<link rel="manifest" href="/manifest.json"><meta name="description" content="網站不能沒有 RWD、AWD沒有 RWD、AWD 的網站到底會怎樣？先講結論，網站流量慢慢會掉下來，因為 Google 說「演算法以行動網站為主」，網站沒有行動網站流量就會慢慢消失，RWD 跟 AWD 都是行動網站，所以網站一定要有 RWD 或 AWD，現在用行動裝置上網的比例超過 80%，簡單來說沒有手機版的網站等於宣告死刑，沒有手機版的網站請趕快改版，即使是 B2B 網站，RWD、AWD 都">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什麼是 RWD？ RWD 跟 AWD 有什麼不同？">
+<meta property="og:url" content="http://example.com/2024/07/25/awd-rwd/index.html">
+<meta property="og:site_name" content="Life × Ex × Code">
+<meta property="og:description" content="網站不能沒有 RWD、AWD沒有 RWD、AWD 的網站到底會怎樣？先講結論，網站流量慢慢會掉下來，因為 Google 說「演算法以行動網站為主」，網站沒有行動網站流量就會慢慢消失，RWD 跟 AWD 都是行動網站，所以網站一定要有 RWD 或 AWD，現在用行動裝置上網的比例超過 80%，簡單來說沒有手機版的網站等於宣告死刑，沒有手機版的網站請趕快改版，即使是 B2B 網站，RWD、AWD 都">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.da-vinci.com.tw/uploads/images/cache/a8c2eb45f4d5776ca28ca0f831041c29-1000x500c00-1-1.png">
+<meta property="og:image" content="https://www.da-vinci.com.tw/uploads/editor/files/mobile-network-use.png">
+<meta property="og:image" content="https://www.da-vinci.com.tw/uploads/editor/files/%E7%B6%B2%E7%AB%99%E4%BB%A5%E8%A1%8C%E5%8B%95%E7%B4%A2%E5%BC%95%E7%82%BA%E4%B8%BB.jpg">
+<meta property="og:image" content="https://www.da-vinci.com.tw/uploads/editor/files/gsc%E6%AA%A2%E6%9F%A5%E8%A1%8C%E5%8B%95%E8%A3%9D%E7%BD%AE%E5%8F%AF%E7%94%A8%E6%80%A7.jpg">
+<meta property="article:published_time" content="2024-07-24T22:06:12.758Z">
+<meta property="article:modified_time" content="2024-07-24T22:09:32.864Z">
+<meta property="article:author" content="Thomas_chu">
+<meta property="article:tag" content="rwd">
+<meta property="article:tag" content="awd">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.da-vinci.com.tw/uploads/images/cache/a8c2eb45f4d5776ca28ca0f831041c29-1000x500c00-1-1.png">
+
+
+<link rel="canonical" href="http://example.com/2024/07/25/awd-rwd/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2024/07/25/awd-rwd/","path":"2024/07/25/awd-rwd/","title":"什麼是 RWD？ RWD 跟 AWD 有什麼不同？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>什麼是 RWD？ RWD 跟 AWD 有什麼不同？ | Life × Ex × Code</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Life × Ex × Code</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E7%AB%99%E4%B8%8D%E8%83%BD%E6%B2%92%E6%9C%89-RWD%E3%80%81AWD"><span class="nav-number">1.</span> <span class="nav-text">網站不能沒有 RWD、AWD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-%E5%B9%B4%E5%8F%B0%E7%81%A3%E8%A1%8C%E5%8B%95%E4%B8%8A%E7%B6%B2%E4%BA%BA%E5%8F%A3"><span class="nav-number">1.1.</span> <span class="nav-text">2020 年台灣行動上網人口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RWD-%E6%98%AF%E7%94%9A%E9%BA%BC"><span class="nav-number">2.</span> <span class="nav-text">RWD 是甚麼?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RWD-%E8%87%AA%E5%8B%95%E6%94%BE%E5%A4%A7%E7%B8%AE%E5%B0%8F%E7%B6%B2%E7%AB%99%E5%B0%BA%E5%AF%B8"><span class="nav-number">2.1.</span> <span class="nav-text">RWD 自動放大縮小網站尺寸</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWD-%E6%98%AF%E7%94%9A%E9%BA%BC"><span class="nav-number">3.</span> <span class="nav-text">AWD 是甚麼?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RWD%E3%80%81AWD-%E6%9C%89%E4%BB%80%E9%BA%BC%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">RWD、AWD 有什麼不同？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RWD%E3%80%81AWD-%E6%87%89%E8%A9%B2%E6%80%8E%E9%BA%BC%E9%81%B8%E5%91%A2%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">RWD、AWD 應該怎麼選呢？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A7%E5%AE%B9%E5%BE%88%E5%A4%9A%E6%89%8D%E9%9C%80%E8%A6%81%E7%94%A8-AWD"><span class="nav-number">5.1.</span> <span class="nav-text">內容很多才需要用 AWD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AWD-%E8%A3%BD%E4%BD%9C%E3%80%81%E7%B6%AD%E8%AD%B7%E6%88%90%E6%9C%AC%E9%AB%98"><span class="nav-number">5.2.</span> <span class="nav-text">AWD 製作、維護成本高</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E6%9B%B4%E6%B7%B1%E5%85%A5%E4%BD%BF%E7%94%A8%E8%80%85%E9%AB%94%E9%A9%97-UX"><span class="nav-number">5.3.</span> <span class="nav-text">需要更深入使用者體驗(UX)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RWD%E3%80%81AWD-%E5%93%AA%E4%B8%80%E7%A8%AE%E5%B0%8D-SEO-%E6%AF%94%E8%BC%83%E5%A5%BD%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">RWD、AWD 哪一種對 SEO 比較好？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RWD-%E6%9C%89%E5%85%A9%E7%A8%AE%E8%A8%AD%E8%A8%88%E6%96%B9%E5%BC%8F"><span class="nav-number">7.</span> <span class="nav-text">RWD 有兩種設計方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E6%A1%86%E6%9E%B6%E5%B7%A5%E5%85%B7%E8%A3%BD%E4%BD%9C-RWD"><span class="nav-number">7.1.</span> <span class="nav-text">以框架工具製作 RWD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E6%89%8B%E5%B7%A5%E5%88%87%E7%89%88%E8%A3%BD%E4%BD%9C-RWD"><span class="nav-number">7.2.</span> <span class="nav-text">以手工切版製作 RWD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%AA%A2%E6%9F%A5%E8%A1%8C%E5%8B%95%E7%89%88%E7%B6%B2%E7%AB%99%E7%9A%84%E7%8B%80%E6%B3%81%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">如何檢查行動版網站的狀況？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Google-%E4%BB%A5%E8%A1%8C%E5%8B%95%E7%B6%B2%E7%AB%99%E4%BD%9C%E7%82%BA%E7%B4%A2%E5%BC%95%EF%BC%8C%E9%9F%BF%E6%87%89%E5%BC%8F%E7%B6%B2%E7%AB%99%E8%AE%8A%E5%BE%97%E9%87%8D%E8%A6%81"><span class="nav-number">8.1.</span> <span class="nav-text">Google 以行動網站作為索引，響應式網站變得重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Google-Search-Console-%E6%AA%A2%E6%9F%A5%E8%A1%8C%E5%8B%95%E7%B6%B2%E7%AB%99-%E9%9F%BF%E6%87%89%E5%BC%8F%E7%B6%B2%E7%AB%99"><span class="nav-number">8.2.</span> <span class="nav-text">Google Search Console 檢查行動網站(響應式網站)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">8.3.</span> <span class="nav-text">結論</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">9.</span> <span class="nav-text">參考文章</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Thomas_chu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Thomas_chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thomas-chu-30" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thomas-chu-30" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/25/awd-rwd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Thomas_chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life × Ex × Code">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          什麼是 RWD？ RWD 跟 AWD 有什麼不同？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-07-25 06:06:12 / Modified: 06:09:32" itemprop="dateCreated datePublished" datetime="2024-07-25T06:06:12+08:00">2024-07-25</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="https://www.da-vinci.com.tw/uploads/images/cache/a8c2eb45f4d5776ca28ca0f831041c29-1000x500c00-1-1.png" alt="RWD or AWD"></p>
+<h2 id="網站不能沒有-RWD、AWD"><a href="#網站不能沒有-RWD、AWD" class="headerlink" title="網站不能沒有 RWD、AWD"></a>網站不能沒有 RWD、AWD</h2><p>沒有 RWD、AWD 的網站到底會怎樣？先講結論，網站流量慢慢會掉下來，因為 Google 說「演算法以行動網站為主」，網站沒有行動網站流量就會慢慢消失，RWD 跟 AWD 都是行動網站，所以網站一定要有 RWD 或 AWD，現在用行動裝置上網的比例超過 80%，簡單來說沒有手機版的網站等於宣告死刑，沒有手機版的網站請趕快改版，即使是 B2B 網站，RWD、AWD 都不是新技術，已經是成熟的網頁設計方式，而且套版網站設計費沒有很高，趕快改版才是當務之急。<br>〈<strong>延伸閱讀：</strong><a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/webdesign-5fact">網頁設計公司不會告訴你的 5 個真相</a>〉</p>
+<span id="more"></span>
+<!--truncate-->
+
+<h3 id="2020-年台灣行動上網人口"><a href="#2020-年台灣行動上網人口" class="headerlink" title="2020 年台灣行動上網人口"></a>2020 年台灣行動上網人口</h3><p><img src="https://www.da-vinci.com.tw/uploads/editor/files/mobile-network-use.png" alt="沒有RWD網站無法生存"><br><em>來源：TWNIC</em></p>
+<h2 id="RWD-是甚麼"><a href="#RWD-是甚麼" class="headerlink" title="RWD 是甚麼?"></a>RWD 是甚麼?</h2><p>RWD 的英文全名是 Responsive Web Design，中文翻譯是「響應式網頁設計」，簡單來說 RWD 就是「同一個網址可同時出現手機、平板、桌機的網站的設計方法」，隨著各種裝置銀幕的大小，自動會顯示不同的網站尺寸，用手機就跑手機版網站，用桌機就跑桌機版網站，用平板就跑平板網站，RWD 就是把三個版本網站合而為一。怎麼知道網站是不是 RWD? 你可以實驗一下，把瀏覽器的視窗拉一拉就知道了，RWD 會讀取「同一個 CSS」，會自動排列網站，請點擊看下方影片就知道可以 RWD 怎麼變化，網站如果是 AWD 或是傳統的手機版網站，是不會這樣變化版面的。</p>
+<h3 id="RWD-自動放大縮小網站尺寸"><a href="#RWD-自動放大縮小網站尺寸" class="headerlink" title="RWD 自動放大縮小網站尺寸"></a>RWD 自動放大縮小網站尺寸</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">controls</span>=<span class="string">&quot;&quot;</span> <span class="attr">height</span>=<span class="string">&quot;240&quot;</span> <span class="attr">width</span>=<span class="string">&quot;320&quot;</span> <span class="attr">style</span>=<span class="string">&quot;box-sizing: inherit; display: inline-block; position: absolute; width: 810px; height: 506.25px; left: 0px; top: 0px;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="AWD-是甚麼"><a href="#AWD-是甚麼" class="headerlink" title="AWD 是甚麼?"></a>AWD 是甚麼?</h2><p>AWD 的英文全名是 Adaptive Web Design，中文翻譯是「自適應網頁設計」，AWD 跟 RWD 外觀、使用起來都沒有太大差別，因為 AWD 跟 RWD 一樣都是「以同一個網址同時出現手機、平板、桌機的網站設計方法」，如果你有看上面的小短片就知道，視窗拉動的時候以 RWD 設計的網站是會放大縮小的，但是 AWD 不會放大縮小，因為 AWD 是會讀取「多個不同的 CSS」，所以只會在真正的裝置上顯示自適應的頁面。<br><strong>〈延伸閱讀：</strong><a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/seo-webdesign">網頁設計與 SEO 的完美整合</a>〉</p>
+<p><strong>CSS 是甚麼?</strong><br>CSS，英文是 Cascading Style Sheets，中文稱做：樣式表、級聯樣式表、串接樣式表、階層式樣式表，CSS 不能單獨使用，必須與 HTML 或 XML 一起協同工作，CSS 樣式表是在定義網站的外觀、樣式、字體大小、字體粗細、字體顏色、元素對齊、定位…這些元素，CSS 主要目的就是設定網頁的布局、設定網頁的樣式，CSS 樣式定義完成之後，就可以用在全部的網站，讓網站不用一頁一頁設定字體、顏色、位置、樣式….，可以加速網站設計，RWD 是共用 CSS，AWD 則是分開 CSS，CSS 樣式工作都是由前端工程師負責製作。</p>
+<p><strong>〈延伸閱讀：</strong><a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/front-end-webdesign">網頁設計為什麼需要前端工程師？</a>〉</p>
+<h2 id="RWD、AWD-有什麼不同？"><a href="#RWD、AWD-有什麼不同？" class="headerlink" title="RWD、AWD 有什麼不同？"></a>RWD、AWD 有什麼不同？</h2><p>不刻意去辨識之下，RWD、AWD 從外觀是看不出來差異的，雖然都是同一個網址跑多個版本網站，但兩者在技術上是有差異的，像是 RWD 是讀同一個 CSS，AWD 則讀取不同 CSS，AWD 可以輕易讓不同的內容在手機版上，AWD 效能略優於 RWD，AWD 可以針對行動版做 UX 優化，RWD 製作費較便宜，且容易維護，RWD 開發時間短，比較不會出現重複內容，RWD 有較多的框架開發工具，使用率較高…，以上都是他們之間的差異，下面比較表就可以清楚知道他們的差異。</p>
+<p>〈<strong>延伸閱讀：</strong><a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/ux-webdesign">網頁設計的使用者體驗(UX)如何執行？</a> 〉</p>
+<table>
+<thead>
+<tr>
+<th align="center">項目</th>
+<th align="center">RWD 響應式設計</th>
+<th align="center">AWD 自適應設計</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">不同版本網站</td>
+<td align="center">同一個網址</td>
+<td align="center">同一個網址</td>
+</tr>
+<tr>
+<td align="center">CSS 樣式表</td>
+<td align="center">同一個 CSS</td>
+<td align="center">不同的 CSS</td>
+</tr>
+<tr>
+<td align="center">網站內容一致</td>
+<td align="center">內容一樣</td>
+<td align="center">不一定</td>
+</tr>
+<tr>
+<td align="center">自動判斷各種裝置</td>
+<td align="center">自動判斷</td>
+<td align="center">自動判斷</td>
+</tr>
+<tr>
+<td align="center">行動裝置速度</td>
+<td align="center">速度中等</td>
+<td align="center">速度較快</td>
+</tr>
+<tr>
+<td align="center">行動裝置體驗優化</td>
+<td align="center">固定內容</td>
+<td align="center">可優化</td>
+</tr>
+<tr>
+<td align="center">網站製作費(客製)</td>
+<td align="center">中等</td>
+<td align="center">較高</td>
+</tr>
+<tr>
+<td align="center">網站資料維護</td>
+<td align="center">維護容易</td>
+<td align="center">部分維護多版本</td>
+</tr>
+<tr>
+<td align="center">開發時間</td>
+<td align="center">快速</td>
+<td align="center">時間較長</td>
+</tr>
+<tr>
+<td align="center">結構重複內容</td>
+<td align="center">不會發生</td>
+<td align="center">偶爾發生</td>
+</tr>
+<tr>
+<td align="center">網址重新導向</td>
+<td align="center">不會重導向</td>
+<td align="center">不會重導向</td>
+</tr>
+<tr>
+<td align="center">Google 檢索速度</td>
+<td align="center">快</td>
+<td align="center">快</td>
+</tr>
+<tr>
+<td align="center">適合執行 SEO</td>
+<td align="center">適合</td>
+<td align="center">適合</td>
+</tr>
+<tr>
+<td align="center">框架開發工具</td>
+<td align="center">多</td>
+<td align="center">少</td>
+</tr>
+<tr>
+<td align="center">設計公司使用率</td>
+<td align="center">高</td>
+<td align="center">低</td>
+</tr>
+<tr>
+<td align="center">手工網站切版</td>
+<td align="center">可以</td>
+<td align="center">可以</td>
+</tr>
+</tbody></table>
+<p>(製表: 達文西數位科技)</p>
+<h2 id="RWD、AWD-應該怎麼選呢？"><a href="#RWD、AWD-應該怎麼選呢？" class="headerlink" title="RWD、AWD 應該怎麼選呢？"></a>RWD、AWD 應該怎麼選呢？</h2><p>先講結論，如果沒有特殊的需求，用 RWD 進行網站設計就可以了。大部分的網站都不需要 AWD 這樣的模式，因為 AWD 製作費比較高，會做的人少，成本比較高，開發時間比較久，以成本效益來說，除非有需要，不然就是用 RWD 就可以了。</p>
+<h3 id="內容很多才需要用-AWD"><a href="#內容很多才需要用-AWD" class="headerlink" title="內容很多才需要用 AWD"></a>內容很多才需要用 AWD</h3><p>內容很多才需要用 AWD，因為 RWD 內容只能在桌機、平板、手機之間做重新排列，內容是不能少的，所以像是像 MOMO、PCHOME…這類內容超多的網站，就必須要手機版減少內容，不然畫面會很長，所以這類大型購物網站都是用 AWD，或是用兩個不同網址的網站，企業網站、小型購物網站就比較適合 RWD，像是 Shopline、Cyberbiz 都是 RWD 製作的，內容非常多的網站才建議使用 AWD。<br>〈<strong>延伸閱讀</strong>：<a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/detail/57">套版網站看起來都很像，到底差在哪?</a>〉</p>
+<h3 id="AWD-製作、維護成本高"><a href="#AWD-製作、維護成本高" class="headerlink" title="AWD 製作、維護成本高"></a>AWD 製作、維護成本高</h3><p>響應式網頁設計(RWD)上線後的維護是比較容易的，AWD 維護上較繁瑣，AWD 必須在後台維護各版本的網站，製作成本 AWD 也比 RWD 貴，因為做的人比較少，開發時間也比較長，性價比來看還是 RWD 比較划算，AWD 在設計與維護上成本都比較高，也是大部分的網頁設計公司都採用 RWD 的最大原因。<br><strong>〈延伸閱讀：</strong><a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/webdesign-price">網站建置費用? 網頁設計報價為何這麼亂?</a>〉</p>
+<h3 id="需要更深入使用者體驗-UX"><a href="#需要更深入使用者體驗-UX" class="headerlink" title="需要更深入使用者體驗(UX)"></a>需要更深入使用者體驗(UX)</h3><p>AWD 可以對手機版做更深入的使用者體驗(UX)，針對手機使用者做內容調整與優化，讓使用流程更友善，但近年來的 RWD 設計已經趨向簡單乾淨，並以手機流程為主要設計，而且大部分的網站都不會像 momo、pchome 那樣複雜，所以 AWD 使用機會並不是很高，就算是大型購物平台也慢慢把手機版網站轉向到 APP，使用者體驗也以 APP 為主，AWD 對手機版進行優化的這個優勢已經沒有這麼明顯。<br>〈<strong>延伸閱讀:</strong> <a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/ui-ux-comparison">UX/UI 不一樣，UI/UX 設計是什麼？</a>〉</p>
+<h2 id="RWD、AWD-哪一種對-SEO-比較好？"><a href="#RWD、AWD-哪一種對-SEO-比較好？" class="headerlink" title="RWD、AWD 哪一種對 SEO 比較好？"></a>RWD、AWD 哪一種對 SEO 比較好？</h2><p>哪一種對 SEO 比較好？答案是：「兩者差距不大」，SEO 的排名規則有「SEO 以行動版網站內容為主」、「網站行動效能影響 SEO」、「網站版本之間的內容一致性會影響 SEO」，手機網站部分：AWD、RWD 兩個都有手機版，所以都符合條件。網站效能部分：AWD 手機效能略優於 RWD，這裡是 AWD 稍微優勢一些。內容一致性部分：AWD 的網站版本之間的確會因為優化，產生內容不同步，RWD 版本則是內容一致，所以在內容一致性上面，RWD 勝 AWD，在各有優缺點之下，兩者其實差異不大，主要還是要看網站的 SEO 優化程度，而不是網頁設計用了 RWD 或 AWD。<br>〈<strong>延伸閱讀:</strong> <a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/seo-what">SEO 是什麼? 簡單說讓你聽得懂</a>〉<br>〈<strong>延伸閱讀:</strong> <a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/keyword-ranking-optimization">關鍵字排名優化最重要的 3 件事</a>〉</p>
+<p><strong>什麼是 PSI ？</strong><br>PSI 的英文是 PageSpeed Insights，簡稱 PSI。PSI 是 Google 提供的「檢測網站性能與速度的線上工具」，除了檢測結果以外並提供各種修改建議，分數是透過運行 Google Lighthouse 資料庫來分析網站，90 分或以上是非常好，50 到 90 中等架構，低於 50 是很差的架構，通常要執行 SEO，最少都要有 80 分以上。<br>【<strong>網站 PSI 是幾分？馬上來測試</strong> <a target="_blank" rel="noopener" href="https://developers.google.com/speed/pagespeed/insights/?hl=zh-TW">PageSpeed Insights</a>】</p>
+<h2 id="RWD-有兩種設計方式"><a href="#RWD-有兩種設計方式" class="headerlink" title="RWD 有兩種設計方式"></a>RWD 有兩種設計方式</h2><p>RWD(響應式網站設計) 分成兩種製作方式：「框架工具」跟「手工切版」，如果不考慮 SEO 跟網站效能的話，其實這兩種方式製作的網站，幾乎沒有什麼明顯差異，都可以達到 RWD 的設計呈現，但如果要針對網站效能與修改彈性，「手工切版」是遠勝於「框架工具」製作的 RWD 網站，這個可以從 Google 的 PSI 測試工具得到測試結果。<br>〈<strong>延伸閱讀:</strong> <a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/front-end-webdesign">什麼是 RWD 切版？</a>〉</p>
+<h3 id="以框架工具製作-RWD"><a href="#以框架工具製作-RWD" class="headerlink" title="以框架工具製作 RWD"></a>以框架工具製作 RWD</h3><p>就是選擇現成的 RWD 框架開發工具，依照既有的 RWD 模版去套用網站素材，然後將網站素材組裝網站交給客戶，後續根據客戶修改需求進行修改，好處是可以減少製作時間，因為有很多現成的模組跟效果可以用，但因為模組因素所以程式無法精簡，網站效能會比較差，還有網站修改幅度不能過大會有技術難度，常見的 RWD 框架工具有：Bootstrap、Semantic UI、Foundation、UiKit…，最多人使用的就是 Bootstrap，Bootstrap 有很多現成的版型，也使用在知名的套版與軟體，例如：Wordpress、Adobe Dreamweaver，缺點就是有「很多的累贅程式碼」，不會改的話效能會很差，AWD 就不像 RWD 有這麼多的框架工具。<br>〈<strong>延伸閱讀：</strong><a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/rwd-different">RWD 網頁設計好壞差很多</a> 〉</p>
+<h3 id="以手工切版製作-RWD"><a href="#以手工切版製作-RWD" class="headerlink" title="以手工切版製作 RWD"></a>以手工切版製作 RWD</h3><p>手工切版，顧名思義就是「手工」，就是不使用 RWD 框架工具進行的切版工作，而是從無到有的產出網站的 html，既然有方便的 RWD 框架工具，為什麼要用「手工」找麻煩？主要原因就是為了有「更有效率的網站」、「網站可以方便修改」這兩件事，手工切版可以精簡程式，不會有像框架工具的「累贅程式碼」，手工切版可以有程式自主權，容易修改程式，也可以達到 HTML 最佳化，但缺點是需要更多的製作時間，從拿到網站設計圖稿，慢慢把圖片切成 HTML，整個製作時間是框架工具製作 RWD 網站的兩倍時間以上，八成以上的網頁設計公司都不會採用，但如果要執行 SEO，需要高效能 PSI 的網站，就需要手切網站。<br><strong>〈延伸閱讀：</strong><a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/seo-speed">網站速度- SEO 優化的重要項目</a>〉</p>
+<table>
+<thead>
+<tr>
+<th align="center">項目</th>
+<th align="center">RWD 框架工具</th>
+<th align="center">RWD 手工切版</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">RWD 網站呈現</td>
+<td align="center">完整</td>
+<td align="center">完整</td>
+</tr>
+<tr>
+<td align="center">代表性工具</td>
+<td align="center">Boostrap</td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="center">程式修改彈性</td>
+<td align="center">低</td>
+<td align="center">高</td>
+</tr>
+<tr>
+<td align="center">設計修改彈性</td>
+<td align="center">低</td>
+<td align="center">高</td>
+</tr>
+<tr>
+<td align="center">PSI 效能分數</td>
+<td align="center">低</td>
+<td align="center">高</td>
+</tr>
+<tr>
+<td align="center">累贅程式</td>
+<td align="center">多</td>
+<td align="center">少</td>
+</tr>
+<tr>
+<td align="center">製作時間</td>
+<td align="center">短</td>
+<td align="center">長</td>
+</tr>
+<tr>
+<td align="center">現成的效果</td>
+<td align="center">多</td>
+<td align="center">需另外裝</td>
+</tr>
+<tr>
+<td align="center">SEO 效能</td>
+<td align="center">低</td>
+<td align="center">高</td>
+</tr>
+<tr>
+<td align="center">網站客製程度</td>
+<td align="center">設計客製</td>
+<td align="center">全程客製</td>
+</tr>
+<tr>
+<td align="center">設計公司使用率</td>
+<td align="center">高</td>
+<td align="center">低</td>
+</tr>
+<tr>
+<td align="center">開發成本</td>
+<td align="center">低</td>
+<td align="center">高</td>
+</tr>
+</tbody></table>
+<p>(製表: 達文西數位科技)</p>
+<h2 id="如何檢查行動版網站的狀況？"><a href="#如何檢查行動版網站的狀況？" class="headerlink" title="如何檢查行動版網站的狀況？"></a>如何檢查行動版網站的狀況？</h2><p>要怎麼檢視行動版網站狀況呢？可以用 Google Search Console(GSC)審查網址，Google 於 2020 年正式以行動版作為搜尋收錄與排名的基準，所以網站必須符合各種行動裝置的規則，所以可以透過 GSC 去查看網站的「行動裝置可用性」、「網站內容」、「中繼資料(Meta Data)」、「結構化資料(Structured Data)」，可以從中找出網站是不是有符合規則，如果有檢測到行動網站的錯誤，就可以根據錯誤進行修正，RWD、AWD 都可以從 Google Search Console 檢測，是 SEO 很重要的工作之一。<br><strong>〈延伸閱讀：</strong><a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/SEO-ranking_key_points">SEO 排名因素有哪些？ 45 個要點一次看完</a>〉</p>
+<h3 id="Google-以行動網站作為索引，響應式網站變得重要"><a href="#Google-以行動網站作為索引，響應式網站變得重要" class="headerlink" title="Google 以行動網站作為索引，響應式網站變得重要"></a>Google 以行動網站作為索引，響應式網站變得重要</h3><p><img src="https://www.da-vinci.com.tw/uploads/editor/files/%E7%B6%B2%E7%AB%99%E4%BB%A5%E8%A1%8C%E5%8B%95%E7%B4%A2%E5%BC%95%E7%82%BA%E4%B8%BB.jpg" alt="Google以行動裝置作為索引"></p>
+<h3 id="Google-Search-Console-檢查行動網站-響應式網站"><a href="#Google-Search-Console-檢查行動網站-響應式網站" class="headerlink" title="Google Search Console 檢查行動網站(響應式網站)"></a>Google Search Console 檢查行動網站(響應式網站)</h3><p><img src="https://www.da-vinci.com.tw/uploads/editor/files/gsc%E6%AA%A2%E6%9F%A5%E8%A1%8C%E5%8B%95%E8%A3%9D%E7%BD%AE%E5%8F%AF%E7%94%A8%E6%80%A7.jpg" alt="Google Search Console檢查行動網站"></p>
+<h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>RWD 網頁設計已經是最主流的網站設計方式，如果網站內容簡單可以選 RWD(響應式網頁設計)，例如: 企業網站、小型購物網站，如果是大型網站希望手機版可以單獨優化，例如: PCHOME 購物，那麼可以用 AWD 製作，一般購物網站使用 RWD 就很夠了，AWD 製作與維護成本較高，也會有資料不同步的可能，如果沒有特別的網站需求，用 RWD(響應式網站設計)是比較好的選擇，還有就是 RWD 並沒有都一樣，選擇專業的網頁設計才能達到高分數 PSI 網站，對 SEO 來說才是最佳方案。</p>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><p><a target="_blank" rel="noopener" href="https://www.da-vinci.com.tw/tw/blog/rwd">https://www.da-vinci.com.tw/tw/blog/rwd</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rwd/" rel="tag"># rwd</a>
+              <a href="/tags/awd/" rel="tag"># awd</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/27/Angular/SSR/" rel="prev" title="Server Side Render">
+                  <i class="fa fa-chevron-left"></i> Server Side Render
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Thomas_chu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"thomas-chu-30","repo":"thomas-chu-30.github.io","client_id":"c0ac85ddeda6dcd02e2f","client_secret":"ee9fabf8ea48c8f55703393dad72ac955e39f783","admin_user":"thomas-chu-30","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"fa9b5dabe6b0b5baa42cc7b5e51bb936"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

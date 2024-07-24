@@ -1,5 +1,6 @@
 ---
 tags: [rwd, awd]
+categories: 生活長知識
 title: 什麼是 RWD？ RWD 跟 AWD 有什麼不同？
 ---
 
